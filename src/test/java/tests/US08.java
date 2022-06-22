@@ -2,9 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
-public class US08Test {
+public class US08 {
     @Test
     public void US08_TC01() {
     }
