@@ -51,11 +51,18 @@ public class US_03_04_Page {
     @FindBy(xpath = "//button[@name='add-to-cart']")
     public WebElement sepeteEkleButonu;
 
-    @FindBy(xpath = "//a[text()='Sepeti görüntüle']")
+    @FindBy(xpath = "//a[@class='button wc-forward']")
     public WebElement sepetiGoruntule;
 
     @FindBy(xpath = "//button[text()='Temizle']")
     public WebElement sepetiTemizle;
+
+    @FindBy(xpath = "//h3[.='Sepet Toplamı']")
+    public WebElement sepetToplamiTextElement;
+
+    @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']")
+    public WebElement odemeSayfasinaGitButonu;
+
 
 
 
