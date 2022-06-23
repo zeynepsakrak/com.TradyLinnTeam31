@@ -1,14 +1,13 @@
-package tests.deneme;
+package tests;
 
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import static org.testng.Assert.*;
+public class US03 {
 
-public class DenemeTest {
     @Test
-    public void test01() {
+    public void US03_TC01(){
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
     }
 }
