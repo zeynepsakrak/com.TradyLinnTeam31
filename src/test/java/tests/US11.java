@@ -13,7 +13,7 @@ public class US11 {
        //3- Kullanici Urunler butonuna tiklar
        //4-Kullanici Urunlerin listelendigini kontrol eder
        //5-Kullanici ilk urune tiklar
-       //6-Kullanici Toptan Ürün Gösterme Ayarları
+       //6-"Kullanici Toptan Ürün Gösterme Ayarları
        //butonuna tiklar"
        //7-Kullanici Toptan Ürün Gösterme Ayarları
        //bolumunun goruntulendigini kontrol eder"
