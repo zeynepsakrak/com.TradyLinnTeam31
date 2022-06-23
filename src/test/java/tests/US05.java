@@ -6,6 +6,5 @@ public class US05 {
     @Test
     public void TC01() {
 
-
     }
 }
