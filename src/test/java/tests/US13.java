@@ -7,20 +7,16 @@ import pages.US_13_14_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static tests.Login.login;
+
 public class US13 {
     US_13_14_Page us_13_14_page;
     @Test
     public void tC01() throws InterruptedException {
+     login();
         us_13_14_page=new US_13_14_Page();
         //US13_TC01_Coupon kodu verilmeli
-        //1. Kullanıcı https://tradylinn.com/ adresine gider
-        Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
-        //2. Kullanıcı "Giris yap" seçenegine tıklar
-        us_13_14_page.girisButonu.click();
-        //3. Kullanıcı Dogru kullanici ve sifre bilgileri ile giris yapar
-        us_13_14_page.userName.sendKeys(ConfigReader.getProperty("tradyValidUsername"));
-        us_13_14_page.pasword.sendKeys(ConfigReader.getProperty("tradyValidPasword"));
-        us_13_14_page.girisYapButonu.click();
+        //giriş yapar
         //4. Kullanıcı "Hesabım" butonunu tıklar
         Thread.sleep(5000);
         us_13_14_page.hesabimButonu.click();

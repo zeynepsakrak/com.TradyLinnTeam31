@@ -12,18 +12,6 @@ public class US_13_14_Page {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[@class='login inline-type']")
-    public WebElement girisButonu;
-
-    @FindBy(xpath = "//input[@id='username']")
-    public WebElement userName;
-
-    @FindBy(xpath = "//input[@id='password']")
-    public WebElement pasword;
-
-    @FindBy(xpath = "//button[@name=\"login\"]")
-    public WebElement girisYapButonu;
-
     @FindBy(xpath = "//li[@id='menu-item-1074']")
     public WebElement hesabimButonu;
 
