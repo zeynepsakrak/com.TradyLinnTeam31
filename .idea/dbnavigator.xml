@@ -2,7 +2,11 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
+<<<<<<< resul
+    <value-preview-text-wrapping value="false" />
+=======
     <value-preview-text-wrapping value="true" />
+>>>>>>> master
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -96,12 +100,20 @@
       </filters>
       <sorting>
         <object-type name="COLUMN" sorting-type="NAME" />
+<<<<<<< resul
+        <object-type name="FUNCTION" sorting-type="NAME" />
+=======
         <object-type name="FUNCTİON" sorting-type="NAME" />
+>>>>>>> master
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
       </sorting>
       <default-editors>
+<<<<<<< resul
+        <object-type name="VIEW" editor-type="SELECTION" />
+=======
         <object-type name="VİEW" editor-type="SELECTION" />
+>>>>>>> master
         <object-type name="PACKAGE" editor-type="SELECTION" />
         <object-type name="TYPE" editor-type="SELECTION" />
       </default-editors>
@@ -112,6 +124,26 @@
           <object-type name="SCHEMA" enabled="true" />
           <object-type name="USER" enabled="false" />
           <object-type name="ROLE" enabled="false" />
+<<<<<<< resul
+          <object-type name="PRIVILEGE" enabled="false" />
+          <object-type name="CHARSET" enabled="false" />
+          <object-type name="TABLE" enabled="true" />
+          <object-type name="VIEW" enabled="true" />
+          <object-type name="MATERIALIZED VIEW" enabled="true" />
+          <object-type name="INDEX" enabled="true" />
+          <object-type name="CONSTRAINT" enabled="true" />
+          <object-type name="DATASET TRIGGER" enabled="true" />
+          <object-type name="DATABASE TRIGGER" enabled="true" />
+          <object-type name="SYNONYM" enabled="false" />
+          <object-type name="SEQUENCE" enabled="true" />
+          <object-type name="PROCEDURE" enabled="true" />
+          <object-type name="FUNCTION" enabled="true" />
+          <object-type name="PACKAGE" enabled="true" />
+          <object-type name="TYPE" enabled="true" />
+          <object-type name="DIMENSION" enabled="false" />
+          <object-type name="CLUSTER" enabled="false" />
+          <object-type name="DBLINK" enabled="true" />
+=======
           <object-type name="PRİVİLEGE" enabled="false" />
           <object-type name="CHARSET" enabled="false" />
           <object-type name="TABLE" enabled="true" />
@@ -130,6 +162,7 @@
           <object-type name="DİMENSİON" enabled="false" />
           <object-type name="CLUSTER" enabled="false" />
           <object-type name="DBLİNK" enabled="true" />
+>>>>>>> master
         </lookup-objects>
         <force-database-load value="false" />
         <prompt-connection-selection value="true" />
