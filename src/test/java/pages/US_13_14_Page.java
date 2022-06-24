@@ -34,7 +34,7 @@ public class US_13_14_Page {
     public WebElement descriptionText;
 
     @FindBy(xpath = "//select[@id='discount_type']")
-    public List<WebElement> discountTypeText;
+    public WebElement discountTypeText;
 
     @FindBy(xpath = "//input[@id='coupon_amount']")
     public WebElement couponAmountText;
