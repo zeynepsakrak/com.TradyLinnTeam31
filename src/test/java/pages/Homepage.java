@@ -23,4 +23,19 @@ public class Homepage {
 
     @FindBy(xpath = "//button[@name=\"login\"]")
     public WebElement girisYapButonu;
+
+    @FindBy(xpath = "(//a[@class='cart-toggle'])[1]")
+    public WebElement sepetimIkonu;
+
+    @FindBy(xpath = "//button[@name='add-to-cart']")
+    public WebElement sepeteEkleButonu;
+
+    @FindBy(xpath = "//a[@class='button wc-forward']")
+    public WebElement sepetiGoruntule;
+
+    @FindBy(xpath = "//button[text()='Temizle']")
+    public WebElement sepetiTemizle;
+
+    @FindBy(xpath = "(//img[@alt='Tradylinn'])[1]")
+    public WebElement tradylinnIkonu;
 }
