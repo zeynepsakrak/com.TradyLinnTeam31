@@ -75,5 +75,8 @@ public class US_13_14_Page {
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-success']")
     public WebElement kayitEdildiMesage;
 
+    @FindBy (xpath = "//*[text()='Coupon Successfully Published.']")
+    public WebElement submitOnayYazisi;
+
 
 }

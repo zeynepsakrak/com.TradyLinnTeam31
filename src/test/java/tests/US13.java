@@ -9,6 +9,8 @@ import pages.US_13_14_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.Random;
+
 import static tests.Login.login;
 
 public class US13 {
@@ -34,13 +36,15 @@ public class US13 {
         us_13_14_page.kuponlarYeniButonu.click();
 
         //8. Kullanıcı "Code" alanına veri girer
-        us_13_14_page.codeText.sendKeys(ConfigReader.getProperty("tradyCouponCodeSabit"), Keys.TAB);
+        Random rnd = new Random();
+        String codeID= String.valueOf(rnd.nextInt(10000));
+        us_13_14_page.codeText.sendKeys(codeID,Keys.TAB);
 
         //9. Kullanıcı "Submit" butonuna tiklar
         us_13_14_page.draftButonu.click();
 
         //10. Kullanıcı "Code" alanına veri girildiğine test eder
-        String expectedCode = ConfigReader.getProperty("tradyCouponCodeSabit");
+        String expectedCode = codeID;
         String actualcode = us_13_14_page.codeText.getAttribute("value");
         Assert.assertEquals(actualcode, expectedCode);
 
@@ -86,7 +90,7 @@ public class US13 {
 
         //11. Kullanıcı "Discount Type" alanı "Fixed Product Discount" seçilir.
         select=new Select(us_13_14_page.discountTypeText);
-        select.selectByIndex(2);
+        select.selectByIndex(0);
 
         //12. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
@@ -96,5 +100,79 @@ public class US13 {
         expectedDescription = "Percentage discount";
         actualDescription = select.getFirstSelectedOption().getText();
         Assert.assertEquals(actualDescription, expectedDescription);
+    }
+
+    @Test(dependsOnMethods = "US13_TC01",priority = 4)
+    public void US13_TC04() throws InterruptedException {
+        //US13_TC02_Tanimlama yazılmalı
+        //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+
+        //8. Kullanıcı "Coupon Amount" alanına veri girer
+        us_13_14_page.couponAmountText.clear();
+        us_13_14_page.couponAmountText.sendKeys(ConfigReader.getProperty("tradyCouponAmount"), Keys.TAB);
+
+        //9. Kullanıcı "Draft" butonuna tiklar
+        us_13_14_page.draftButonu.click();
+        Thread.sleep(5000);
+        //10. Kullanıcı "Coupon Amount" alanına veri girildiğine test eder
+        String expectedDescription = ConfigReader.getProperty("tradyCouponAmount");
+        String actualDescription = us_13_14_page.couponAmountText.getAttribute("value");
+        Assert.assertEquals(actualDescription, expectedDescription);
+    }
+
+    @Test(dependsOnMethods = "US13_TC01",priority = 5)
+    public void US13_TC05() throws InterruptedException {
+        //US13_TC02_Tanimlama yazılmalı
+        //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+
+        //8. Kullanıcı "Coupon expiry date" alanına veri girer
+        us_13_14_page.couponexpirydateText.sendKeys(ConfigReader.getProperty("tradyKCouponExpiryDate"), Keys.TAB);
+
+        //9. Kullanıcı "Draft" butonuna tiklar
+        us_13_14_page.draftButonu.click();
+        Thread.sleep(5000);
+
+        //10.Kullanıcı "Coupon expiry date" alanına veri girildiğine test eder
+        String expectedDescription = ConfigReader.getProperty("tradyKCouponExpiryDate");
+        String actualDescription = us_13_14_page.couponexpirydateText.getAttribute("value");
+        Assert.assertEquals(actualDescription, expectedDescription);
+    }
+
+    @Test(dependsOnMethods = "US13_TC01",priority = 6)
+    public void US13_TC06() throws InterruptedException {
+        //US13_TC02_Tanimlama yazılmalı
+        //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+
+        //8. Kullanıcı "Allow free shipping" alanına tik atar
+        us_13_14_page.allowfreeshippingCheck.click();
+
+        //9. Kullanıcı "Draft" butonuna tiklar
+        us_13_14_page.draftButonu.click();
+        Thread.sleep(5000);
+
+        //10. Kullanıcı "Allow free shipping" alanı tikli olduğunu test eder
+        Assert.assertTrue(us_13_14_page.allowfreeshippingCheck.isSelected());
+    }
+
+    @Test(dependsOnMethods = "US13_TC01",priority = 7)
+    public void US13_TC07() throws InterruptedException {
+        //US13_TC02_Tanimlama yazılmalı
+        //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+
+        //8. Kullanıcı "Show on store" alanına tik atar
+        us_13_14_page.showonstoreCheck.click();
+        Thread.sleep(3000);
+        //9. Kullanıcı "Draft" butonuna tiklar
+        us_13_14_page.draftButonu.click();
+        Thread.sleep(5000);
+
+        //10. Kullanıcı "Show on store" alanı tikli olduğunu test eder
+        Assert.assertTrue(us_13_14_page.showonstoreCheck.isSelected());
+
+        //11. Kullanıcı "Submit" butonuna tıklar
+        us_13_14_page.submitButonu.click();
+
+        //12. Kullanıcı Kayıt yapıldığını kontrol eder
+        Assert.assertTrue(us_13_14_page.submitOnayYazisi.getText().contains("Coupon Successfully Published."));
     }
 }
