@@ -34,7 +34,7 @@ public class US_13_14_Page {
     public WebElement descriptionText;
 
     @FindBy(xpath = "//select[@id='discount_type']")
-    public List<WebElement> discountTypeText;
+    public WebElement discountTypeText;
 
     @FindBy(xpath = "//input[@id='coupon_amount']")
     public WebElement couponAmountText;
@@ -68,6 +68,15 @@ public class US_13_14_Page {
 
     @FindBy(xpath = "//input[@id='wcfm_coupon_manager_submit_button']")
     public WebElement submitButonu;
+
+    @FindBy(xpath = "//input[@id='wcfm_coupon_manager_draft_button']")
+    public WebElement draftButonu;
+
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-success']")
+    public WebElement kayitEdildiMesage;
+
+    @FindBy (xpath = "//*[text()='Coupon Successfully Published.']")
+    public WebElement submitOnayYazisi;
 
 
 }
