@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -8,6 +9,10 @@ import pages.Homepage;
 import pages.US_05_06_07_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 
 import static tests.Login.login;
 
@@ -106,7 +111,7 @@ public class US05 {
     }
 
     @Test
-    public void TC04() throws InterruptedException {
+    public void TC04() throws InterruptedException, AWTException {
        // Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
@@ -136,17 +141,128 @@ public class US05 {
                         .getProperty("regularPrice")).sendKeys(Keys.TAB)
                 .sendKeys(ConfigReader.getProperty("salePrice")).perform();
 
+        // Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
+        us_05_06_07_page.largePhoto.click();
+        us_05_06_07_page.dosyaYukle.click();
 
+        //Kullanici Dosya Secin butonuna tiklar
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("window.scrollBy(0,200)");
+        us_05_06_07_page.uploaderButton1.click();
+        Thread.sleep(3000);
+        Robot rb = new Robot();
+        StringSelection str1 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(5000);
+        us_05_06_07_page.secPhoto.click();
+        us_05_06_07_page.mediaModalIcanKapat.click();
+
+        // Kullanici Galeri Images icin kücük resim bosluguna tiklar
+        us_05_06_07_page.galeriImages.click();
+        us_05_06_07_page.dosyaYukle.click();
+
+        //Kullanici Dosya Secin butonuna tiklar
+        js.executeScript("window.scrollBy(0,200)");
+        us_05_06_07_page.uploaderButton1.click();
+        Thread.sleep(3000);
+        StringSelection str2 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str2, null);
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(5000);
+        //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
+        us_05_06_07_page.addToGalery.click();
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void TC05() throws InterruptedException, AWTException {
+        // Kullanici vendor olarak hesabina gider
+        us_05_06_07_page=new US_05_06_07_Page();
+        Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
+        us_05_06_07_page.girisButonu.click();
+        us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
+        us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
+        us_05_06_07_page.girisYapButonu.click();
+        Thread.sleep(5000);
+        us_05_06_07_page.hesabimButonu.click();
+
+        //Kullanici Store Manager butonuna tiklar
+        us_05_06_07_page.storeManagerButonu.click();
+
+        //Kullanici Urunler butonuna tiklar
+        us_05_06_07_page.urunButonu.click();
+
+        //Kullanici Yeni Ekle butonuna tiklar
+        us_05_06_07_page.yeniEkleButonu.click();
+
+        // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
+        Actions actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(3000);
+        actions.click(us_05_06_07_page.productTitle)
+                .sendKeys(ConfigReader.getProperty("productTitle"))
+                .sendKeys(Keys.TAB).sendKeys(ConfigReader
+                        .getProperty("regularPrice")).sendKeys(Keys.TAB)
+                .sendKeys(ConfigReader.getProperty("salePrice")).perform();
+
+        // Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
+        us_05_06_07_page.largePhoto.click();
+        us_05_06_07_page.dosyaYukle.click();
+
+        //Kullanici Dosya Secin butonuna tiklar
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("window.scrollBy(0,200)");
+        us_05_06_07_page.uploaderButton1.click();
+        Thread.sleep(3000);
+        Robot rb = new Robot();
+        StringSelection str1 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(5000);
+        us_05_06_07_page.secPhoto.click();
+        us_05_06_07_page.mediaModalIcanKapat.click();
+
+        // Kullanici Galeri Images icin kücük resim bosluguna tiklar
+        us_05_06_07_page.galeriImages.click();
+        us_05_06_07_page.dosyaYukle.click();
+
+        //Kullanici Dosya Secin butonuna tiklar
+        js.executeScript("window.scrollBy(0,200)");
+        us_05_06_07_page.uploaderButton1.click();
+        Thread.sleep(3000);
+        StringSelection str2 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str2, null);
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(5000);
+        //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
+        us_05_06_07_page.addToGalery.click();
         /*
-        6- Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
-        7- Kullanici Dosya Yükle butonuna tiklar
-        8- Kullanici Dosya Secin butonuna tiklar
-        9- Kullanici bir resim dosyasini secer (Foto yolu yazilir) ve Sec butonunu tiklar
-        10- Kullanici Galeri Images icin kücük resim bosluguna tiklar
-        11- Kullanici Dosya Yükle butonuna tiklar
-        12- Kullanici Dosya Secin butonuna tiklar
-        13- Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
+14- Kullanici Short Description boxa metin girer
+15- Kullanici Description boxa metin girer
+16- Kullanici Categories de bir kategori secer
+17- Kullanici Product Brands da bir brand secer
+18- Kullanici Submit butonuna tiklar
          */
-
     }
 }

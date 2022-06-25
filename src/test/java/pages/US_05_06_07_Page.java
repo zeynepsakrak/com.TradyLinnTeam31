@@ -3,10 +3,12 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US_05_06_07_Page {
+
     public US_05_06_07_Page () {PageFactory.initElements(Driver.getDriver(), this);}
     @FindBy(xpath = "//a[@class='login inline-type']")
     public WebElement girisButonu;
@@ -58,5 +60,29 @@ public class US_05_06_07_Page {
 
     @FindBy (xpath = "//input[@id='sale_price']")
     public WebElement salePrice;
+
+    @FindBy(xpath = "//img[@id='featured_img_display']")
+    public WebElement largePhoto;
+
+    @FindBy(xpath = "(//button[@id='menu-item-upload'])[1]")
+    public WebElement dosyaYukle;
+
+    @FindBy(xpath = "//button[@id='__wp-uploader-id-1']")
+    public WebElement uploaderButton1;
+
+    @FindBy(xpath = "//button[@id='__wp-uploader-id-4']")
+    public WebElement uploaderButton2;
+
+    @FindBy(xpath = "//img[@id='gallery_img_gimage_0_display']")
+    public WebElement galeriImages;
+
+    @FindBy(xpath = "//button[@disabled='disabled']")
+    public WebElement secPhoto;
+
+    @FindBy(xpath = "//*[@id=\"__wp-uploader-id-3\"]/div[4]/div/div[2]/button")
+    public WebElement addToGalery;
+
+    @FindBy(xpath = "//span[@class='media-modal-icon']")
+    public WebElement mediaModalIcanKapat;
 
 }
