@@ -105,5 +105,48 @@ public class US05 {
         Driver.closeDriver();
     }
 
+    @Test
+    public void TC04() throws InterruptedException {
+       // Kullanici vendor olarak hesabina gider
+        us_05_06_07_page=new US_05_06_07_Page();
+        Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
+        us_05_06_07_page.girisButonu.click();
+        us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
+        us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
+        us_05_06_07_page.girisYapButonu.click();
+        Thread.sleep(5000);
+        us_05_06_07_page.hesabimButonu.click();
 
+        //Kullanici Store Manager butonuna tiklar
+        us_05_06_07_page.storeManagerButonu.click();
+
+        //Kullanici Urunler butonuna tiklar
+        us_05_06_07_page.urunButonu.click();
+
+        //Kullanici Yeni Ekle butonuna tiklar
+        us_05_06_07_page.yeniEkleButonu.click();
+
+        // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
+        Actions actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(3000);
+        actions.click(us_05_06_07_page.productTitle)
+                .sendKeys(ConfigReader.getProperty("productTitle"))
+                .sendKeys(Keys.TAB).sendKeys(ConfigReader
+                        .getProperty("regularPrice")).sendKeys(Keys.TAB)
+                .sendKeys(ConfigReader.getProperty("salePrice")).perform();
+
+
+        /*
+        6- Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
+        7- Kullanici Dosya Yükle butonuna tiklar
+        8- Kullanici Dosya Secin butonuna tiklar
+        9- Kullanici bir resim dosyasini secer (Foto yolu yazilir) ve Sec butonunu tiklar
+        10- Kullanici Galeri Images icin kücük resim bosluguna tiklar
+        11- Kullanici Dosya Yükle butonuna tiklar
+        12- Kullanici Dosya Secin butonuna tiklar
+        13- Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
+         */
+
+    }
 }
