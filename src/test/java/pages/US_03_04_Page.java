@@ -63,11 +63,53 @@ public class US_03_04_Page {
     @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']")
     public WebElement odemeSayfasinaGitButonu;
 
+    @FindBy(xpath = "(//span[@role='textbox'])[2]")
+    public WebElement korgoBilgileriSehirElementi;
 
+    @FindBy(xpath = "//p[@id='calc_shipping_city_field']")
+    public WebElement korgoBilgileriIlceElementi;
 
+    @FindBy(xpath = "//p[@id='calc_shipping_postcode_field']")
+    public WebElement korgoBilgileriPostaKoduElementi;
 
+    @FindBy(xpath = "//button[.='Fiyatı Güncelle']")
+    public WebElement fiyatiGuncelleButonu;
 
+    @FindBy(xpath = "//input[@placeholder='Ürün arama']")
+    public WebElement urunAramaKutusu;
 
+    @FindBy(xpath = "(//button[@class='btn btn-search'])[1]")
+    public WebElement aramaMercegi;
+
+    @FindBy(xpath = "//td[@class='product-price']")
+    public List<WebElement> secilenUrunlerFiyatListesi;
+
+    @FindBy(xpath = "//td[@class='product-quantity']")
+    public List<WebElement> secilenUrunlerMiktarListesi;
+
+    @FindBy(xpath = "//td[@class='product-subtotal']")
+    public List<WebElement> secilenUrunlerAraToplamListesi;
+
+    @FindBy(xpath = "//button[@title='Eksi']")
+    public List<WebElement> eksiButonListesi;
+
+    @FindBy(xpath = "//button[@title='Artı']")
+    public List<WebElement> artiButonListesi;
+
+    @FindBy(xpath = "//button[.='Sepeti Yenile']")
+    public WebElement sepetiYenileButonu;
+
+    @FindBy(xpath = "//button[.='Kupon kullan']")
+    public WebElement kuponKullanButonu;
+
+    @FindBy(xpath = "//a[.='Alışverişe Devam Et']")
+    public WebElement sepetimAlisveriseDevamEtButonu;
+
+    @FindBy(xpath = "//*[.='Fatura detayları']")
+    public WebElement faturaDetaylariTitle;
+
+    @FindBy(xpath = "//*[.='Siparişiniz']")
+    public WebElement siparisinizTitle;
 
 
 }
