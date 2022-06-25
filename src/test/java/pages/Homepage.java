@@ -24,6 +24,18 @@ public class Homepage {
     @FindBy(xpath = "//button[@name=\"login\"]")
     public WebElement girisYapButonu;
 
+    @FindBy(xpath = "//*[@id=\"menu-item-1074\"]/a")
+    public WebElement hesabim;
+    @FindBy(xpath ="//a[contains(text(),'Store Manager')]")
+    public WebElement StoreManager;
+
+
+    @FindBy(xpath ="//span[contains(text(),'Ürün:% s')]")
+    public WebElement urun;
+    @FindBy(xpath ="//span[contains(text(),'Yeni ekle')]")
+    public WebElement yeniUrunEkle;
+
+
     @FindBy(xpath = "(//a[@class='cart-toggle'])[1]")
     public WebElement sepetimIkonu;
 
