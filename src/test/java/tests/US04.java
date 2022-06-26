@@ -208,7 +208,5 @@ public class US04 {
         Assert.assertTrue(forthPage.faturaDetaylariTitle.isDisplayed());
         Assert.assertTrue(forthPage.odemeSayfasiAraToplam.isDisplayed());
         Driver.closeDriver();
-        }
-
-
+    }
 }

@@ -25,19 +25,21 @@ import java.util.function.Function;
 import static tests.Login.login;
 
 public class ReusableMethods {
-    static  JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-static Actions actions=new Actions(Driver.getDriver());
+    static JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+    static Actions actions = new Actions(Driver.getDriver());
+
     public static void sepetiBosalt() {
-        Homepage homepage=new Homepage();
+        Homepage homepage = new Homepage();
         if (!homepage.sepetimIkonu.getText().contains("0")) {
             homepage.sepetimIkonu.click();
             homepage.sepetiGoruntule.click();
-           bekle();
+            waitFor(1);
             homepage.sepetiTemizle.click();
             homepage.tradylinnIkonu.click();
         }
     }
-    public static void bekle(){
+
+    public static void bekle() {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -80,22 +82,22 @@ static Actions actions=new Actions(Driver.getDriver());
 
     public static void urun_ekle_menusune_gidilir() {
 
-        Homepage homepage=new Homepage();
+        Homepage homepage = new Homepage();
         login();
-        jse.executeScript("arguments[0].scrollIntoView();",homepage.hesabim);
-    bekle();
+        jse.executeScript("arguments[0].scrollIntoView();", homepage.hesabim);
+        bekle();
         homepage.hesabim.click();
         bekle();
         homepage.StoreManager.click();
-       // jse.executeScript("arguments[0].scrollIntoView();",homepage.urun);
+        // jse.executeScript("arguments[0].scrollIntoView();",homepage.urun);
 
-        waitForVisibility(homepage.Home,5);
+        waitForVisibility(homepage.Home, 5);
 
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         homepage.urun.click();
-     bekle();
-     homepage.yeniUrunEkle.click();
+        bekle();
+        homepage.yeniUrunEkle.click();
 
     }
 
@@ -112,6 +114,7 @@ static Actions actions=new Actions(Driver.getDriver());
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
@@ -128,6 +131,7 @@ static Actions actions=new Actions(Driver.getDriver());
         }
         return elemTexts;
     }
+
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
@@ -139,6 +143,7 @@ static Actions actions=new Actions(Driver.getDriver());
         }
         return elemTexts;
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -149,6 +154,7 @@ static Actions actions=new Actions(Driver.getDriver());
             }
         }
     }
+
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -164,6 +170,7 @@ static Actions actions=new Actions(Driver.getDriver());
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
+
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeout) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
