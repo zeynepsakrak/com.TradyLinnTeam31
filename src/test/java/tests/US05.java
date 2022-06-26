@@ -264,12 +264,10 @@ public class US05 {
         us_05_06_07_page.iframe1.sendKeys(ConfigReader.getProperty("shortDescription"));
         us_05_06_07_page.iframe2.sendKeys(ConfigReader.getProperty("description"));
 
-
 /*
 16- Kullanici Categories de bir kategori secer
 17- Kullanici Product Brands da bir brand secer
 18- Kullanici Submit butonuna tiklar
          */
-
     }
 }
