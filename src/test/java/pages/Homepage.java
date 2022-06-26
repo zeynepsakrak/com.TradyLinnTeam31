@@ -30,18 +30,19 @@ public class Homepage {
     public WebElement StoreManager;
 
 
-    @FindBy(xpath ="//span[contains(text(),'Ürün:% s')]")
+    @FindBy(xpath ="(//span[@class='text'])[4]")
     public WebElement urun;
+
+
+    @FindBy(xpath ="//span[normalize-space()='Home']")
+    public WebElement Home;
+
     @FindBy(xpath ="//span[contains(text(),'Yeni ekle')]")
     public WebElement yeniUrunEkle;
-
-
     @FindBy(xpath = "(//a[@class='cart-toggle'])[1]")
     public WebElement sepetimIkonu;
-
     @FindBy(xpath = "//button[@name='add-to-cart']")
     public WebElement sepeteEkleButonu;
-
     @FindBy(xpath = "//a[@class='button wc-forward']")
     public WebElement sepetiGoruntule;
 
