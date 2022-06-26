@@ -75,7 +75,7 @@ public class US_03_04_Page {
     @FindBy(xpath = "//button[.='Fiyatı Güncelle']")
     public WebElement fiyatiGuncelleButonu;
 
-    @FindBy(xpath = "//input[@placeholder='Ürün arama']")
+    @FindBy(xpath = "//input[@aria-label='Ara']")
     public WebElement urunAramaKutusu;
 
     @FindBy(xpath = "(//button[@class='btn btn-search'])[1]")
@@ -84,7 +84,7 @@ public class US_03_04_Page {
     @FindBy(xpath = "//td[@class='product-price']")
     public List<WebElement> secilenUrunlerFiyatListesi;
 
-    @FindBy(xpath = "//td[@class='product-quantity']")
+    @FindBy(xpath = "//div[@class='quantity']")
     public List<WebElement> secilenUrunlerMiktarListesi;
 
     @FindBy(xpath = "//td[@class='product-subtotal']")
@@ -110,6 +110,10 @@ public class US_03_04_Page {
 
     @FindBy(xpath = "//*[.='Siparişiniz']")
     public WebElement siparisinizTitle;
+
+    @FindBy(xpath = "(//th[.='Ara Toplam'])[2]")
+    public WebElement odemeSayfasiAraToplam;
+
 
 
 }

@@ -260,8 +260,10 @@ public class US05 {
         Thread.sleep(3000);
         us_05_06_07_page.mediaModalIcanKapat.click();
 
-        /*
-14- Kullanici Short Description boxa metin girer
+
+        //Kullanici Short Description boxa metin girer
+
+                /*
 15- Kullanici Description boxa metin girer
 16- Kullanici Categories de bir kategori secer
 17- Kullanici Product Brands da bir brand secer
