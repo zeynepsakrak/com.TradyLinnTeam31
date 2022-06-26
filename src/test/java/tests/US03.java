@@ -13,47 +13,51 @@ import org.testng.annotations.Test;
 import pages.US_03_04_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import java.time.Duration;
 
 import static tests.Login.login;
 import static tests.ReusableMethods.sepetiBosalt;
+import static tests.ReusableMethods.waitFor;
 
-public class US03 {
+public class US03 extends TestBaseRapor {
     US_03_04_Page thirdPage = new US_03_04_Page();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
     Actions actions = new Actions(Driver.getDriver());
 
     @Test
-    public void US03_TC01() throws InterruptedException {
+    public void US03_TC01() {
+        extentTest=extentReports.createTest("US03_TC01","Ürünlerin goruntulendigini kontrol eder");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
         //5. 'Hesabim'a tiklar
-        Thread.sleep(5000);
+waitFor(8);
         thirdPage.hesabimButonu.click();
         //6. 'Siparisler'e tiklar
         thirdPage.hesabimSiparislerButonu.click();
         //7. 'Ürünlere göz at/Alisverise devam et' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.hesabimAlisveriseDevamEtButonu);
-        Thread.sleep(1000);
+waitFor(5);
         thirdPage.hesabimAlisveriseDevamEtButonu.click();
         //8. Ürünlerin goruntulendigini kontrol eder
         Assert.assertTrue(thirdPage.urunlerElementListesi.size() != 0);
         Driver.closeDriver();
+        extentTest.info("ürünler görüntülendi");
     }
 
     @Test
-    public void US03_TC02() throws InterruptedException {
+    public void US03_TC02() {
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        Thread.sleep(5000);
+        waitFor(5);
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -62,7 +66,7 @@ public class US03 {
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                Thread.sleep(1000);
+waitFor(8);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 count++;
@@ -76,14 +80,16 @@ public class US03 {
         Driver.closeDriver();
     }
 
+
+
     @Test
-    public void US03_TC03() throws InterruptedException {
+    public void US03_TC03() {
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        Thread.sleep(5000);
+        waitFor(8);
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -91,7 +97,7 @@ public class US03 {
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                Thread.sleep(1000);
+                waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 break;
@@ -105,7 +111,7 @@ public class US03 {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("cart"));
         //10. 'Ödeme sayfasina git'e tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.odemeSayfasinaGitButonu);
-        Thread.sleep(1000);
+        waitFor(1);
         thirdPage.odemeSayfasinaGitButonu.click();
         //11. checkout'a gidildigini kontrol eder
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("checkout"));
@@ -113,13 +119,13 @@ public class US03 {
     }
 
     @Test
-    public void US03_TC04() throws InterruptedException {
+    public void US03_TC04() {
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        Thread.sleep(5000);
+
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -127,7 +133,7 @@ public class US03 {
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                Thread.sleep(1000);
+                waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 break;
@@ -143,7 +149,7 @@ public class US03 {
         //select.selectByVisibleText("Adana");
 
         //myPage.korgoBilgileriSehirElementi.sendKeys("Adana");
-        Thread.sleep(1000);
+        waitFor(1);
         thirdPage.korgoBilgileriIlceElementi.sendKeys("Ceyhan");
         thirdPage.korgoBilgileriPostaKoduElementi.sendKeys("01270");
         //10. 'Fiyati Güncelle'ye tiklar
@@ -157,13 +163,13 @@ public class US03 {
     }
 
     @Test
-    public void US03_TC05() throws InterruptedException {
+    public void US03_TC05() {
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        Thread.sleep(5000);
+        waitFor(5);
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -171,7 +177,7 @@ public class US03 {
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                Thread.sleep(1000);
+                waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 break;
@@ -188,4 +194,6 @@ public class US03 {
         //12. Fatura detaylarinin girildigini ve siparis verildigini kontrol eder
 
     }
+
+
 }

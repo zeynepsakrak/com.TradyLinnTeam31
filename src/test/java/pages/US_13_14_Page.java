@@ -9,6 +9,7 @@ import java.util.List;
 
 public class US_13_14_Page {
     public US_13_14_Page() {
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -63,8 +64,8 @@ public class US_13_14_Page {
     @FindBy(xpath = "//input[@id='exclude_sale_items']")
     public WebElement excludesaleitemsCheck;
 
-    @FindBy(xpath = "(//input[@class='select2-search__field'])[4]")
-    public List<WebElement> excludecategories;
+    @FindBy(xpath = "//select[@id='exclude_product_categories']")
+    public WebElement excludecategories;
 
     @FindBy(xpath = "//input[@id='wcfm_coupon_manager_submit_button']")
     public WebElement submitButonu;
@@ -77,6 +78,11 @@ public class US_13_14_Page {
 
     @FindBy (xpath = "//*[text()='Coupon Successfully Published.']")
     public WebElement submitOnayYazisi;
+
+    @FindBy(xpath = "//li[@class='select2-selection__choice']")
+    public List<WebElement> categoriesSelectedList;
+
+    // Herşey bitti
 
 
 }
