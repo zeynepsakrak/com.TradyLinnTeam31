@@ -260,10 +260,12 @@ public class US05 {
         Thread.sleep(3000);
         us_05_06_07_page.mediaModalIcanKapat.click();
 
-        //Kullanici Short Description boxa metin girer
+        //Kullanici Short Description boxa ve Description boxametin girer
+        us_05_06_07_page.iframe1.sendKeys(ConfigReader.getProperty("shortDescription"));
+        us_05_06_07_page.iframe2.sendKeys(ConfigReader.getProperty("description"));
 
-                /*
-15- Kullanici Description boxa metin girer
+
+/*
 16- Kullanici Categories de bir kategori secer
 17- Kullanici Product Brands da bir brand secer
 18- Kullanici Submit butonuna tiklar

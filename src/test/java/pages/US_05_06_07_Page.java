@@ -91,4 +91,15 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "//*[@id=\"__wp-uploader-id-5\"]/div[1]/button/span")
     public WebElement mediaModalIcanKapat;
 
+    @FindBy(xpath = "//iframe[@id='excerpt_ifr']")
+    public WebElement iframe1;
+
+    @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
+    public WebElement iframe1TextBox;
+
+    @FindBy(xpath = "//iframe[@id='description_ifr']")
+    public WebElement iframe2;
+
+    @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
+    public WebElement iframe2TextBoox;
 }
