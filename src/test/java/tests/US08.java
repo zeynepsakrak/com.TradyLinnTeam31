@@ -17,6 +17,11 @@ public class US08 {
     @Test(priority = 1)
     public void testName() {
         urun_ekle_menusune_gidilir();
+        bekle();
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        bekle();
+        page.Inventory.click();
+        bekle();
     }
 
     /*
@@ -37,15 +42,12 @@ public class US08 {
 
     @Test(priority = 2)
     public void US08_TC01() {
-        bekle();
-        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
-        bekle();
-        page.Inventory.click();
-        bekle();
-        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+
         page.ManageStock.click();
         page.StockMiktar.clear();
         page.StockMiktar.sendKeys("10");
+        bekle();
+        System.out.println(page.StockMiktar.getText());
         Assert.assertTrue(page.StockMiktar.getText().contains("10"));
     }
 
@@ -70,6 +72,8 @@ public class US08 {
 
     @Test(priority = 3)
     public void US08_TC02() {
-
+if (!page.Allow.isSelected()){
+    page.Allow.click();
+}
     }
 }

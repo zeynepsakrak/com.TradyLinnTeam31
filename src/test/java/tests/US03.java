@@ -16,16 +16,16 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-import static org.apache.commons.io.FileUtils.waitFor;
 import static tests.Login.login;
 import static tests.ReusableMethods.sepetiBosalt;
+import static tests.ReusableMethods.waitFor;
 
 public class US03 {
     US_03_04_Page thirdPage = new US_03_04_Page();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
     Actions actions = new Actions(Driver.getDriver());
-/*
+
     @Test
     public void US03_TC01() {
         //1. Kullanıcı https://tradylinn.com adresine gider
@@ -34,13 +34,13 @@ public class US03 {
         //4. 'Giris Yap' butonuna tiklar
         login();
         //5. 'Hesabim'a tiklar
-        waitFor(5);
+waitFor(8);
         thirdPage.hesabimButonu.click();
         //6. 'Siparisler'e tiklar
         thirdPage.hesabimSiparislerButonu.click();
         //7. 'Ürünlere göz at/Alisverise devam et' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.hesabimAlisveriseDevamEtButonu);
-        waitFor(1);
+waitFor(5);
         thirdPage.hesabimAlisveriseDevamEtButonu.click();
         //8. Ürünlerin goruntulendigini kontrol eder
         Assert.assertTrue(thirdPage.urunlerElementListesi.size() != 0);
@@ -63,7 +63,7 @@ public class US03 {
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                waitFor(1);
+waitFor(8);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 count++;
@@ -76,6 +76,8 @@ public class US03 {
         Assert.assertEquals(thirdPage.sepetimIkonu.getText().replace("Sepetim\n", ""), "5");
         Driver.closeDriver();
     }
+
+
 
     @Test
     public void US03_TC03() {
@@ -120,7 +122,7 @@ public class US03 {
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -190,5 +192,5 @@ public class US03 {
 
     }
 
- */
+
 }

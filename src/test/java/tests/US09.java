@@ -1,10 +1,12 @@
 package tests;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.US_08_09_10_Page;
 import utilities.Driver;
 
+import static tests.ReusableMethods.bekle;
 import static tests.ReusableMethods.urun_ekle_menusune_gidilir;
 
 public class US09 {
@@ -13,6 +15,11 @@ public class US09 {
     @Test(priority = 1)
     public void testName(){
         urun_ekle_menusune_gidilir();
+        bekle();
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        bekle();
+        page.Shipping.click();
+        bekle();
     }
     /*
     US09_TC01 Kilo ve boyut belirlenmeli
@@ -32,6 +39,21 @@ public class US09 {
 
     @Test
     public void US09_TC01() {
+        bekle();
+        bekle();
+        page.Weight.click();
+        page.Weight.clear();
+        page.Weight.sendKeys("10");
+        bekle();
+        bekle();
+        page.Length.click();
+        page.Length.clear();
+        page.Length.sendKeys("20");
+        bekle();
+        bekle();
+        page.height.click();
+        page.height.clear();
+        page.height.sendKeys("30");
     }
 /*
     US09_TC02 Hacim ve ne kadar surede teslimat yapilacagi belirlenmeli
@@ -50,5 +72,6 @@ public class US09 {
 
     @Test
     public void US09_TC02() {
+
     }
 }
