@@ -81,5 +81,7 @@ public class US_13_14_Page {
     @FindBy(xpath = "//li[@class='select2-selection__choice']")
     public List<WebElement> categoriesSelectedList;
 
+    // Herşey bitti
+
 
 }
