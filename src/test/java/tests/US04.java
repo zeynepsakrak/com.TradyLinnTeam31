@@ -12,7 +12,7 @@ import static tests.ReusableMethods.*;
 
 public class US04 {
     US_03_04_Page forthPage = new US_03_04_Page();
-
+/*
     @Test
     public void US04_TC01() {
         //1. Kullanıcı https://tradylinn.com adresine gider
@@ -208,5 +208,7 @@ public class US04 {
         Assert.assertTrue(forthPage.faturaDetaylariTitle.isDisplayed());
         Assert.assertTrue(forthPage.odemeSayfasiAraToplam.isDisplayed());
         Driver.closeDriver();
-    }
+        }
+ */
+
 }

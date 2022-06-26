@@ -1,12 +1,14 @@
 package tests;
 
 import org.apache.logging.log4j.core.config.Order;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.US_08_09_10_Page;
 import utilities.Driver;
 
+import static tests.ReusableMethods.bekle;
 import static tests.ReusableMethods.urun_ekle_menusune_gidilir;
 
 public class US08 {
@@ -35,8 +37,12 @@ public class US08 {
 
     @Test(priority = 2)
     public void US08_TC01() {
-        actions.moveToElement(page.Inventory);
+        bekle();
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        bekle();
         page.Inventory.click();
+        bekle();
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         page.ManageStock.click();
         page.StockMiktar.clear();
         page.StockMiktar.sendKeys("10");
