@@ -7,11 +7,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.US_08_09_10_Page;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import static tests.ReusableMethods.bekle;
 import static tests.ReusableMethods.urun_ekle_menusune_gidilir;
 
-public class US08 {
+public class US08 extends TestBaseRapor {
     US_08_09_10_Page page=new US_08_09_10_Page();
     Actions actions=new Actions(Driver.getDriver());
     @Test(priority = 1)
@@ -42,13 +43,14 @@ public class US08 {
 
     @Test(priority = 2)
     public void US08_TC01() {
-
+        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
         page.ManageStock.click();
         page.StockMiktar.clear();
         page.StockMiktar.sendKeys("10");
         bekle();
         System.out.println(page.StockMiktar.getText());
         Assert.assertTrue(page.StockMiktar.getText().contains("10"));
+        extentTest.info("Urun miktarı stock belirlendi");
     }
 
     /*

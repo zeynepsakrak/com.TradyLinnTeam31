@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import pages.US_03_04_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import java.time.Duration;
 
@@ -20,7 +21,7 @@ import static tests.Login.login;
 import static tests.ReusableMethods.sepetiBosalt;
 import static tests.ReusableMethods.waitFor;
 
-public class US03 {
+public class US03 extends TestBaseRapor {
     US_03_04_Page thirdPage = new US_03_04_Page();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
@@ -28,6 +29,7 @@ public class US03 {
 
     @Test
     public void US03_TC01() {
+        extentTest=extentReports.createTest("US03_TC01","Ürünlerin goruntulendigini kontrol eder");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
@@ -45,6 +47,7 @@ waitFor(5);
         //8. Ürünlerin goruntulendigini kontrol eder
         Assert.assertTrue(thirdPage.urunlerElementListesi.size() != 0);
         Driver.closeDriver();
+        extentTest.info("ürünler görüntülendi");
     }
 
     @Test

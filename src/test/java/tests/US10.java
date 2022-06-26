@@ -20,6 +20,7 @@ public class US10 {
         bekle();
         page.Attributes.click();
         bekle();
+
     }
     /*
     US10_TC01 Renk secenegi; beyaz, siyah, yeşil vs tum renkler belirtilmeli
