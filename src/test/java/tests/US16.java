@@ -37,14 +37,10 @@ public class US16 {
         Thread.sleep(5000);
         us_15_16_page.customers.click();
 
-
         //6- kayitli kisinin son siparisi gorulebilmeli
-
-
         Assert.assertTrue(us_15_16_page.sonSiparis.isDisplayed());
-
-
     }
+
 
     @Test
     public void TestCase02() throws InterruptedException {

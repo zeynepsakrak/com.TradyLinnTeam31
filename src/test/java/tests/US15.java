@@ -44,8 +44,6 @@ public class US15 {
         Thread.sleep(5000);
         us_15_16_page.limit.click();
 
-
-
         //8- Vendor "Usage limit per coupon" limiti bilgileri eklenebilir
 
         //action.sendKeys(Keys.TAB);
