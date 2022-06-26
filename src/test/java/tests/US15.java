@@ -14,7 +14,6 @@ public class US15 {
     @Test
     public void Test01_02_03() throws InterruptedException {
 
-
         //1- Siteye git:https://tradylinn.com/ gidilebilir
         Driver.getDriver().get(ConfigReader.getProperty("tradllyinnUrl"));
 
@@ -38,7 +37,6 @@ public class US15 {
 
         //7- Vendor "limit" butonuna tiklanir
 
-
         Actions action=new Actions(Driver.getDriver());
         action.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(5000);
@@ -55,9 +53,6 @@ public class US15 {
         Assert.assertTrue(us_15_16_page.usLimitItems.getAttribute("value").contains("5"));
         Assert.assertTrue(us_15_16_page.perUser.getAttribute("value").contains("5"));
         //Driver.closeDriver();
-
-
-
     }
 }
 
