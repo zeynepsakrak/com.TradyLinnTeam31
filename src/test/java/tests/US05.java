@@ -143,7 +143,7 @@ public class US05 {
 
         // Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
         us_05_06_07_page.largePhoto.click();
-        us_05_06_07_page.dosyaYukle.click();
+        us_05_06_07_page.dosyaYukle1.click();
 
         //Kullanici Dosya Secin butonuna tiklar
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
@@ -161,15 +161,15 @@ public class US05 {
         rb.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(5000);
         us_05_06_07_page.secPhoto.click();
-        us_05_06_07_page.mediaModalIcanKapat.click();
+        //us_05_06_07_page.mediaModalIcanKapat.click();
 
         // Kullanici Galeri Images icin kücük resim bosluguna tiklar
         us_05_06_07_page.galeriImages.click();
-        us_05_06_07_page.dosyaYukle.click();
+        Thread.sleep(3000);
+        us_05_06_07_page.ortamKutuphanesiSaz.click();
 
         //Kullanici Dosya Secin butonuna tiklar
         js.executeScript("window.scrollBy(0,200)");
-        us_05_06_07_page.uploaderButton1.click();
         Thread.sleep(3000);
         StringSelection str2 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str2, null);
@@ -180,6 +180,7 @@ public class US05 {
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(5000);
+
         //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
         us_05_06_07_page.addToGalery.click();
         Driver.closeDriver();
@@ -218,7 +219,7 @@ public class US05 {
 
         // Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
         us_05_06_07_page.largePhoto.click();
-        us_05_06_07_page.dosyaYukle.click();
+        us_05_06_07_page.dosyaYukle1.click();
 
         //Kullanici Dosya Secin butonuna tiklar
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
@@ -236,16 +237,15 @@ public class US05 {
         rb.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(5000);
         us_05_06_07_page.secPhoto.click();
-        us_05_06_07_page.mediaModalIcanKapat.click();
 
         // Kullanici Galeri Images icin kücük resim bosluguna tiklar
         us_05_06_07_page.galeriImages.click();
-        us_05_06_07_page.dosyaYukle.click();
+        Thread.sleep(3000);
+        us_05_06_07_page.ortamKutuphanesiSaz.click();
 
         //Kullanici Dosya Secin butonuna tiklar
         js.executeScript("window.scrollBy(0,200)");
-        us_05_06_07_page.uploaderButton1.click();
-        Thread.sleep(3000);
+        //us_05_06_07_page.uploaderButton1.click();
         StringSelection str2 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str2, null);
         rb.keyPress(KeyEvent.VK_CONTROL);
@@ -257,6 +257,9 @@ public class US05 {
         Thread.sleep(5000);
         //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
         us_05_06_07_page.addToGalery.click();
+        Thread.sleep(3000);
+        us_05_06_07_page.mediaModalIcanKapat.click();
+
         /*
 14- Kullanici Short Description boxa metin girer
 15- Kullanici Description boxa metin girer

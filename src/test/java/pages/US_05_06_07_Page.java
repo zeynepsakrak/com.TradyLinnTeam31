@@ -65,7 +65,10 @@ public class US_05_06_07_Page {
     public WebElement largePhoto;
 
     @FindBy(xpath = "(//button[@id='menu-item-upload'])[1]")
-    public WebElement dosyaYukle;
+    public WebElement dosyaYukle1;
+
+    @FindBy(xpath = "//*[@id=\"menu-item-upload\"]")
+    public WebElement dosyaYukle2;
 
     @FindBy(xpath = "//button[@id='__wp-uploader-id-1']")
     public WebElement uploaderButton1;
@@ -76,13 +79,16 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "//img[@id='gallery_img_gimage_0_display']")
     public WebElement galeriImages;
 
-    @FindBy(xpath = "//button[@disabled='disabled']")
+    @FindBy(xpath = "//*[@id=\"__attachments-view-122\"]/li[1]/div/div")
+    public WebElement ortamKutuphanesiSaz;
+
+    @FindBy(xpath = "//*[@id=\"__wp-uploader-id-0\"]/div[4]/div/div[2]/button")
     public WebElement secPhoto;
 
-    @FindBy(xpath = "//*[@id=\"__wp-uploader-id-3\"]/div[4]/div/div[2]/button")
+    @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
     public WebElement addToGalery;
 
-    @FindBy(xpath = "//span[@class='media-modal-icon']")
+    @FindBy(xpath = "//*[@id=\"__wp-uploader-id-5\"]/div[1]/button/span")
     public WebElement mediaModalIcanKapat;
 
 }
