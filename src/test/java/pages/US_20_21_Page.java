@@ -41,20 +41,39 @@ public class US_20_21_Page {
                      //*[@id="wcfm_menu"]/div[17]/a/span[2]
     public WebElement raporlar;
 
-    @FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[1]/a")
+
+
+    @FindBy(xpath = "//a[@href='/store-manager/reports-sales-by-date/?range=year']")
+    public WebElement yearButon;
+    @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement yearRapor;
 
-    @FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[2]/a")
+    @FindBy(xpath = "//a[@href='/store-manager/reports-sales-by-date/?range=last_month']")
+                     //a[@href='/store-manager/reports-sales-by-date/?range=last_month']
+    public WebElement lastMonthButon;
+    @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement lastMonthRapor;
 
-    @FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[3]/a")
+    @FindBy(xpath = "//a[@href='/store-manager/reports-sales-by-date/?range=month']")
+    public WebElement thisMonthButon;
+    @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement thisMonthRapor;
 
-    @FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[4]/a")
+    @FindBy(xpath = "//a[@href='/store-manager/reports-sales-by-date/?range=7day']")
+    public WebElement last7DayButon;
+    @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement last7DayRapor;
 
-    @FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[5]/form/div/input[1]")
+    //@FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[5]/form/div/input[1]")
+    //public WebElement costumButon;
+    @FindBy(xpath = "//input[@value='2022-06-20 to 2022-06-30']")
+    public WebElement costumButon;
+    @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement costumRapor;
+    @FindBy(xpath = "/html/body/div[8]/div[2]/table[1]/tbody/tr[4]/td[2]/div")
+    public WebElement costumRapor20Haz;
+    @FindBy(xpath = "/html/body/div[8]/div[2]/table[1]/tbody/tr[5]/td[5]/div")
+    public WebElement costumRapor30Haz;
 
 
 
