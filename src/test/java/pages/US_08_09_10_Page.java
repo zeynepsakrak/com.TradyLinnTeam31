@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class US_08_09_10_Page {
     public US_08_09_10_Page() {
         PageFactory.initElements(Driver.getDriver(),this); }
@@ -17,11 +19,17 @@ public class US_08_09_10_Page {
     public WebElement StockMiktar;
     @FindBy(xpath = "//select[@id='backorders']")
     public WebElement AllowBlackorder;
+    @FindBy(xpath = "(//select[@id='backorders'])//option[3]")
+    public WebElement Allow;
+    @FindBy(xpath = "(//select[@id='backorders'])//option[2]")
+    public WebElement AllowButNotifyCustomer;
+    @FindBy(xpath = "(//select[@id='backorders'])//option[1]")
+    public WebElement DoNotAllow;
 
 //*******us09******
     @FindBy(xpath = "//div[contains(text(),'Shipping')]")
     public WebElement Shipping;
-    @FindBy(xpath = "//input[@id='weight']")
+    @FindBy (xpath = "//*[@id=\"weight\"]")
     public WebElement Weight;
     @FindBy(xpath = "//input[@id='length']")
     public WebElement Length;
