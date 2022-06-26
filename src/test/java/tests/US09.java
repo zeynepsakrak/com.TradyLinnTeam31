@@ -1,13 +1,16 @@
 package tests;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.US_08_09_10_Page;
 import utilities.Driver;
 
-import static tests.ReusableMethods.bekle;
-import static tests.ReusableMethods.urun_ekle_menusune_gidilir;
+import java.util.List;
+
+import static tests.ReusableMethods.*;
 
 public class US09 {
     US_08_09_10_Page page=new US_08_09_10_Page();
@@ -37,10 +40,9 @@ public class US09 {
 
      */
 
-    @Test
+    @Test(priority = 2)
     public void US09_TC01() {
-        bekle();
-        bekle();
+        waitFor(10);
         page.Weight.click();
         page.Weight.clear();
         page.Weight.sendKeys("10");
@@ -70,8 +72,14 @@ public class US09 {
 11. Processing Time seçeneğinden süre belirlenmeli
      */
 
-    @Test
+    @Test(priority = 3)
     public void US09_TC02() {
+        Select select =new Select(page.processingTime);
+        List<WebElement> processingTime= select.getOptions();
+        for (WebElement each:processingTime) {
+            each.click();
+            System.out.println(each.getText());
+        }
 
     }
 }

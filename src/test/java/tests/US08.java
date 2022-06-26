@@ -43,14 +43,14 @@ public class US08 extends TestBaseRapor {
 
     @Test(priority = 2)
     public void US08_TC01() {
-        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
+        //extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
         page.ManageStock.click();
         page.StockMiktar.clear();
         page.StockMiktar.sendKeys("10");
         bekle();
         System.out.println(page.StockMiktar.getText());
         Assert.assertTrue(page.StockMiktar.getText().contains("10"));
-        extentTest.info("Urun miktarı stock belirlendi");
+        //extentTest.info("Urun miktarı stock belirlendi");
     }
 
     /*
