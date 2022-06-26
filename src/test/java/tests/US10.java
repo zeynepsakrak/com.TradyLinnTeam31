@@ -1,6 +1,19 @@
 package tests;
 
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+import pages.US_08_09_10_Page;
+import utilities.Driver;
+
+import static tests.ReusableMethods.urun_ekle_menusune_gidilir;
+
 public class US10 {
+    US_08_09_10_Page page=new US_08_09_10_Page();
+    Actions actions=new Actions(Driver.getDriver());
+    @Test(priority = 1)
+    public void testName(){
+        urun_ekle_menusune_gidilir();
+    }
     /*
     US10_TC01 Renk secenegi; beyaz, siyah, yeşil vs tum renkler belirtilmeli
 1. URL ye gider

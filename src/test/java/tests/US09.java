@@ -11,7 +11,7 @@ public class US09 {
     US_08_09_10_Page page=new US_08_09_10_Page();
     Actions actions=new Actions(Driver.getDriver());
     @Test(priority = 1)
-    public void testName() {
+    public void testName(){
         urun_ekle_menusune_gidilir();
     }
     /*

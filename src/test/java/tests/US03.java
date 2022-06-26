@@ -16,16 +16,16 @@ import utilities.Driver;
 
 import java.time.Duration;
 
+import static org.apache.commons.io.FileUtils.waitFor;
 import static tests.Login.login;
 import static tests.ReusableMethods.sepetiBosalt;
-import static tests.ReusableMethods.waitFor;
 
 public class US03 {
     US_03_04_Page thirdPage = new US_03_04_Page();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
     Actions actions = new Actions(Driver.getDriver());
-
+/*
     @Test
     public void US03_TC01() {
         //1. Kullanıcı https://tradylinn.com adresine gider
@@ -189,4 +189,6 @@ public class US03 {
         //12. Fatura detaylarinin girildigini ve siparis verildigini kontrol eder
 
     }
+
+ */
 }

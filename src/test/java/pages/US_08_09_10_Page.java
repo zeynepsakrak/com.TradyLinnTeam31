@@ -9,7 +9,7 @@ public class US_08_09_10_Page {
     public US_08_09_10_Page() {
         PageFactory.initElements(Driver.getDriver(),this); }
 //*******us08******
-    @FindBy(xpath = "//div[contains(text(),'Inventory')]")
+    @FindBy(xpath = "//div[@id='wcfm_products_manage_form_inventory_head']")
     public WebElement Inventory;
     @FindBy(xpath = "//input[@id='manage_stock']")
     public WebElement ManageStock;
