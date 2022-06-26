@@ -12,6 +12,11 @@ public class Login {
           homepage.girisButonu.click();
           homepage.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
           homepage.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
+          try {
+               Thread.sleep(1000);
+          } catch (InterruptedException e) {
+               e.printStackTrace();
+          }
           homepage.girisYapButonu.click();
      }
 }
