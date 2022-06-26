@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -10,13 +11,14 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.Random;
 
 import static tests.Login.login;
 
 public class US14 {
     US_13_14_Page us_13_14_page = new US_13_14_Page();
-    Actions action=new Actions(Driver.getDriver());
+    Actions action = new Actions(Driver.getDriver());
 
     @Test(priority = 1)
     public void US14_TC01() throws InterruptedException {
@@ -52,7 +54,6 @@ public class US14 {
         us_13_14_page.minimumspendText.sendKeys(ConfigReader.getProperty("tradyminimumspend"));
 
         //11. Kullanıcı "Draft" butonuna tiklar
-        action.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
         us_13_14_page.draftButonu.click();
         Thread.sleep(5000);
 
@@ -68,15 +69,12 @@ public class US14 {
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
 
         //9. Kullanıcı "Restriction" butonunu tıklar
-
-        action.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();
         us_13_14_page.restrictionButonu.click();
 
         //10. Kullanıcı "Maximum spend" alanına veri girer
         us_13_14_page.maximumspendText.sendKeys(ConfigReader.getProperty("tradymaximumspend"));
 
         //11. Kullanıcı "Draft" butonuna tiklar
-        action.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
         us_13_14_page.draftButonu.click();
         Thread.sleep(5000);
 
@@ -92,15 +90,13 @@ public class US14 {
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
 
         //9. Kullanıcı "Restriction" butonunu tıklar
-        action.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();
+        Thread.sleep(5000);
         us_13_14_page.restrictionButonu.click();
 
         //10. Kullanıcı "Individual use only" alanına tik atar
-        action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.IndividualuseonlyCheck.click();
 
         //11. Kullanıcı "Draft" butonuna tiklar
-        action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.draftButonu.click();
         Thread.sleep(5000);
 
@@ -140,15 +136,30 @@ public class US14 {
 
         //10. Kullanıcı "Exclude categories" alanına "Besin takviyesi" ve "Yeni ürünler" seçer
         Select select = new Select(us_13_14_page.excludecategories);
-        select.selectByIndex(1);
+        select.selectByIndex(6);
+        select.selectByIndex(16);
+        List<WebElement> secilen=select.getAllSelectedOptions();
+        String expectedcategories="";
+        for (WebElement each: secilen){
+            expectedcategories+="×"+each.getText();
+        }
+
+       //11. Kullanıcı "Draft" butonuna tiklar
+          us_13_14_page.draftButonu.click();
+          Thread.sleep(5000);
+
+        // 12. Kullanıcı "Exclude categories" alanında "Besin takviyesi" ve "Yeni ürünler" seçili olduğunu test eder
+        String actualcategories="";
+        for (WebElement each:us_13_14_page.categoriesSelectedList){
+            actualcategories+=each.getText();
+        }
+        Assert.assertEquals(actualcategories,expectedcategories);
+
+        //13. Kullanıcı "Submit" butonuna tıklar
         Thread.sleep(5000);
+        us_13_14_page.submitButonu.click();
 
-
-        //  //10. Kullanıcı "Draft" butonuna tiklar
-        //  us_13_14_page.draftButonu.click();
-        //  Thread.sleep(5000);
-
-        //  //11. Kullanıcı "Exclude sale items" alanı tikli olduğunu test eder
-        //  Assert.assertTrue(us_13_14_page.excludesaleitemsCheck.isSelected());
+        //14. Kullanıcı Kayıt yapıldığını kontrol eder
+        Assert.assertTrue(us_13_14_page.submitOnayYazisi.getText().contains("Coupon Successfully Published."));
     }
 }
