@@ -79,7 +79,7 @@ public class US_13_14_Page {
     public WebElement submitOnayYazisi;
 
     @FindBy(xpath = "//li[@class='select2-selection__choice']")
-    public List<String> katagori;
+    public List<WebElement> categoriesSelectedList;
 
 
 }
