@@ -21,28 +21,28 @@ public class US14 {
     Actions action = new Actions(Driver.getDriver());
 
     @Test(priority = 1)
-    public void US14_TC01() throws InterruptedException {
+    public void US14_TC01(){
         //US14_TC01_Minimum spend / en az alma miktari girilmeli
         //1., 2., 3. Stepler
         login();
-        Thread.sleep(8000);
+        ReusableMethods.bekle();
 
         //4. Kullanıcı "Hesabım" butonunu tıklar
         us_13_14_page.hesabimButonu.click();
 
         //5. Kullanıcı "Store Manager" butonunu tıklar
         us_13_14_page.storeManagerButonu.click();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
 
         //6. Kullanıcı "Kuponlar" butonunu tıklar
-        action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarButonu.click();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
 
         //7. Kullanıcı "Yeni ekle" butonunu tıklar
-        action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarYeniButonu.click();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
 
         //8. Kullanıcı "Code" alanına veri girer
-        action.sendKeys(Keys.PAGE_DOWN).perform();
         Random rnd = new Random();
         String codeID = String.valueOf(rnd.nextInt(10000));
         us_13_14_page.codeText.sendKeys(codeID, Keys.TAB);
@@ -55,7 +55,7 @@ public class US14 {
 
         //11. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
 
         //12. Kullanıcı "Minimum spend" alanına veri girildiğine test eder
         String expectedDescription = ConfigReader.getProperty("tradyminimumspend");
@@ -64,11 +64,12 @@ public class US14 {
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 2)
-    public void US14_TC02() throws InterruptedException {
+    public void US14_TC02() {
         //US14_TC02_Maximum spend / maksimum alma miktarı girilmeli
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
 
         //9. Kullanıcı "Restriction" butonunu tıklar
+        action.sendKeys(Keys.PAGE_UP).perform();
         us_13_14_page.restrictionButonu.click();
 
         //10. Kullanıcı "Maximum spend" alanına veri girer
@@ -76,7 +77,7 @@ public class US14 {
 
         //11. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
 
         //12. Kullanıcı "Maximum spend" alanına veri girildiğine test eder
         String expectedDescription = ConfigReader.getProperty("tradymaximumspend");
@@ -90,7 +91,7 @@ public class US14 {
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
 
         //9. Kullanıcı "Restriction" butonunu tıklar
-        Thread.sleep(5000);
+        action.sendKeys(Keys.PAGE_UP).perform();
         us_13_14_page.restrictionButonu.click();
 
         //10. Kullanıcı "Individual use only" alanına tik atar
@@ -98,19 +99,18 @@ public class US14 {
 
         //11. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
 
         //12. Kullanıcı "Individual use only" alanı tikli olduğunu test eder
         Assert.assertTrue(us_13_14_page.IndividualuseonlyCheck.isSelected());
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 4)
-    public void US14_TC04() throws InterruptedException {
+    public void US14_TC04() {
         //US14_TC04_Exclude sale items / bazi satis ürünleri disinda tut
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
 
         //9. Kullanıcı "Restriction" butonunu tıklar
-        Thread.sleep(5000);
         us_13_14_page.restrictionButonu.click();
 
         //10. Kullanıcı "Exclude sale items" alanına tik atar
@@ -118,21 +118,20 @@ public class US14 {
 
         //11. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
 
         //12. Kullanıcı "Exclude sale items" alanı tikli olduğunu test eder
         Assert.assertTrue(us_13_14_page.excludesaleitemsCheck.isSelected());
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 5)
-    public void US14_TC05() throws InterruptedException {
+    public void US14_TC05() {
         //US14_TC05_Exclude categories / bazi kategorileri disinda tut
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
 
         //9. Kullanıcı "Restriction" butonunu tıklar
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
         us_13_14_page.restrictionButonu.click();
-        Thread.sleep(5000);
 
         //10. Kullanıcı "Exclude categories" alanına "Besin takviyesi" ve "Yeni ürünler" seçer
         Select select = new Select(us_13_14_page.excludecategories);
@@ -146,7 +145,7 @@ public class US14 {
 
        //11. Kullanıcı "Draft" butonuna tiklar
           us_13_14_page.draftButonu.click();
-          Thread.sleep(5000);
+        ReusableMethods.bekle();
 
         // 12. Kullanıcı "Exclude categories" alanında "Besin takviyesi" ve "Yeni ürünler" seçili olduğunu test eder
         String actualcategories="";
@@ -156,7 +155,7 @@ public class US14 {
         Assert.assertEquals(actualcategories,expectedcategories);
 
         //13. Kullanıcı "Submit" butonuna tıklar
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
         us_13_14_page.submitButonu.click();
 
         //14. Kullanıcı Kayıt yapıldığını kontrol eder
