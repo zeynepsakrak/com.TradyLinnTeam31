@@ -260,7 +260,6 @@ public class US05 {
         Thread.sleep(3000);
         us_05_06_07_page.mediaModalIcanKapat.click();
 
-
         //Kullanici Short Description boxa metin girer
 
                 /*
@@ -269,5 +268,6 @@ public class US05 {
 17- Kullanici Product Brands da bir brand secer
 18- Kullanici Submit butonuna tiklar
          */
+
     }
 }
