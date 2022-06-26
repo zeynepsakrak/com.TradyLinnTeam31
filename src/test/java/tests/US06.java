@@ -37,6 +37,6 @@ public class US06 {
         actions.click(us_05_06_07_page.categories).sendKeys(Keys.PAGE_DOWN).perform();
         us_05_06_07_page.musikClickBox.click();
         Assert.assertTrue(us_05_06_07_page.musikClickBox.isSelected());
-
+        Driver.closeDriver();
     }
 }

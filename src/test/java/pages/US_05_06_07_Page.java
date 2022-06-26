@@ -88,12 +88,15 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "(//button[@class='button media-button button-primary button-large media-button-select'])[2]")
     public WebElement addToGalery;
 
+    @FindBy(xpath = "//*[@id=\"__attachments-view-122\"]/li[1]/div/div")
+    public WebElement sazFoto;
+
     @FindBy(xpath = "//*[@id=\"__wp-uploader-id-5\"]/div[1]/button/span")
     public WebElement mediaModalIcanKapat;
 
     @FindBy(xpath = "//iframe[@id='excerpt_ifr']")
     public WebElement iframe1;
-
+    //*[@id="tinymce"]/p
     @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
     public WebElement iframe1TextBox;
 
@@ -115,7 +118,7 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[8]")
     public WebElement brandEnstrumanClick;
 
-    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
+    @FindBy(xpath = "//input[@value='Submit']")
     public WebElement submitButton;
 
 

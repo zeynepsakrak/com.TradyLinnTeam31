@@ -37,5 +37,6 @@ public class US07 {
         Thread.sleep(3000);
         us_05_06_07_page.brandEnstrumanClick.click();
         Assert.assertTrue(us_05_06_07_page.brandEnstrumanClick.isSelected());
+        Driver.closeDriver();
     }
 }

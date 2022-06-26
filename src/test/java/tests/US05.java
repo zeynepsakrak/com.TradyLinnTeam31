@@ -256,13 +256,16 @@ public class US05 {
         rb.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(5000);
         //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
+        us_05_06_07_page.sazFoto.click();
         us_05_06_07_page.addToGalery.click();
-        Thread.sleep(3000);
-        us_05_06_07_page.mediaModalIcanKapat.click();
+        Thread.sleep(5000);
+        //us_05_06_07_page.mediaModalIcanKapat.click();
 
         //Kullanici Short Description boxa ve Description boxametin girer
-        us_05_06_07_page.iframe1.sendKeys(ConfigReader.getProperty("shortDescription"));
-        us_05_06_07_page.iframe2.sendKeys(ConfigReader.getProperty("description"));
+        us_05_06_07_page.iframe1.click();
+        us_05_06_07_page.iframe1TextBox.sendKeys(ConfigReader.getProperty("shortDescription"));
+        us_05_06_07_page.iframe2.click();
+        us_05_06_07_page.iframe2TextBoox.sendKeys(ConfigReader.getProperty("description"));
         /*
         16- Kullanici Categories de bir kategori secer
         17- Kullanici Product Brands da bir brand secer
@@ -273,6 +276,7 @@ public class US05 {
         us_05_06_07_page.musikClickBox.click();
         us_05_06_07_page.brandEnstrumanClick.click();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(3000);
         us_05_06_07_page.submitButton.click();
         Driver.closeDriver();
     }
