@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 import pages.US_03_04_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.TestBaseRapor;
 
 import java.time.Duration;
 
@@ -21,7 +20,7 @@ import static tests.Login.login;
 import static tests.ReusableMethods.sepetiBosalt;
 import static tests.ReusableMethods.waitFor;
 
-public class US03 extends TestBaseRapor {
+public class US03 {
     US_03_04_Page thirdPage = new US_03_04_Page();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
@@ -29,25 +28,23 @@ public class US03 extends TestBaseRapor {
 
     @Test
     public void US03_TC01() {
-        extentTest=extentReports.createTest("US03_TC01","Ürünlerin goruntulendigini kontrol eder");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
         //5. 'Hesabim'a tiklar
-waitFor(8);
+        waitFor(5);
         thirdPage.hesabimButonu.click();
         //6. 'Siparisler'e tiklar
         thirdPage.hesabimSiparislerButonu.click();
         //7. 'Ürünlere göz at/Alisverise devam et' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.hesabimAlisveriseDevamEtButonu);
-waitFor(5);
+        waitFor(1);
         thirdPage.hesabimAlisveriseDevamEtButonu.click();
         //8. Ürünlerin goruntulendigini kontrol eder
         Assert.assertTrue(thirdPage.urunlerElementListesi.size() != 0);
         Driver.closeDriver();
-        extentTest.info("ürünler görüntülendi");
     }
 
     @Test
@@ -66,7 +63,7 @@ waitFor(5);
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-waitFor(8);
+                waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 count++;
@@ -79,8 +76,6 @@ waitFor(8);
         Assert.assertEquals(thirdPage.sepetimIkonu.getText().replace("Sepetim\n", ""), "5");
         Driver.closeDriver();
     }
-
-
 
     @Test
     public void US03_TC03() {
@@ -125,7 +120,7 @@ waitFor(8);
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-
+        waitFor(5);
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -194,6 +189,4 @@ waitFor(8);
         //12. Fatura detaylarinin girildigini ve siparis verildigini kontrol eder
 
     }
-
-
 }
