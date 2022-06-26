@@ -40,7 +40,7 @@ public class US13 {
         String codeID= String.valueOf(rnd.nextInt(10000));
         us_13_14_page.codeText.sendKeys(codeID,Keys.TAB);
 
-        //9. Kullanıcı "Submit" butonuna tiklar
+        //9. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
 
         //10. Kullanıcı "Code" alanına veri girildiğine test eder
@@ -59,9 +59,11 @@ public class US13 {
         //8. Kullanıcı "Description" alanına veri girer
         us_13_14_page.descriptionText.sendKeys(ConfigReader.getProperty("tradyDescriptionSabit"), Keys.TAB);
         Thread.sleep(5000);
+
         //9. Kullanıcı "Draft" butonuna tiklar
         us_13_14_page.draftButonu.click();
         Thread.sleep(5000);
+
         //10. Kullanıcı "Description" alanına veri girildiğine test eder
         String expectedDescription = ConfigReader.getProperty("tradyDescriptionSabit");
         String actualDescription = us_13_14_page.descriptionText.getAttribute("value");
