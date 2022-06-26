@@ -102,4 +102,21 @@ public class US_05_06_07_Page {
 
     @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
     public WebElement iframe2TextBoox;
+
+    @FindBy(xpath = "//ul[@id='product_cats_checklist']")
+    public WebElement categories;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[25]")
+    public WebElement musikClickBox;
+
+    @FindBy(xpath = "//ul[@id='product_brand']")
+    public WebElement productBrands;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[8]")
+    public WebElement brandEnstrumanClick;
+
+    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
+    public WebElement submitButton;
+
+
 }
