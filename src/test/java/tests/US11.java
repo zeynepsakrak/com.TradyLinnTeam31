@@ -1,20 +1,42 @@
 package tests;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.US_11_12_Page;
+import utilities.Driver;
+
+import static tests.Login.login;
+import static tests.ReusableMethods.waitFor;
 
 public class US11 {
-   US_11_12_Page uS_11_12_Page=new US_11_12_Page();
+   US_11_12_Page myPage=new US_11_12_Page();
 
    @Test
-   public void urunCesid(){
+   public void US11_TC01(){
        //1-Kullanici vendor olarak hesabina gider
+       login();
+       waitFor(8);
+       myPage.hesabimButonu.click();
        //2- Kullanici Store Manager butonuna tiklar
+       myPage.storeManagerButonu.click();
        //3- Kullanici Urunler butonuna tiklar
+       myPage.urunlerButonu.click();
+
        //4-Kullanici Urunlerin listelendigini kontrol eder
+       Assert.assertTrue(myPage.urunlerListesi.size()!=0);
+
        //5-Kullanici ilk urune tiklar
+       JavascriptExecutor js1 = (JavascriptExecutor) Driver.getDriver();
+       js1.executeScript("arguments[0].scrollIntoView(true);",myPage.ilkUrun);
+
+
+       js1.executeScript("arguments[0].click();", myPage.ilkUrun);
+
+
        //6-"Kullanici Toptan Ürün Gösterme Ayarları
        //butonuna tiklar"
+
        //7-Kullanici Toptan Ürün Gösterme Ayarları
        //bolumunun goruntulendigini kontrol eder"
        //8-Kullanici Urun cesidini secer
