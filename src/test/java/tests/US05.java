@@ -284,8 +284,10 @@ public class US05 {
                 .click(us_05_06_07_page.choosTags).click(us_05_06_07_page.ahsap)
                 .sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).click(us_05_06_07_page.skuBox)
                 .sendKeys("saz").click(us_05_06_07_page.manageStock).click(us_05_06_07_page.stockQty).sendKeys("1")
-                .click(us_05_06_07_page.soldIndividually)
-                .sendKeys(Keys.PAGE_DOWN).click(us_05_06_07_page.submitButton).perform();
+                .click(us_05_06_07_page.soldIndividually).perform();
+
+        js.executeScript("arguments[0].scrollIntoView(true);",us_05_06_07_page.submitButton);
+        js.executeScript("arguments[0].click();", us_05_06_07_page.submitButton);
         Driver.closeDriver();
     }
 }
