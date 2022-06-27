@@ -19,64 +19,45 @@ public class US13 {
 
     @Test(priority = 1)
     public void US13_TC01() {
-        //US13_TC01_Coupon kodu verilmeli
-        //1., 2., 3. Stepler
-        login();
-
-        //4. Kullanıcı "Hesabım" butonunu tıklar
+        extentTest=extentReports.createTest("US13_TC01","Coupon kodu verilmeli");
+        login();                                    //1., 2., 3. Stepler
         ReusableMethods.bekle();
-        us_13_14_page.hesabimButonu.click();
-
-        //5. Kullanıcı "Store Manager" butonunu tıklar
-        us_13_14_page.storeManagerButonu.click();
+        us_13_14_page.hesabimButonu.click();        //4. Kullanıcı "Hesabım" butonunu tıklar
+        us_13_14_page.storeManagerButonu.click();   //5. Kullanıcı "Store Manager" butonunu tıklar
         action.sendKeys(Keys.PAGE_DOWN).perform();
-
-        //6. Kullanıcı "Kuponlar" butonunu tıklar
-        us_13_14_page.kuponlarButonu.click();
+        us_13_14_page.kuponlarButonu.click();       //6. Kullanıcı "Kuponlar" butonunu tıklar
         action.sendKeys(Keys.PAGE_DOWN).perform();
-
-        //7. Kullanıcı "Yeni ekle" butonunu tıklar
-        us_13_14_page.kuponlarYeniButonu.click();
+        us_13_14_page.kuponlarYeniButonu.click();   //7. Kullanıcı "Yeni ekle" butonunu tıklar
         action.sendKeys(Keys.PAGE_DOWN).perform();
-
-        //8. Kullanıcı "Code" alanına veri girer
-        Random rnd = new Random();
+        Random rnd = new Random();                  //8. Kullanıcı "Code" alanına veri girer
         String codeID = String.valueOf(rnd.nextInt(10000));
         us_13_14_page.codeText.sendKeys(codeID, Keys.TAB);
-
-        //9. Kullanıcı "Draft" butonuna tiklar
-        us_13_14_page.draftButonu.click();
+        us_13_14_page.draftButonu.click();          //9. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
-
-        //10. Kullanıcı "Code" alanına veri girildiğine test eder
         String expectedCode = codeID;
         String actualcode = us_13_14_page.codeText.getAttribute("value");
-        Assert.assertEquals(actualcode, expectedCode);
-
+        Assert.assertEquals(actualcode, expectedCode);  //10. Kullanıcı "Code" alanına veri girildiğine test eder
+        extentTest.info("'Kupon Code' alanına veri girilebiliyor");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 2)
     public void US13_TC02() {
-        //US13_TC02_Tanimlama yazılmalı
+        extentTest=extentReports.createTest("US13_TC02","Tanimlama yazılmalı");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
-
-        //8. Kullanıcı "Description" alanına veri girer
-        us_13_14_page.descriptionText.sendKeys(ConfigReader.getProperty("tradyDescriptionSabit"), Keys.TAB);
-
-        //9. Kullanıcı "Draft" butonuna tiklar
-        us_13_14_page.draftButonu.click();
+        us_13_14_page.descriptionText.sendKeys(ConfigReader.getProperty("tradyDescriptionSabit"), Keys.TAB);//8. Kullanıcı "Description" alanına veri girer
+        us_13_14_page.draftButonu.click();                              //9. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
-
-        //10. Kullanıcı "Description" alanına veri girildiğine test eder
         String expectedDescription = ConfigReader.getProperty("tradyDescriptionSabit");
         String actualDescription = us_13_14_page.descriptionText.getAttribute("value");
-        Assert.assertEquals(actualDescription, expectedDescription);
+        Assert.assertEquals(actualDescription, expectedDescription);    //10. Kullanıcı "Description" alanına veri girildiğine test eder
+        extentTest.info("'Description' alanına veri girilebiliyor");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 3)
     public void US13_TC03() {
+        extentTest=extentReports.createTest("US13_TC02","Tanimlama yazılmalı");
         //US13_TC03_Indirim sekli / discount
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
 

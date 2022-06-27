@@ -11,7 +11,7 @@ import utilities.Driver;
 public class US07 {
     US_05_06_07_Page us_05_06_07_page;
     @Test
-    public void TC01() throws InterruptedException {
+    public void UC07_TC01() throws InterruptedException {
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));

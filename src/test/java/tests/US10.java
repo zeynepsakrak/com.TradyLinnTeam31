@@ -1,10 +1,14 @@
 package tests;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.US_08_09_10_Page;
 import utilities.Driver;
+
+import java.util.List;
 
 import static tests.ReusableMethods.bekle;
 import static tests.ReusableMethods.urun_ekle_menusune_gidilir;
@@ -20,6 +24,7 @@ public class US10 {
         bekle();
         page.Attributes.click();
         bekle();
+
     }
     /*
     US10_TC01 Renk secenegi; beyaz, siyah, yeşil vs tum renkler belirtilmeli
@@ -37,9 +42,17 @@ public class US10 {
 11.bütün renk seçenekleri eklenir
      */
 
-    @Test
+    @Test(priority = 2)
     public void US10_TC01() {
-
+        ReusableMethods.waitFor(3);
+        page.colorOk.click();
+        ReusableMethods.waitFor(3);
+        Select select2 =new Select(page.colorSelectAll);
+        List<WebElement> colors= select2.getOptions();
+        for (WebElement each:colors) {
+            each.click();
+            System.out.println(each.getText());
+        }
     }
     /*
     US10_TC02 Size secenegi; small, medium, large, extra large olmali
@@ -56,8 +69,15 @@ public class US10 {
 10. "size" çubuğuna gelinir
 11. small, medium, large, extra large seçenekleri eklenir
      */
-    @Test
+    @Test(priority = 3)
     public void US10_TC02() {
-
+        ReusableMethods.waitFor(3);
+        page.sizeOk.click();
+        Select select3 =new Select(page.colorSelectAll);
+        List<WebElement> size= select3.getOptions();
+        for (WebElement each:size) {
+            each.click();
+            System.out.println(each.getText());
+        }
     }
 }

@@ -29,7 +29,7 @@ public class US_08_09_10_Page {
 //*******us09******
     @FindBy(xpath = "//div[contains(text(),'Shipping')]")
     public WebElement Shipping;
-    @FindBy (xpath = "//*[@id=\"weight\"]")
+    @FindBy (xpath = "//input[@id=\"weight\"]")
     public WebElement Weight;
     @FindBy(xpath = "//input[@id='length']")
     public WebElement Length;

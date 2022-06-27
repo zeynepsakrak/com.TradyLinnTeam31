@@ -34,13 +34,13 @@ public class US03 {
         //4. 'Giris Yap' butonuna tiklar
         login();
         //5. 'Hesabim'a tiklar
-waitFor(8);
+        waitFor(5);
         thirdPage.hesabimButonu.click();
         //6. 'Siparisler'e tiklar
         thirdPage.hesabimSiparislerButonu.click();
         //7. 'Ürünlere göz at/Alisverise devam et' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.hesabimAlisveriseDevamEtButonu);
-waitFor(5);
+        waitFor(1);
         thirdPage.hesabimAlisveriseDevamEtButonu.click();
         //8. Ürünlerin goruntulendigini kontrol eder
         Assert.assertTrue(thirdPage.urunlerElementListesi.size() != 0);
@@ -63,7 +63,7 @@ waitFor(5);
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-waitFor(8);
+                waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 thirdPage.sepeteEkleButonu.click();
                 count++;
@@ -76,8 +76,6 @@ waitFor(8);
         Assert.assertEquals(thirdPage.sepetimIkonu.getText().replace("Sepetim\n", ""), "5");
         Driver.closeDriver();
     }
-
-
 
     @Test
     public void US03_TC03() {
@@ -122,7 +120,7 @@ waitFor(8);
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-
+        waitFor(5);
         //5. 'Hemen Basla' butonuna tiklar
         sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
@@ -191,6 +189,4 @@ waitFor(8);
         //12. Fatura detaylarinin girildigini ve siparis verildigini kontrol eder
 
     }
-
-
 }
