@@ -16,7 +16,7 @@ import java.awt.event.KeyEvent;
 
 import static tests.Login.login;
 
-public class US05 {
+public class US05 extends ReusableMethods{
     US_05_06_07_Page us_05_06_07_page;
 
     @Test
@@ -193,9 +193,11 @@ public class US05 {
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         us_05_06_07_page.girisButonu.click();
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
 
         //Kullanici Store Manager butonuna tiklar
@@ -210,7 +212,7 @@ public class US05 {
         // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(2);
         actions.click(us_05_06_07_page.virtualClick).click(us_05_06_07_page.productTitle)
                 .sendKeys(ConfigReader.getProperty("productTitle"))
                 .sendKeys(Keys.TAB).sendKeys(ConfigReader
@@ -225,7 +227,7 @@ public class US05 {
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollBy(0,200)");
         us_05_06_07_page.uploaderButton1.click();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(6);
         Robot rb = new Robot();
         StringSelection str1 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
@@ -235,12 +237,12 @@ public class US05 {
         rb.keyRelease(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(9000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.secPhoto.click();
 
         // Kullanici Galeri Images icin kücük resim bosluguna tiklar
         us_05_06_07_page.galeriImages.click();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.ortamKutuphanesiSaz.click();
 
         //Kullanici Dosya Secin butonuna tiklar
@@ -254,11 +256,11 @@ public class US05 {
         rb.keyRelease(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
         us_05_06_07_page.sazFoto.click();
         us_05_06_07_page.addToGalery.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         //us_05_06_07_page.mediaModalIcanKapat.click();
         //Kullanici Short Description box a ve Description box a metin girer
         us_05_06_07_page.iframe1.click();
@@ -274,18 +276,18 @@ public class US05 {
         Kullanici Product Brands da bir brand secer
         Kullanici Submit butonuna tiklar
          */
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         actions.click(us_05_06_07_page.categories).sendKeys(Keys.PAGE_DOWN).perform();
         us_05_06_07_page.musikClickBox.click();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(3);
         us_05_06_07_page.brandEnstrumanClick.click();
-        us_05_06_07_page.gecisPunkt.click();
+        ReusableMethods.waitFor(3);
+       // us_05_06_07_page.gecisPunkt.click();
+        js.executeScript("arguments[0].scrollIntoView(true);",us_05_06_07_page.gecisPunkt);
+        js.executeScript("arguments[0].click();", us_05_06_07_page.gecisPunkt);
         actions.sendKeys(Keys.PAGE_DOWN)
-                .click(us_05_06_07_page.choosTags).click(us_05_06_07_page.ahsap)
-                .sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).click(us_05_06_07_page.skuBox)
-                .sendKeys("saz").click(us_05_06_07_page.manageStock).click(us_05_06_07_page.stockQty).sendKeys("1")
-                .click(us_05_06_07_page.soldIndividually).perform();
-
+                .sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         js.executeScript("arguments[0].scrollIntoView(true);",us_05_06_07_page.submitButton);
         js.executeScript("arguments[0].click();", us_05_06_07_page.submitButton);
         Driver.closeDriver();

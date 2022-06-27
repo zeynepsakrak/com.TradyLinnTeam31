@@ -174,4 +174,5 @@ public class US13 {
         //12. Kullanıcı Kayıt yapıldığını kontrol eder
         Assert.assertTrue(us_13_14_page.submitOnayYazisi.getText().contains("Coupon Successfully Published."));
     }
+
 }
