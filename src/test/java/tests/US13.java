@@ -13,7 +13,7 @@ import java.util.Random;
 
 import static tests.Login.login;
 
-public class US13 {
+public class US13 {/*
     US_13_14_Page us_13_14_page = new US_13_14_Page();
     Actions action = new Actions(Driver.getDriver());
 
@@ -174,4 +174,5 @@ public class US13 {
         //12. Kullanıcı Kayıt yapıldığını kontrol eder
         Assert.assertTrue(us_13_14_page.submitOnayYazisi.getText().contains("Coupon Successfully Published."));
     }
+*/
 }
