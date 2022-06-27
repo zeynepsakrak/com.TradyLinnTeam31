@@ -260,7 +260,6 @@ public class US05 {
         us_05_06_07_page.addToGalery.click();
         Thread.sleep(5000);
         //us_05_06_07_page.mediaModalIcanKapat.click();
-
         //Kullanici Short Description box a ve Description box a metin girer
         us_05_06_07_page.iframe1.click();
         Driver.getDriver().switchTo().frame(us_05_06_07_page.iframe1);
@@ -271,9 +270,9 @@ public class US05 {
         us_05_06_07_page.iframe2TextBoox.sendKeys(ConfigReader.getProperty("description"));
         Driver.getDriver().switchTo().defaultContent();
         /*
-        16- Kullanici Categories de bir kategori secer
-        17- Kullanici Product Brands da bir brand secer
-        18- Kullanici Submit butonuna tiklar
+        Kullanici Categories de bir kategori secer
+        Kullanici Product Brands da bir brand secer
+        Kullanici Submit butonuna tiklar
          */
         Thread.sleep(3000);
         actions.click(us_05_06_07_page.categories).sendKeys(Keys.PAGE_DOWN).perform();
