@@ -8,7 +8,7 @@ import pages.US_05_06_07_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US06 {
+public class US06 extends ReusableMethods{
     US_05_06_07_Page us_05_06_07_page;
     @Test
     public void UC06_TC01() throws InterruptedException {
@@ -19,7 +19,7 @@ public class US06 {
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
@@ -32,8 +32,7 @@ public class US06 {
          */
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(3000);
-
+        ReusableMethods.waitFor(3);
         actions.click(us_05_06_07_page.categories).sendKeys(Keys.PAGE_DOWN).perform();
         us_05_06_07_page.musikClickBox.click();
         Assert.assertTrue(us_05_06_07_page.musikClickBox.isSelected());

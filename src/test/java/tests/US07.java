@@ -8,7 +8,7 @@ import pages.US_05_06_07_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US07 {
+public class US07 extends ReusableMethods{
     US_05_06_07_Page us_05_06_07_page;
     @Test
     public void UC07_TC01() throws InterruptedException {
@@ -19,7 +19,7 @@ public class US07 {
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
@@ -34,10 +34,9 @@ public class US07 {
         actions.sendKeys(Keys.PAGE_DOWN)
                 .sendKeys(Keys.PAGE_DOWN)
                     .perform();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         us_05_06_07_page.brandEnstrumanClick.click();
         Assert.assertTrue(us_05_06_07_page.brandEnstrumanClick.isSelected());
         Driver.closeDriver();
-
     }
 }
