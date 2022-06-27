@@ -28,7 +28,7 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
 
         //Kullanici Store Manager butonuna tiklar
@@ -40,7 +40,7 @@ public class US05 extends ReusableMethods{
         // Kullanici; status, stock, price ve date stunlarinin görünür oldugu kontrol edilir
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(us_05_06_07_page.Status.isDisplayed());
         Assert.assertTrue(us_05_06_07_page.Stock.isDisplayed());
         Assert.assertTrue(us_05_06_07_page.Price.isDisplayed());
@@ -57,7 +57,7 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(3);
         us_05_06_07_page.hesabimButonu.click();
 
         //Kullanici Store Manager butonuna tiklar
@@ -86,7 +86,7 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
 
         //Kullanici Store Manager butonuna tiklar
@@ -101,7 +101,7 @@ public class US05 extends ReusableMethods{
         // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         actions.click(us_05_06_07_page.productTitle)
                 .sendKeys(ConfigReader.getProperty("productTitle"))
                     .sendKeys(Keys.TAB).sendKeys(ConfigReader
@@ -119,7 +119,7 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         us_05_06_07_page.girisYapButonu.click();
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
 
         //Kullanici Store Manager butonuna tiklar
@@ -134,7 +134,7 @@ public class US05 extends ReusableMethods{
         // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         actions.click(us_05_06_07_page.productTitle)
                 .sendKeys(ConfigReader.getProperty("productTitle"))
                 .sendKeys(Keys.TAB).sendKeys(ConfigReader
@@ -149,7 +149,7 @@ public class US05 extends ReusableMethods{
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollBy(0,200)");
         us_05_06_07_page.uploaderButton1.click();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         Robot rb = new Robot();
         StringSelection str1 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
@@ -159,18 +159,18 @@ public class US05 extends ReusableMethods{
         rb.keyRelease(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
         us_05_06_07_page.secPhoto.click();
         //us_05_06_07_page.mediaModalIcanKapat.click();
 
         // Kullanici Galeri Images icin kücük resim bosluguna tiklar
         us_05_06_07_page.galeriImages.click();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         us_05_06_07_page.ortamKutuphanesiSaz.click();
 
         //Kullanici Dosya Secin butonuna tiklar
         js.executeScript("window.scrollBy(0,200)");
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         StringSelection str2 = new StringSelection("\"C:\\Users\\jakyu\\Desktop\\baglama (3).png\"");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str2, null);
         rb.keyPress(KeyEvent.VK_CONTROL);
@@ -179,7 +179,7 @@ public class US05 extends ReusableMethods{
         rb.keyRelease(KeyEvent.VK_V);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(5000);
+        ReusableMethods.waitFor(5);
 
         //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
         us_05_06_07_page.addToGalery.click();
@@ -291,7 +291,5 @@ public class US05 extends ReusableMethods{
         js.executeScript("arguments[0].scrollIntoView(true);",us_05_06_07_page.submitButton);
         js.executeScript("arguments[0].click();", us_05_06_07_page.submitButton);
         Driver.closeDriver();
-
-
     }
 }
