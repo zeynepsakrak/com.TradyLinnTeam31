@@ -34,7 +34,7 @@ public class US07 extends ReusableMethods{
         actions.sendKeys(Keys.PAGE_DOWN)
                 .sendKeys(Keys.PAGE_DOWN)
                     .perform();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
         us_05_06_07_page.brandEnstrumanClick.click();
         Assert.assertTrue(us_05_06_07_page.brandEnstrumanClick.isSelected());
         Driver.closeDriver();

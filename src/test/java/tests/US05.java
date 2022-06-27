@@ -30,13 +30,10 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.girisYapButonu.click();
         ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
-
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
-
         //Kullanici Urunler butonuna tiklar
         us_05_06_07_page.urunButonu.click();
-
         // Kullanici; status, stock, price ve date stunlarinin görünür oldugu kontrol edilir
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -47,7 +44,6 @@ public class US05 extends ReusableMethods{
         Assert.assertTrue(us_05_06_07_page.Date.isDisplayed());
         Driver.closeDriver();
     }
-
     @Test
     public void UC05_TC02() throws InterruptedException {
         //Kullanici vendor olarak hesabina gider
@@ -59,16 +55,12 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.girisYapButonu.click();
         ReusableMethods.waitFor(3);
         us_05_06_07_page.hesabimButonu.click();
-
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
-
         //Kullanici Urunler butonuna tiklar
         us_05_06_07_page.urunButonu.click();
-
         //Kullanici Yeni Ekle butonuna tiklar
         us_05_06_07_page.yeniEkleButonu.click();
-
         // Kullanici Virtual ve Downloadable seceneklerinin oldugunu kontrol eder
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -88,16 +80,12 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.girisYapButonu.click();
         ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
-
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
-
         //Kullanici Urunler butonuna tiklar
         us_05_06_07_page.urunButonu.click();
-
         //Kullanici Yeni Ekle butonuna tiklar
         us_05_06_07_page.yeniEkleButonu.click();
-
         // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -121,16 +109,12 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.girisYapButonu.click();
         ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
-
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
-
         //Kullanici Urunler butonuna tiklar
         us_05_06_07_page.urunButonu.click();
-
         //Kullanici Yeni Ekle butonuna tiklar
         us_05_06_07_page.yeniEkleButonu.click();
-
         // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -140,11 +124,9 @@ public class US05 extends ReusableMethods{
                 .sendKeys(Keys.TAB).sendKeys(ConfigReader
                         .getProperty("regularPrice")).sendKeys(Keys.TAB)
                 .sendKeys(ConfigReader.getProperty("salePrice")).perform();
-
         // Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
         us_05_06_07_page.largePhoto.click();
         us_05_06_07_page.dosyaYukle1.click();
-
         //Kullanici Dosya Secin butonuna tiklar
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollBy(0,200)");
@@ -162,12 +144,10 @@ public class US05 extends ReusableMethods{
         ReusableMethods.waitFor(5);
         us_05_06_07_page.secPhoto.click();
         //us_05_06_07_page.mediaModalIcanKapat.click();
-
         // Kullanici Galeri Images icin kücük resim bosluguna tiklar
         us_05_06_07_page.galeriImages.click();
         ReusableMethods.waitFor(3);
         us_05_06_07_page.ortamKutuphanesiSaz.click();
-
         //Kullanici Dosya Secin butonuna tiklar
         js.executeScript("window.scrollBy(0,200)");
         ReusableMethods.waitFor(3);
@@ -180,7 +160,6 @@ public class US05 extends ReusableMethods{
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
         ReusableMethods.waitFor(5);
-
         //Kullanici bir resim dosyasini secer ve ADD TO GALLERY butonunu tiklar
         us_05_06_07_page.addToGalery.click();
         Driver.closeDriver();
@@ -199,16 +178,12 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.girisYapButonu.click();
         ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
-
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
-
         //Kullanici Urunler butonuna tiklar
         us_05_06_07_page.urunButonu.click();
-
         //Kullanici Yeni Ekle butonuna tiklar
         us_05_06_07_page.yeniEkleButonu.click();
-
         // Kullanici Product Title, Price ve Sale Price box'lara veri girisi yapar
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -218,11 +193,9 @@ public class US05 extends ReusableMethods{
                 .sendKeys(Keys.TAB).sendKeys(ConfigReader
                         .getProperty("regularPrice")).sendKeys(Keys.TAB)
                 .sendKeys(ConfigReader.getProperty("salePrice")).perform();
-
         // Kullanici ürün resmi yuklemek icin Large Photo kutusuna tiklar
         us_05_06_07_page.largePhoto.click();
         us_05_06_07_page.dosyaYukle1.click();
-
         //Kullanici Dosya Secin butonuna tiklar
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollBy(0,200)");
@@ -239,12 +212,10 @@ public class US05 extends ReusableMethods{
         rb.keyRelease(KeyEvent.VK_ENTER);
         ReusableMethods.waitFor(5);
         us_05_06_07_page.secPhoto.click();
-
         // Kullanici Galeri Images icin kücük resim bosluguna tiklar
         us_05_06_07_page.galeriImages.click();
         ReusableMethods.waitFor(5);
         us_05_06_07_page.ortamKutuphanesiSaz.click();
-
         //Kullanici Dosya Secin butonuna tiklar
         js.executeScript("window.scrollBy(0,200)");
         //us_05_06_07_page.uploaderButton1.click();
