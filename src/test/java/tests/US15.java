@@ -8,6 +8,9 @@ import pages.US_15_16_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static tests.ReusableMethods.waitFor;
+
+
 public class US15 {
     US_15_16_Page us_15_16_page=new US_15_16_Page();
 
@@ -23,23 +26,26 @@ public class US15 {
         //3- Vendor "username or email address" ve "password" bilgileri girer ve "login" butonuna tiklanir
         us_15_16_page.username.sendKeys(ConfigReader.getProperty("tradllyinnEmail"));
         us_15_16_page.password.sendKeys(ConfigReader.getProperty("tradllyinnPassword"));
+        waitFor(1);
         us_15_16_page.login.sendKeys(Keys.ENTER);
+
 
         //4-Vendor "Store Manager" butonuna tiklanir
         us_15_16_page.storeManager.click();
 
+
         //5-Vendor "Coupons" butonuna tiklanir
         us_15_16_page.coupons.sendKeys(Keys.ENTER);
-        Thread.sleep(5000);
+        ReusableMethods.bekle();
 
         //6- Vendor "add new "butonuna tiklanir
         us_15_16_page.addNew.click();
 
         //7- Vendor "limit" butonuna tiklanir
-
+        ReusableMethods.bekle();
         Actions action=new Actions(Driver.getDriver());
         action.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(5000);
+
         us_15_16_page.limit.click();
 
         //8- Vendor "Usage limit per coupon" limiti bilgileri eklenebilir
