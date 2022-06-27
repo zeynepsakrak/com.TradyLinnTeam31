@@ -3,6 +3,8 @@ package tests;
 import org.testng.annotations.Test;
 import pages.US_01_02_Page;
 
+import static tests.Login.login;
+
 public class US01 {
     US_01_02_Page firstPage=new US_01_02_Page();
 

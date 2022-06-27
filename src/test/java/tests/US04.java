@@ -20,16 +20,16 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. Urunun sepete eklendigini kontrol eder
-        waitFor(2);
+
         Assert.assertEquals(forthPage.sepetimIkonu.getText().replace("Sepetim\n", ""), "1");
         //8. 'Sepetim' butonuna tiklar
         forthPage.sepetimIkonu.click();
@@ -49,16 +49,16 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
@@ -67,7 +67,7 @@ public class US04 {
         forthPage.secilenUrunlerMiktarListesi.get(0).sendKeys("5"+Keys.ENTER);
         forthPage.artiButonListesi.get(0).click();
         forthPage.sepetiYenileButonu.click();
-        waitFor(5);
+
         //10. Urun miktarinin arttigini kontrol eder
         System.out.println(forthPage.secilenUrunlerMiktarListesi.get(0).getText());
         Assert.assertEquals(forthPage.secilenUrunlerMiktarListesi.get(0).getText(), "2");
@@ -84,16 +84,16 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
@@ -111,22 +111,22 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
         //9. 'Temizle' butonuna tiklar
         jse.executeScript("arguments[0].scrollIntoView();", forthPage.sepetiTemizle);
-        waitFor(1);
+
         forthPage.sepetiTemizle.click();
         //10. Sepetteki urunlerin silindigini kontrol eder
         Assert.assertEquals(forthPage.sepetimIkonu.getText().replace("Sepetim\n", ""), "0");
@@ -140,16 +140,16 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
@@ -164,16 +164,16 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
@@ -189,16 +189,16 @@ public class US04 {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();

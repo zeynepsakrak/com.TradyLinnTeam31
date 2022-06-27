@@ -77,4 +77,8 @@ static Actions actions=new Actions(Driver.getDriver());
 
     }
 
+    public static void sayfayiKapat(){
+        Driver.closeDriver();
+    }
+
 }
