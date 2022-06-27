@@ -34,11 +34,9 @@ public class US_20_21_Page {
     public WebElement kullaniciRating;
 
     @FindBy(xpath = "//*[@id=\"wcfm-reviews\"]/tbody/tr/td[6]")
-
     public WebElement kullaniciCommentiTarihi;
 
     @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[15]/a/span[2]")
-                     //*[@id="wcfm_menu"]/div[17]/a/span[2]
     public WebElement raporlar;
 
 
@@ -64,9 +62,8 @@ public class US_20_21_Page {
     @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement last7DayRapor;
 
-    //@FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[5]/form/div/input[1]")
-    //public WebElement costumButon;
-    @FindBy(xpath = "//input[@value='2022-06-20 to 2022-06-30']")
+
+    @FindBy(xpath = "//*[@id=\"poststuff\"]/div/div[1]/ul/li[5]/form/div/input[1]")
     public WebElement costumButon;
     @FindBy(xpath = "//canvas[@id='chart-placeholder-canvas']")
     public WebElement costumRapor;
