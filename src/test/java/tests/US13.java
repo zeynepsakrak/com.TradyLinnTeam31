@@ -16,7 +16,6 @@ import static tests.Login.login;
 
 
 public class US13 extends TestBaseRapor {
-
     US_13_14_Page us_13_14_page = new US_13_14_Page();
     Actions action = new Actions(Driver.getDriver());
 
@@ -145,5 +144,4 @@ public class US13 extends TestBaseRapor {
         extentTest.info("Girilen veriler kaydedilip Coupon kodu başarılı bir şekilde oluşturulabiliyor.");
         Driver.closeDriver();
     }
-*/
 }
