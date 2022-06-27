@@ -46,7 +46,7 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "(//span[@class='text'])[19]")
     public WebElement yeniEkleButonu;
 
-    @FindBy(xpath = "//input[@name='is_virtual']")
+    @FindBy(xpath = "//input[@id='is_virtual']")
     public WebElement virtualClick;
 
     @FindBy(xpath = "//input[@name='is_downloadable']")
@@ -118,7 +118,28 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[8]")
     public WebElement brandEnstrumanClick;
 
-    @FindBy(xpath = "//input[@value='Submit']")
+    @FindBy(xpath = "//p[@class='description wcfm_title wcfm_full_ele wcfm_wpeditor']")
+    public WebElement gecisPunkt;
+
+    @FindBy(xpath = "//p[@class='description wcfm_full_ele wcfm_side_tag_cloud wcfm_fetch_tag_cloud']")
+    public WebElement choosTags;
+
+    @FindBy (xpath = "//*[@id=\"wcfm_products_manage_form_general_expander\"]/div[2]/p[2]/ul/li[1]/a")
+    public WebElement ahsap;
+
+    @FindBy(xpath = "//input[@id='sku']")
+    public WebElement skuBox;
+
+    @FindBy(xpath = "//*[@id=\"manage_stock\"]")
+    public WebElement manageStock;
+
+    @FindBy(xpath = "//input[@id='stock_qty']")
+    public WebElement stockQty;
+
+    @FindBy(xpath = "//*[@id=\"sold_individually\"]")
+    public WebElement soldIndividually;
+
+    @FindBy(xpath = "//*[@id=\"wcfm_products_simple_submit_button\"]")
     public WebElement submitButton;
 
 
