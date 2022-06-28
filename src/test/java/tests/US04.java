@@ -116,7 +116,7 @@ public class US04 extends TestBaseRapor {
         forthPage.artiButonListesi.get(0).click();
         //10. 'Sepeti Yenile'ye tiklayarak 'Ara toplam'in degistigini kontrol eder
         forthPage.sepetiYenileButonu.click();
-        waitFor(3);
+        waitFor(10);
         int artmisMiktar = parseInt(forthPage.secilenUrunlerAraToplamListesi.get(0).getText().replaceAll("\\D+", ""));
         System.out.println(ilkMiktar);
         System.out.println(artmisMiktar);
@@ -124,8 +124,8 @@ public class US04 extends TestBaseRapor {
         waitFor(3);
         //11.Urun miktarina stoktan fazla deger girer
         int artirmaOncesi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
-        for (int i = 0; i < (Integer.parseInt(ConfigReader.getProperty("stokMiktari")) - 1); i++) {
-            forthPage.artiButonListesi.get(i).click();
+        for (int i = 0; i < (Integer.parseInt(ConfigReader.getProperty("stokMiktari")) + 2); i++) {
+            forthPage.artiButonListesi.get(0).click();
         }
         forthPage.sepetiYenileButonu.click();
         waitFor(3);
@@ -133,7 +133,7 @@ public class US04 extends TestBaseRapor {
         int artirmaSonrasi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
         System.out.println(artirmaOncesi);
         System.out.println(artirmaSonrasi);
-        Assert.assertTrue(artirmaSonrasi < Integer.parseInt(ConfigReader.getProperty("stokMiktari")));
+        Assert.assertTrue(artirmaSonrasi == Integer.parseInt(ConfigReader.getProperty("stokMiktari")));
         //13.Urun miktarina gecerli bir deger girer
         extentTest.info("Stoktan fazla urun eklenemedi");
     }
