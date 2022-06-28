@@ -23,8 +23,26 @@ public class US_01_02_Page {
     @FindBy(xpath = "//button[@name=\"login\"]")
     public WebElement girisYapButonu;
 
+    @FindBy(xpath = "//*[text()='Üye Ol']")
+    public WebElement uyeOl;
+
+    @FindBy(xpath = "//*[text()='Satıcı Ol']")
+    public WebElement saticiOl;
+
     @FindBy(xpath = "//*[@id=\"menu-item-1074\"]/a")
     public WebElement hesabim;
+
+    @FindBy(xpath = "//input[@id='user_email']")
+    public WebElement emailKutusu;
+
+    @FindBy(xpath = "//input[@id='passoword']")
+    public WebElement passwordKutusu;
+
+    @FindBy(xpath = "//input[@id='confirm_pwd']")
+    public WebElement confirmPasswordKutusu;
+
+    @FindBy(xpath = "//input[@value='Register']")
+    public WebElement registerButonu;
 
     @FindBy(xpath = "(//*[text()='Siparişler'])[2]")
     public WebElement ordersButonu;

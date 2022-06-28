@@ -2,12 +2,14 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.US_01_02_Page;
 
 import static tests.Login.login;
 
 public class US02 {
     US_01_02_Page firstPage=new US_01_02_Page();
+    SoftAssert softAssert=new SoftAssert();
 
 
     @Test
@@ -33,18 +35,25 @@ public class US02 {
         Thread.sleep(8000);
         firstPage.hesabim.click();
         //5_Orders butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.ordersButonu.isDisplayed());
+        softAssert.assertTrue(firstPage.ordersButonu.isDisplayed(),
+                "Orders butonu görülmedi.");
         //6_Downloads butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.downloadsButonu.isDisplayed());
+        softAssert.assertTrue(firstPage.downloadsButonu.isDisplayed(),
+                "Downloads butonu görülmedi.");
         //7_Addresses butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.addressesButonu.isDisplayed());
+        softAssert.assertTrue(firstPage.addressesButonu.isDisplayed(),
+                "Addresses butonu görülmedi.");
         //8_Account details butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.accountDetailsButonu.isDisplayed());
+        softAssert.assertTrue(firstPage.accountDetailsButonu.isDisplayed(),
+                "Account butonu görülmedi.");
         //9_Whislist butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.whislistButonu.isDisplayed());
+        softAssert.assertTrue(firstPage.whislistButonu.isDisplayed(),
+                "Whislist butonu görülmedi.");
         //10_Logout butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.logoutButonu.isDisplayed());
-        //ReusableMethods.sayfayiKapat();
+        softAssert.assertTrue(firstPage.logoutButonu.isDisplayed(),
+                "Logout butonu görülmedi.");
+        softAssert.assertAll();
+        ReusableMethods.sayfayiKapat();
     }
 
     @Test
@@ -56,19 +65,28 @@ public class US02 {
         login();
         Thread.sleep(8000);
         //5_Store manager butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.storeManagerDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.storeManagerDashboard.isDisplayed(),
+                "Dashboard altinda Store manager butonu görülmedi.");
         //6_Orders butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.ordersButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.ordersButonuDashboard.isDisplayed(),
+                "Dashboard altinda Orders butonu görülmedi.");
         //7_Downloads butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.downloadsButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.downloadsButonuDashboard.isDisplayed(),
+                "Dashboard altinda Downloads butonu görülmedi.");
         //8_Addresses butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.addressesButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.addressesButonuDashboard.isDisplayed(),
+                "Dashboard altinda Addresses butonu görülmedi.");
         //9_Account details butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.accountDetailsButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.accountDetailsButonuDashboard.isDisplayed(),
+                "Dashboard altinda Account details butonu görülmedi.");
         //10_Appointments butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.appoinmentsButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.appoinmentsButonuDashboard.isDisplayed(),
+                "Dashboard altinda Appointments butonu görülmedi.");
         //11_Wishlist butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.whislistButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.whislistButonuDashboard.isDisplayed(),
+                "Dashboard altinda Wishlist butonu görülmedi.");
+        softAssert.assertAll();
+        ReusableMethods.sayfayiKapat();
     }
 
     @Test
@@ -81,10 +99,15 @@ public class US02 {
         Thread.sleep(8000);
         firstPage.hesabim.click();
         //5_Support tickets butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.supportTicketsButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.supportTicketsButonuDashboard.isDisplayed(),
+                "Dashboard altinda Support tickets butonu görülmedi.");
         //6_Followings butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.followingsButonuDashboard.isDisplayed());
-        //7_Appointments butonunun görüldüğünü test eder.
-        Assert.assertTrue(firstPage.appoinmentsButonuDashboard.isDisplayed());
+        softAssert.assertTrue(firstPage.followingsButonuDashboard.isDisplayed(),
+                "Dashboard altinda Followings butonu görülmedi.");
+        //7_Logout butonunun görüldüğünü test eder.
+        softAssert.assertTrue(firstPage.logoutButonuDashboard.isDisplayed(),
+                "Dashboard altinda Logout butonu görülmedi.");
+        softAssert.assertAll();
+        ReusableMethods.sayfayiKapat();
     }
 }
