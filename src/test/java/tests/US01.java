@@ -22,7 +22,7 @@ public class US01 {
         firstPage.uyeOl.click();
         //3_Kullanıcı Become a vendor butonunun göründüğünü test eder
         Assert.assertTrue(firstPage.saticiOl.isDisplayed());
-        ReusableMethods.sayfayiKapat();
+        Driver.closeDriver();
     }
 
     @Test
