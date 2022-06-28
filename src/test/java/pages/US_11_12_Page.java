@@ -29,6 +29,12 @@ public class US_11_12_Page {
     @FindBy(xpath = "(//a[@class='wcfm_product_title'])[1]")
     public WebElement ilkUrun;
 
+    @FindBy(xpath = "(//a[@class='wcfm_product_title'])[2]")
+    public WebElement ikinciUrun;
+
+    @FindBy(xpath = "(//a[@class='wcfm_product_title'])[3]")
+    public WebElement ucuncuUrun;
+
     @FindBy(xpath = "(//div[@class='icon-box text-center'])[2]")
     public WebElement indirmelerButonu;
 
@@ -70,5 +76,27 @@ public class US_11_12_Page {
 
     @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
     public WebElement hesapBigileriDegistirildiYazisi;
+
+    @FindBy(xpath = "//div[@class='page_collapsible wcfm_acf_products_manage_3116_collapsible simple variable external grouped booking collapse-close']")
+    public WebElement toptanUrunGostermeAyarlariButonu;
+
+    @FindBy(xpath = "//div[@class='wcfm-container wcfm_acf_products_manage_3116_container simple variable external grouped booking']")
+    public WebElement toptanUrunGostermeMenusu;
+
+    @FindBy(xpath = "//select[@id='piecetype']")
+    public WebElement urunCesidi;
+
+    @FindBy(xpath = "//input[@name='submit-data']")
+    public WebElement submitButonu;
+
+    @FindBy(xpath = "//div[@class='wcfm-message']")
+    public WebElement productSuccessfullyPublished;
+
+    @FindBy(xpath = "//input[@id='unitpercart']")
+    public WebElement unitsPerPiece;
+
+    @FindBy(xpath = "//input[@id='minorderqtytr']")
+    public WebElement minumumQuantity;
+
 
 }
