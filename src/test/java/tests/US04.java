@@ -79,29 +79,51 @@ public class US04 {
 
     @Test
     public void US04_TC03() {
+        extentTest = extentReports.createTest("Stok fazlasi urun ekleme", "Stoktan fazla urun eklenmemelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-
+        waitFor(8);
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
         sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-
+        waitFor(11);
         forthPage.aramaMercegi.click();
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         //7. 'Sepetim' butonuna tiklar
-
+        waitFor(2);
         forthPage.sepetimIkonu.click();
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
+        waitFor(1);
         //9. Miktar bolumundeki arti'ya tiklar
+        int ilkMiktar = parseInt(forthPage.secilenUrunlerAraToplamListesi.get(0).getText().replaceAll("\\D+", ""));
+        forthPage.artiButonListesi.get(0).click();
         //10. 'Sepeti Yenile'ye tiklayarak 'Ara toplam'in degistigini kontrol eder
+        forthPage.sepetiYenileButonu.click();
+        waitFor(10);
+        int artmisMiktar = parseInt(forthPage.secilenUrunlerAraToplamListesi.get(0).getText().replaceAll("\\D+", ""));
+        System.out.println(ilkMiktar);
+        System.out.println(artmisMiktar);
+        Assert.assertTrue(ilkMiktar < artmisMiktar);
+        waitFor(3);
         //11.Urun miktarina stoktan fazla deger girer
+        int artirmaOncesi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
+        for (int i = 0; i < (Integer.parseInt(ConfigReader.getProperty("stokMiktari")) + 2); i++) {
+            forthPage.artiButonListesi.get(0).click();
+        }
+        forthPage.sepetiYenileButonu.click();
+        waitFor(3);
         //12. Stoktan fazla deger girilemedigini kontrol eder
+        int artirmaSonrasi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
+        System.out.println(artirmaOncesi);
+        System.out.println(artirmaSonrasi);
+        Assert.assertTrue(artirmaSonrasi == Integer.parseInt(ConfigReader.getProperty("stokMiktari")));
         //13.Urun miktarina gecerli bir deger girer
+        extentTest.info("Stoktan fazla urun eklenemedi");
     }
 
     @Test
