@@ -96,7 +96,7 @@ public class US_05_06_07_Page {
 
     @FindBy(xpath = "//iframe[@id='excerpt_ifr']")
     public WebElement iframe1;
-    //*[@id="tinymce"]/p
+
     @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
     public WebElement iframe1TextBox;
 
