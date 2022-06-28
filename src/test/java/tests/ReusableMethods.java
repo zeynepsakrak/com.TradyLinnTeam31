@@ -1,11 +1,11 @@
 package tests;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Homepage;
 import utilities.ConfigReader;
@@ -13,51 +13,30 @@ import utilities.Driver;
 
 import javax.swing.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.function.Function;
 
 import static tests.Login.login;
 
 public class ReusableMethods {
-    static JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-    static Actions actions = new Actions(Driver.getDriver());
-
+    static  JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+static Actions actions=new Actions(Driver.getDriver());
     public static void sepetiBosalt() {
-        Homepage homepage = new Homepage();
-        if (!homepage.sepetimIkonu.getText().replace("Sepetim\n", "").equals("0")) {
+        Homepage homepage=new Homepage();
+        if (!homepage.sepetimIkonu.getText().contains("0")) {
             homepage.sepetimIkonu.click();
             homepage.sepetiGoruntule.click();
-            jse.executeScript("arguments[0].scrollIntoView();", homepage.sepetiTemizle);
-            waitFor(2);
+           bekle();
             homepage.sepetiTemizle.click();
             homepage.tradylinnIkonu.click();
         }
     }
-
-    public static void bekle() {
+    public static void bekle(){
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
-
-    //   HARD WAIT WITH THREAD.SLEEP
-//   waitFor(5);  => waits for 5 second
-    public static void waitFor(int sec) {
-        try {
-            Thread.sleep(sec * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
@@ -80,109 +59,26 @@ public class ReusableMethods {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-
     public static void urun_ekle_menusune_gidilir() {
 
-        Homepage homepage = new Homepage();
+        Homepage homepage=new Homepage();
         login();
-        jse.executeScript("arguments[0].scrollIntoView();", homepage.hesabim);
-        bekle();
+        jse.executeScript("arguments[0].scrollIntoView();",homepage.hesabim);
+    bekle();
         homepage.hesabim.click();
         bekle();
         homepage.StoreManager.click();
-        // jse.executeScript("arguments[0].scrollIntoView();",homepage.urun);
-
-        waitForVisibility(homepage.Home, 5);
-
-
+       // jse.executeScript("arguments[0].scrollIntoView();",homepage.urun);
+        waitForVisibility(homepage.Home,5);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         homepage.urun.click();
-        bekle();
-        homepage.yeniUrunEkle.click();
+     bekle();
+     homepage.yeniUrunEkle.click();
 
     }
 
-    public static String getScreenshot(String name) throws IOException {
-        // naming the screenshot with the current date to avoid duplication
-        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        // TakesScreenshot is an interface of selenium that takes the screenshot
-        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
-        File finalDestination = new File(target);
-        // save the screenshot to the path given
-        FileUtils.copyFile(source, finalDestination);
-        return target;
+    public static void sayfayiKapat(){
+        Driver.closeDriver();
     }
 
-    //========Hover Over=====//
-    public static void hover(WebElement element) {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(element).perform();
-    }
-
-    //==========Return a list of string given a list of Web Element====////
-    public static List<String> getElementsText(List<WebElement> list) {
-        List<String> elemTexts = new ArrayList<>();
-        for (WebElement el : list) {
-            if (!el.getText().isEmpty()) {
-                elemTexts.add(el.getText());
-            }
-        }
-        return elemTexts;
-    }
-
-    //========Returns the Text of the element given an element locator==//
-    public static List<String> getElementsText(By locator) {
-        List<WebElement> elems = Driver.getDriver().findElements(locator);
-        List<String> elemTexts = new ArrayList<>();
-        for (WebElement el : elems) {
-            if (!el.getText().isEmpty()) {
-                elemTexts.add(el.getText());
-            }
-        }
-        return elemTexts;
-    }
-
-    public static void clickWithTimeOut(WebElement element, int timeout) {
-        for (int i = 0; i < timeout; i++) {
-            try {
-                element.click();
-                return;
-            } catch (WebDriverException e) {
-                waitFor(1);
-            }
-        }
-    }
-
-    public static void waitForPageToLoad(long timeout) {
-        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-            }
-        };
-        try {
-            System.out.println("Waiting for page to load...");
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
-            wait.until(expectation);
-        } catch (Throwable error) {
-            System.out.println(
-                    "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
-        }
-    }
-
-    //======Fluent Wait====//
-    public static WebElement fluentWait(final WebElement webElement, int timeout) {
-        //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
-        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
-                .withTimeout(Duration.ofSeconds(3))//Wait 3 second each time
-                .pollingEvery(Duration.ofSeconds(1));//Check for the element every 1 second
-        WebElement element = wait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver driver) {
-                return webElement;
-            }
-        });
-        return element;
-    }
 }
