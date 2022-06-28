@@ -51,5 +51,6 @@ public class US06 extends TestBaseRapor{
         Assert.assertTrue(us_05_06_07_page.musikClickBox.isSelected());
         extentTest.info("Musik katagorisinin isaretli oldugu goruldu");
         Driver.closeDriver();
+
     }
 }
