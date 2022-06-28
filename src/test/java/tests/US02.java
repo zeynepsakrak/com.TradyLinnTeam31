@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.US_01_02_Page;
+import utilities.Driver;
 
 import static tests.Login.login;
 
@@ -22,7 +23,7 @@ public class US02 {
         Thread.sleep(8000);
         //5_Başarılı bir şekilde login olduğunu test eder.
         Assert.assertTrue(firstPage.cikisButonu.isDisplayed());
-        ReusableMethods.sayfayiKapat();
+        Driver.closeDriver();
     }
 
     @Test
@@ -53,7 +54,7 @@ public class US02 {
         softAssert.assertTrue(firstPage.logoutButonu.isDisplayed(),
                 "Logout butonu görülmedi.");
         softAssert.assertAll();
-        ReusableMethods.sayfayiKapat();
+        Driver.closeDriver();
     }
 
     @Test
@@ -86,7 +87,7 @@ public class US02 {
         softAssert.assertTrue(firstPage.whislistButonuDashboard.isDisplayed(),
                 "Dashboard altinda Wishlist butonu görülmedi.");
         softAssert.assertAll();
-        ReusableMethods.sayfayiKapat();
+        Driver.closeDriver();
     }
 
     @Test
@@ -108,6 +109,6 @@ public class US02 {
         softAssert.assertTrue(firstPage.logoutButonuDashboard.isDisplayed(),
                 "Dashboard altinda Logout butonu görülmedi.");
         softAssert.assertAll();
-        ReusableMethods.sayfayiKapat();
+        Driver.closeDriver();
     }
 }
