@@ -6,11 +6,13 @@ import org.testng.annotations.Test;
 import pages.US_03_04_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
+import static java.lang.Integer.parseInt;
 import static tests.Login.login;
 import static tests.ReusableMethods.*;
 
-public class US04 {
+public class US04 extends TestBaseRapor {
     US_03_04_Page forthPage = new US_03_04_Page();
 
     @Test
@@ -64,7 +66,7 @@ public class US04 {
         forthPage.sepetiGoruntule.click();
         System.out.println(forthPage.secilenUrunlerMiktarListesi.get(0).getText());
         //9. Miktar bolumundeki arti'ya tiklar
-        forthPage.secilenUrunlerMiktarListesi.get(0).sendKeys("5"+Keys.ENTER);
+        forthPage.secilenUrunlerMiktarListesi.get(0).sendKeys("5" + Keys.ENTER);
         forthPage.artiButonListesi.get(0).click();
         forthPage.sepetiYenileButonu.click();
 
@@ -112,7 +114,7 @@ public class US04 {
         waitFor(3);
         //11.Urun miktarina stoktan fazla deger girer
         int artirmaOncesi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
-        for (int i = 0; i < (Integer.parseInt(ConfigReader.getProperty("stokMiktari")) + 2); i++) {
+        for (int i = 0; i < (parseInt(ConfigReader.getProperty("stokMiktari")) + 2); i++) {
             forthPage.artiButonListesi.get(0).click();
         }
         forthPage.sepetiYenileButonu.click();
@@ -121,7 +123,7 @@ public class US04 {
         int artirmaSonrasi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
         System.out.println(artirmaOncesi);
         System.out.println(artirmaSonrasi);
-        Assert.assertTrue(artirmaSonrasi == Integer.parseInt(ConfigReader.getProperty("stokMiktari")));
+        Assert.assertTrue(artirmaSonrasi == parseInt(ConfigReader.getProperty("stokMiktari")));
         //13.Urun miktarina gecerli bir deger girer
         extentTest.info("Stoktan fazla urun eklenemedi");
     }
