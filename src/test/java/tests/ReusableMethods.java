@@ -30,10 +30,11 @@ public class ReusableMethods {
 
     public static void sepetiBosalt() {
         Homepage homepage = new Homepage();
-        if (!homepage.sepetimIkonu.getText().contains("0")) {
+        if (!homepage.sepetimIkonu.getText().replace("Sepetim\n", "").equals("0")) {
             homepage.sepetimIkonu.click();
             homepage.sepetiGoruntule.click();
-            waitFor(1);
+            jse.executeScript("arguments[0].scrollIntoView();", homepage.sepetiTemizle);
+            waitFor(2);
             homepage.sepetiTemizle.click();
             homepage.tradylinnIkonu.click();
         }
