@@ -253,7 +253,7 @@ public class US05 extends ReusableMethods{
         ReusableMethods.waitFor(3);
         us_05_06_07_page.brandEnstrumanClick.click();
         ReusableMethods.waitFor(3);
-       // us_05_06_07_page.gecisPunkt.click();
+        // us_05_06_07_page.gecisPunkt.click();
         js.executeScript("arguments[0].scrollIntoView(true);",us_05_06_07_page.gecisPunkt);
         js.executeScript("arguments[0].click();", us_05_06_07_page.gecisPunkt);
         actions.sendKeys(Keys.PAGE_DOWN)
