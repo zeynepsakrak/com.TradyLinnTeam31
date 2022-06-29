@@ -50,7 +50,7 @@ public class US07 extends TestBaseRapor {
         us_05_06_07_page.brandEnstrumanClick.click();
         extentTest.info("Brand olarak Enstruman tiklandi");
         Assert.assertTrue(us_05_06_07_page.brandEnstrumanClick.isSelected());
-        extentTest.info("Enstruman brandinin isaretli oldugu goruldu");
+        extentTest.pass("Enstruman brandinin isaretli oldugu goruldu");
         Driver.closeDriver();
     }
 }
