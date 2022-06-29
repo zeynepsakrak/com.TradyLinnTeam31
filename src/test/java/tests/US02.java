@@ -12,7 +12,6 @@ public class US02 {
     US_01_02_Page firstPage=new US_01_02_Page();
     SoftAssert softAssert=new SoftAssert();
 
-
     @Test
     public void US01_TC01() throws InterruptedException {
         //1_Kullanıcı https://tradylinn.com adresine gider.
@@ -111,4 +110,5 @@ public class US02 {
         softAssert.assertAll();
         Driver.closeDriver();
     }
+
 }
