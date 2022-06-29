@@ -23,13 +23,20 @@ public class US13 extends TestBaseRapor {
     public void US13_TC01() {
         extentTest=extentReports.createTest("US13_TC01","Coupon kodu verilmeli");
         login();                                    //1., 2., 3. Stepler
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
         ReusableMethods.bekle();
         us_13_14_page.hesabimButonu.click();        //4. Kullanıcı "Hesabım" butonunu tıklar
+        extentTest.info("Hesabım Butonuna basıldı.");
         us_13_14_page.storeManagerButonu.click();   //5. Kullanıcı "Store Manager" butonunu tıklar
+        extentTest.info("Stor Manager Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarButonu.click();       //6. Kullanıcı "Kuponlar" butonunu tıklar
+        extentTest.info("Kuponlar Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarYeniButonu.click();   //7. Kullanıcı "Yeni ekle" butonunu tıklar
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_DOWN).perform();
         Random rnd = new Random();                  //8. Kullanıcı "Code" alanına veri girer
         String codeID = String.valueOf(rnd.nextInt(10000));
@@ -47,6 +54,13 @@ public class US13 extends TestBaseRapor {
     public void US13_TC02() {
         extentTest=extentReports.createTest("US13_TC02","Tanimlama yazılmalı");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
         us_13_14_page.descriptionText.sendKeys(ConfigReader.getProperty("tradyDescriptionSabit"), Keys.TAB);//8. Kullanıcı "Description" alanına veri girer
@@ -55,17 +69,25 @@ public class US13 extends TestBaseRapor {
         String expectedDescription = ConfigReader.getProperty("tradyDescriptionSabit");
         String actualDescription = us_13_14_page.descriptionText.getAttribute("value");
         Assert.assertEquals(actualDescription, expectedDescription);    //10. Kullanıcı "Description" alanına veri girildiğine test eder
-        extentTest.info("'Description' alanına veri girilebiliyor.");
+        extentTest.info("'Description' alanına veri girişi yapıldı.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 3)
     public void US13_TC03() {
         extentTest=extentReports.createTest("US13_TC03","Indirim sekli / discount");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
         Select select = new Select(us_13_14_page.discountTypeText);
         select.selectByIndex(1);                //8. Kullanıcı "Discount Type" alanı "Percentage discount" seçilir.
+        extentTest.info("'Discount Type' alanı 'Percentage discount' seçildi.");
         us_13_14_page.draftButonu.click();      //9. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
         String expectedDescription = "Fixed Product Discount";
@@ -73,7 +95,8 @@ public class US13 extends TestBaseRapor {
         Assert.assertEquals(actualDescription, expectedDescription);    //10. Kullanıcı "Discount Type" alanı "Percentage discount" olduğunu test eder
         action.sendKeys(Keys.PAGE_UP).perform();
         select = new Select(us_13_14_page.discountTypeText);
-        select.selectByIndex(0);                    //11. Kullanıcı "Discount Type" alanı "Fixed Product Discount" seçilir.
+        select.selectByIndex(0);                    //11. Kullanıcı "Discount Type" alanı "Fixed Product Discount" seçilir
+        extentTest.info("'Discount Type' alanı 'Fixed Product Discount' seçildi.");// .
         ReusableMethods.bekle();
         us_13_14_page.draftButonu.click();          //12. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
@@ -87,6 +110,13 @@ public class US13 extends TestBaseRapor {
     public void US13_TC04() {
         extentTest=extentReports.createTest("US13_TC04","Coupon amount");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
         us_13_14_page.couponAmountText.clear();
@@ -103,6 +133,13 @@ public class US13 extends TestBaseRapor {
     public void US13_TC05() {
         extentTest=extentReports.createTest("US13_TC05","Coupon expiry date / urun kuponu son kullanım tarihi girilmeli");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
         us_13_14_page.couponexpirydateText.sendKeys(ConfigReader.getProperty("tradyKCouponExpiryDate"), Keys.TAB); //8. Kullanıcı "Coupon expiry date" alanına veri girer
@@ -118,6 +155,13 @@ public class US13 extends TestBaseRapor {
     public void US13_TC06() {
         extentTest=extentReports.createTest("US13_TC06","Free shipping uygulanmalı");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
         us_13_14_page.allowfreeshippingCheck.click();   //8. Kullanıcı "Allow free shipping" alanına tik atar
@@ -131,6 +175,13 @@ public class US13 extends TestBaseRapor {
     public void US13_TC07() {
         extentTest=extentReports.createTest("US13_TC07","Show on store");
         //1.,2., 3., 4., 5., 6., 7. adımlar US13_TC01 test metoduna bağlı çalışır
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle();
         us_13_14_page.showonstoreCheck.click();     //8. Kullanıcı "Show on store" alanına tik atar

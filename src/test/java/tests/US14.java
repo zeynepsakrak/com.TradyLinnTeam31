@@ -25,13 +25,20 @@ public class US14 extends TestBaseRapor {
     public void US14_TC01() {
         extentTest = extentReports.createTest("US14_TC01", "Minimum spend / en az alma miktari girilmeli");
         login();                                    //1., 2., 3. Stepler
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
         ReusableMethods.bekle();
         us_13_14_page.hesabimButonu.click();        //4. Kullanıcı "Hesabım" butonunu tıklar
+        extentTest.info("Hesabım Butonuna basıldı.");
         us_13_14_page.storeManagerButonu.click();   //5. Kullanıcı "Store Manager" butonunu tıklar
+        extentTest.info("Stor Manager Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarButonu.click();       //6. Kullanıcı "Kuponlar" butonunu tıklar
+        extentTest.info("Kuponlar Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarYeniButonu.click();   //7. Kullanıcı "Yeni ekle" butonunu tıklar
+        extentTest.info("Kuponlar Yeni Ekle Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_DOWN).perform();
         Random rnd = new Random();                  //8. Kullanıcı "Code" alanına veri girer
         String codeID = String.valueOf(rnd.nextInt(10000));
@@ -50,6 +57,13 @@ public class US14 extends TestBaseRapor {
     public void US14_TC02() {
         extentTest = extentReports.createTest("US14_TC02", "Maximum spend / maksimum alma miktarı girilmeli");
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Ekle Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         us_13_14_page.restrictionButonu.click();        //9. Kullanıcı "Restriction" butonunu tıklar
         us_13_14_page.maximumspendText.sendKeys(ConfigReader.getProperty("tradymaximumspend")); //10. Kullanıcı "Maximum spend" alanına veri girer
@@ -65,6 +79,13 @@ public class US14 extends TestBaseRapor {
     public void US14_TC03() throws InterruptedException {
         extentTest = extentReports.createTest("US14_TC03", "Individual use only / kisisel kullanım sadece secenegi olmalı");
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Ekle Butonuna basıldı.");
         action.sendKeys(Keys.PAGE_UP).perform();
         us_13_14_page.restrictionButonu.click();            //9. Kullanıcı "Restriction" butonunu tıklar
         us_13_14_page.IndividualuseonlyCheck.click();       //10. Kullanıcı "Individual use only" alanına tik atar
@@ -78,6 +99,13 @@ public class US14 extends TestBaseRapor {
     public void US14_TC04() {
         extentTest = extentReports.createTest("US14_TC04", "Exclude sale items / bazi satis ürünleri disinda tut");
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Ekle Butonuna basıldı.");
         us_13_14_page.restrictionButonu.click();            //9. Kullanıcı "Restriction" butonunu tıklar
         us_13_14_page.excludesaleitemsCheck.click();        //10. Kullanıcı "Exclude sale items" alanına tik atar
         us_13_14_page.draftButonu.click();                  //11. Kullanıcı "Draft" butonuna tiklar
@@ -90,6 +118,13 @@ public class US14 extends TestBaseRapor {
     public void US14_TC05() {
         extentTest = extentReports.createTest("US14_TC05", "Exclude categories / bazi kategorileri disinda tut");
         //1., 2., 3. 4., 5., 6., 7., 8.  Stepler US14_TC01 testten alıyor
+        extentTest.info("https://tradylinn.com adresine gidildi");
+        extentTest.info("Username ve Pasword girildi");
+        extentTest.info("Giriş Butonuna basıldı.");
+        extentTest.info("Hesabım Butonuna basıldı.");
+        extentTest.info("Stor Manager Butonuna basıldı.");
+        extentTest.info("Kuponlar Butonuna basıldı.");
+        extentTest.info("Kuponlar Yeni Ekle Butonuna basıldı.");
         ReusableMethods.bekle();
         us_13_14_page.restrictionButonu.click();        //9. Kullanıcı "Restriction" butonunu tıklar
 
