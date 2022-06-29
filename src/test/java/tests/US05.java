@@ -14,8 +14,6 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
-import static tests.Login.login;
-
 public class US05 extends ReusableMethods{
     US_05_06_07_Page us_05_06_07_page;
 
