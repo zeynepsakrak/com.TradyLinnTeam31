@@ -13,7 +13,6 @@ public class US01 {
     US_01_02_Page firstPage=new US_01_02_Page();
     SoftAssert softAssert = new SoftAssert();
 
-
     @Test
     public void US01_TC01() {
         //1_Kullanıcı https://tradylinn.com adresine gider.
@@ -169,10 +168,5 @@ public class US01 {
     public void US01_TC08() {
         // ...
     }
-
-
-
-
-
 
 }
