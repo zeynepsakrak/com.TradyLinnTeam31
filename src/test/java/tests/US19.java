@@ -32,7 +32,7 @@ public class US19 {
         waitFor(15);
         homePage.hesabim.click();
         homePage.StoreManager.click();
-        myPage.takipci.sendKeys(Keys.ENTER);
+        myPage.takipci.click();
         waitFor(5);
         Assert.assertTrue(myPage.takipciIslem.isDisplayed());
     }
