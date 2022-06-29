@@ -66,6 +66,9 @@ public class US_03_04_Page {
     @FindBy(xpath = "(//span[@role='textbox'])[2]")
     public WebElement korgoBilgileriSehirElementi;
 
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    public WebElement korgoBilgileriSehirSearchElementi;
+
     @FindBy(xpath = "//p[@id='calc_shipping_city_field']")
     public WebElement korgoBilgileriIlceElementi;
 
@@ -74,6 +77,37 @@ public class US_03_04_Page {
 
     @FindBy(xpath = "//button[.='Fiyatı Güncelle']")
     public WebElement fiyatiGuncelleButonu;
+
+    @FindBy(xpath = "//p[@class='woocommerce-shipping-destination']")
+    public WebElement gonderiAdresiTextElement;
+
+    @FindBy(xpath = "//input[@name='billing_first_name']")
+    public WebElement faturaDetaylariIsim;
+
+    @FindBy(xpath = "//input[@id='billing_last_name']")
+    public WebElement faturaDetaylariSoyisim;
+
+    @FindBy(xpath = "//input[@id='billing_address_1']")
+    public WebElement faturaDetaylariSokak;
+
+    @FindBy(xpath = "//input[@id='billing_postcode']")
+    public WebElement faturaDetaylariPostaKodu;
+
+    @FindBy(xpath = "//input[@id='billing_city']")
+    public WebElement faturaDetaylariIlce;
+
+    @FindBy(xpath = "//input[@id='billing_phone']")
+    public WebElement faturaDetaylariTelefon;
+
+    @FindBy(xpath = "//span[@id='select2-billing_state-container']")
+    public WebElement faturaDetaylariSehir;
+
+    @FindBy(xpath = "//input[@id='wcfmmp_user_location']")
+    public WebElement faturaDetaylariGonderiYeri;
+
+
+    @FindBy(xpath = "//button[@name='woocommerce_checkout_place_order']")
+    public WebElement siparisiOnaylaButonu;
 
     @FindBy(xpath = "//input[@aria-label='Ara']")
     public WebElement urunAramaKutusu;
@@ -84,8 +118,9 @@ public class US_03_04_Page {
     @FindBy(xpath = "//td[@class='product-price']")
     public List<WebElement> secilenUrunlerFiyatListesi;
 
-    @FindBy(xpath = "//div[@class='quantity']")
+    @FindBy(xpath = "//input[@title='Miktar']")
     public List<WebElement> secilenUrunlerMiktarListesi;
+
 
     @FindBy(xpath = "//td[@class='product-subtotal']")
     public List<WebElement> secilenUrunlerAraToplamListesi;
@@ -113,7 +148,6 @@ public class US_03_04_Page {
 
     @FindBy(xpath = "(//th[.='Ara Toplam'])[2]")
     public WebElement odemeSayfasiAraToplam;
-
 
 
 }
