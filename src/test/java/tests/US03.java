@@ -2,8 +2,6 @@ package tests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,15 +10,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
-import java.time.Duration;
-
 import static tests.Login.login;
 
 
 public class US03 extends TestBaseRapor {
     US_03_04_Page thirdPage = new US_03_04_Page();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
     Actions actions = new Actions(Driver.getDriver());
 
     @Test
