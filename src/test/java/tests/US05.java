@@ -17,7 +17,7 @@ import java.awt.event.KeyEvent;
 public class US05 extends ReusableMethods{
     US_05_06_07_Page us_05_06_07_page;
 
-    @Test
+    @Test(priority = 1)
     public void US05_TC01() throws InterruptedException {
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
@@ -42,7 +42,7 @@ public class US05 extends ReusableMethods{
         Assert.assertTrue(us_05_06_07_page.Date.isDisplayed());
         Driver.closeDriver();
     }
-    @Test
+    @Test(priority = 2)
     public void UC05_TC02() throws InterruptedException {
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
@@ -67,7 +67,7 @@ public class US05 extends ReusableMethods{
         Assert.assertTrue(us_05_06_07_page.downloadableClick.isEnabled());
         Driver.closeDriver();
     }
-    @Test
+    @Test(priority = 3)
     public void UC05_TC03() throws InterruptedException {
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
@@ -95,7 +95,7 @@ public class US05 extends ReusableMethods{
                             .sendKeys(ConfigReader.getProperty("salePrice")).perform();
         Driver.closeDriver();
     }
-    @Test
+    @Test(priority = 4)
     public void UC05_TC04() throws InterruptedException, AWTException {
        // Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
@@ -161,7 +161,7 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.addToGalery.click();
         Driver.closeDriver();
     }
-    @Test
+    @Test(priority = 5)
     public void UC05_TC05() throws InterruptedException, AWTException {
         // Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
