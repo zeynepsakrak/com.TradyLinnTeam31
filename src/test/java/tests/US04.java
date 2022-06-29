@@ -10,7 +10,6 @@ import utilities.TestBaseRapor;
 
 import static java.lang.Integer.parseInt;
 import static tests.Login.login;
-import static tests.ReusableMethods.*;
 
 
 public class US04 extends TestBaseRapor {
@@ -24,22 +23,22 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. Urunun sepete eklendigini kontrol eder
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         Assert.assertEquals(forthPage.sepetimIkonu.getText().replace("Sepetim\n", ""), "1");
         extentTest.info("Urunun sepete eklendigi kontrol edildi");
         //8. 'Sepetim' butonuna tiklar
@@ -64,44 +63,44 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. 'Sepetim' butonuna tiklar
-        waitForVisibility(forthPage.sepetimIkonu, 15);
+        ReusableMethods.waitForVisibility(forthPage.sepetimIkonu, 15);
         //waitFor(2);
         forthPage.sepetimIkonu.click();
         extentTest.info("Sepetim butonuna tiklandi");
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         extentTest.info("Sepeti goruntule butonuna tiklandi");
         //9. Miktar bolumundeki arti'ya tiklar
         int ilkMiktar = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
         forthPage.artiButonListesi.get(0).click();
         forthPage.sepetiYenileButonu.click();
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         int artmisMiktar = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
         extentTest.info("Miktar bolumundeki artiya tiklandi");
         //10. Urun miktarinin arttigini kontrol eder
         Assert.assertTrue(artmisMiktar > ilkMiktar);
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         extentTest.info("Urun miktarinin arttigini kontrol edildi");
         //11. Miktar bolumundeki eksi'ye tiklar
         forthPage.eksiButonListesi.get(0).click();
         forthPage.sepetiYenileButonu.click();
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         int azalmisMiktar = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
         extentTest.info("Miktar bolumundeki eksiye tiklandi");
         //12. Urun miktarinin eksildigini kontrol eder
@@ -118,27 +117,27 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.sepetimIkonu.click();
         extentTest.info("Sepetim butonuna tiklandi");
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         extentTest.info("Sepeti goruntule butonuna tiklandi");
         //9. Miktar bolumundeki arti'ya tiklar
         int ilkMiktar = parseInt(forthPage.secilenUrunlerAraToplamListesi.get(0).getText().replaceAll("\\D+", ""));
@@ -146,24 +145,24 @@ public class US04 extends TestBaseRapor {
         extentTest.info("Miktar bolumundeki artiya tiklandi");
         //10. 'Sepeti Yenile'ye tiklayarak 'Ara toplam'in degistigini kontrol eder
         forthPage.sepetiYenileButonu.click();
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         int artmisMiktar = parseInt(forthPage.secilenUrunlerAraToplamListesi.get(0).getText().replaceAll("\\D+", ""));
         Assert.assertTrue(ilkMiktar < artmisMiktar);
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         extentTest.info("Sepeti Yenileye tiklayarak Ara toplamin degistigini kontrol edildi");
         //11.Urun miktarina stoktan fazla deger girer
         for (int i = 0; i < (Integer.parseInt(ConfigReader.getProperty("stokMiktari")) - 1); i++) {
             forthPage.artiButonListesi.get(0).click();
         }
         forthPage.sepetiYenileButonu.click();
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         extentTest.info("Urun miktarina stoktan fazla deger girildi");
         //12. Stoktan fazla deger girilemedigini kontrol eder
         int artirmaSonrasi = parseInt(forthPage.secilenUrunlerMiktarListesi.get(0).getAttribute("value"));
         Assert.assertEquals(artirmaSonrasi, parseInt(ConfigReader.getProperty("stokMiktari")));
         extentTest.info("Stoktan fazla deger girilemedigini kontrol edildi");
         //13.Urun miktarina gecerli bir deger girer
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.eksiButonListesi.get(0).click();
         forthPage.sepetiTemizle.click();
         extentTest.pass("Urun miktarina gecerli bir deger girildi");
@@ -178,30 +177,30 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.sepetimIkonu.click();
         extentTest.info("Sepetim butonuna tiklandi");
         //8. 'Sepeti goruntule' butonuna tiklar
         forthPage.sepetiGoruntule.click();
         extentTest.info("Sepeti goruntule butonuna tiklandi");
         //9. 'Temizle' butonuna tiklar
-        jse.executeScript("arguments[0].scrollIntoView();", forthPage.sepetiTemizle);
-        waitFor(1);
+        ReusableMethods.jse.executeScript("arguments[0].scrollIntoView();", forthPage.sepetiTemizle);
+        ReusableMethods.waitFor(1);
         forthPage.sepetiTemizle.click();
         extentTest.info("Temizle butonuna tiklandi");
         //10. Sepetteki urunlerin silindigini kontrol eder
@@ -218,26 +217,26 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.sepetimIkonu.click();
         extentTest.info("Sepetim butonuna tiklandi");
         //8. 'Sepeti goruntule' butonuna tiklar
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.sepetiGoruntule.click();
         extentTest.info("Sepeti goruntule butonuna tiklandi");
         //9. 'Kupon Discount' seceneginin ulasilabilir oldugunu kontrol eder
@@ -254,22 +253,22 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.sepetimIkonu.click();
         extentTest.info("Sepetim butonuna tiklandi");
         //8. 'Sepeti goruntule' butonuna tiklar
@@ -289,22 +288,22 @@ public class US04 extends TestBaseRapor {
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(5);
+        ReusableMethods.waitFor(5);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Arama bolumu'ne istenen urunu girip arama butonuna basar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         forthPage.urunAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun"));
-        waitFor(11);
+        ReusableMethods.waitFor(11);
         forthPage.aramaMercegi.click();
         extentTest.info("Arama bolumune istenen urunu girip arama butonuna tiklandi");
         //6. Aranan urunu sepete ekler
         forthPage.sepeteEkleButonu.click();
         extentTest.info("Aranan urunu sepete eklendi");
         //7. 'Sepetim' butonuna tiklar
-        waitFor(2);
+        ReusableMethods.waitFor(2);
         forthPage.sepetimIkonu.click();
         extentTest.info("Sepetim butonuna tiklandi");
         //8. 'Sepeti goruntule' butonuna tiklar
