@@ -156,6 +156,7 @@ public class ReusableMethods {
         });
         return element;
     }
+    //======Sadece çalışılan kısmı ekran görüntüsünü alma====//
     public static String gScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());

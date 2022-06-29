@@ -32,12 +32,13 @@ public class US08 extends TestBaseRapor{
 
     @Test(priority = 2)
     public void US08_TC01() throws IOException {
-        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
+        extentTest=extentReports.createTest("US08_TC01","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");
         extentTest.info("Store manager butonuna tiklandi");
         extentTest.info("Urun butonuna tiklandi");
         extentTest.info("urun ekle butonuna tiklandi");
+        extentTest.info("\"Inventory\" tıklandı");
         waitFor(2);
         page.ManageStock.click();
         extentTest.info("manage stock butonuna tiklandi");
@@ -53,13 +54,15 @@ public class US08 extends TestBaseRapor{
     }
     @Test(priority = 3)
     public void US08_TC02() throws IOException {
-        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
+        extentTest=extentReports.createTest("US08_TC02","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");
         extentTest.info("Store manager butonuna tiklandi");
         extentTest.info("Urun butonuna tiklandi");
         extentTest.info("urun ekle butonuna tiklandi");
+        extentTest.info("\"Inventory\" tıklandı");
         extentTest.info("manage stock butonuna tiklandi");
+
         Select select =new Select(page.AllowBlackorder);
         List<WebElement> ActualList= select.getOptions();
         List<WebElement> expectedList=new ArrayList<>();
@@ -67,9 +70,11 @@ public class US08 extends TestBaseRapor{
             each.click();
             expectedList.add(each);
         }
-
+        extentTest.info("AllowBlackorder Allow seçildi");
+        extentTest.info("Allow, but notify custemar seçeneği seçildi");
+        extentTest.info("Do Not Allow seçeneği seçildi");
         Assert.assertEquals(ActualList,expectedList);
-        extentTest.pass("Backorder izni verilebilmeli, gecici verilmeme optionu olmalı veya verilmeli ama müşteri bilgilendirilmeli");
+        extentTest.pass("Backorder Allow, Allow, but notify custemar seçeneği seçildi veya Do Not Allow seçenekleri belirledi");
         ReusableMethods.gScreenshot("BackOrder");
     }
 }
