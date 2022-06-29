@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="E2E Test Calistirma">
+    <test name="Classes">
+        <classes>
+            <class name="tests.Login"></class>
+            <class name="tests.US02"></class>
+            <class name="tests.US03"></class>
+            <class name="tests.US07"></class>
+            <class name="tests.US08"></class>
+            <class name="tests.US12"></class>
+            <class name="tests.US14"></class>
+            <class name="tests.US15"></class>
+            <class name="tests.US17"></class>
+            <class name="tests.US20"></class>
+        </classes>
+    </test>
+</suite>
