@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Smoke Test Calistirma">
+    <test name="Secilen US">
+        <classes>
+            <class name="tests.US03"></class>
+        </classes>
+    </test>
+
+</suite>
