@@ -32,6 +32,7 @@ public class US19 {
         waitFor(15);
         homePage.hesabim.click();
         homePage.StoreManager.click();
+        bekle();
         myPage.takipci.click();
         waitFor(5);
         Assert.assertTrue(myPage.takipciIslem.isDisplayed());
