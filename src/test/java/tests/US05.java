@@ -95,7 +95,6 @@ public class US05 extends ReusableMethods{
                             .sendKeys(ConfigReader.getProperty("salePrice")).perform();
         Driver.closeDriver();
     }
-
     @Test
     public void UC05_TC04() throws InterruptedException, AWTException {
        // Kullanici vendor olarak hesabina gider
@@ -162,7 +161,6 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.addToGalery.click();
         Driver.closeDriver();
     }
-
     @Test
     public void UC05_TC05() throws InterruptedException, AWTException {
         // Kullanici vendor olarak hesabina gider
