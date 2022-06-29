@@ -20,18 +20,15 @@ import static tests.ReusableMethods.*;
 public class US08 extends TestBaseRapor{
     US_08_09_10_Page page=new US_08_09_10_Page();
     Actions actions=new Actions(Driver.getDriver());
+
     @Test(priority = 1)
-    public void InventoryGit() {
+    public void US08_TC01() throws IOException {
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         bekle();
         page.Inventory.click();
         waitFor(3);
-    }
-
-    @Test(priority = 2)
-    public void US08_TC01() throws IOException {
         extentTest=extentReports.createTest("US08_TC01","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");
@@ -52,7 +49,7 @@ public class US08 extends TestBaseRapor{
        extentTest.pass("Urun miktarı stock belirlendi");
         ReusableMethods.gScreenshot("Urun miktarı stock belirlendi");
     }
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void US08_TC02() throws IOException {
         extentTest=extentReports.createTest("US08_TC02","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
@@ -62,7 +59,6 @@ public class US08 extends TestBaseRapor{
         extentTest.info("urun ekle butonuna tiklandi");
         extentTest.info("\"Inventory\" tıklandı");
         extentTest.info("manage stock butonuna tiklandi");
-
         Select select =new Select(page.AllowBlackorder);
         List<WebElement> ActualList= select.getOptions();
         List<WebElement> expectedList=new ArrayList<>();

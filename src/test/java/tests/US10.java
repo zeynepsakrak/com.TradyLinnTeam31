@@ -19,19 +19,15 @@ import static tests.ReusableMethods.*;
 public class US10 extends TestBaseRapor {
     US_08_09_10_Page page=new US_08_09_10_Page();
     Actions actions=new Actions(Driver.getDriver());
+
     @Test(priority = 1)
-    public void testName(){
+    public void US10_TC01() throws IOException {
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         bekle();
         page.Attributes.click();
         bekle();
-
-    }
-
-    @Test(priority = 2)
-    public void US10_TC01() throws IOException {
         extentTest=extentReports.createTest("US10_TC01","Renk secenegi; beyaz, siyah, yeşil vs tum renkler belirtilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");
@@ -57,7 +53,7 @@ public class US10 extends TestBaseRapor {
         ReusableMethods.gScreenshot("color");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void US10_TC02() throws IOException {
         extentTest=extentReports.createTest("US10_TC02","Renk secenegi; beyaz, siyah, yeşil vs tum renkler belirtilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");

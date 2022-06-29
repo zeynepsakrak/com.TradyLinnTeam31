@@ -19,18 +19,15 @@ import static tests.ReusableMethods.*;
 public class US09 extends TestBaseRapor {
     US_08_09_10_Page page=new US_08_09_10_Page();
     Actions actions=new Actions(Driver.getDriver());
+
     @Test(priority = 1)
-    public void testName(){
+    public void US09_TC01() throws IOException {
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         bekle();
         page.Shipping.click();
         bekle();
-    }
-
-    @Test(priority = 2)
-    public void US09_TC01() throws IOException {
         extentTest=extentReports.createTest("US09_TC01","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");
@@ -64,7 +61,7 @@ public class US09 extends TestBaseRapor {
         ReusableMethods.gScreenshot("Kilo boyut");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void US09_TC02() throws IOException {
         extentTest=extentReports.createTest("US09_TC02","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
