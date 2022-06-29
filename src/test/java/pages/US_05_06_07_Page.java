@@ -96,7 +96,7 @@ public class US_05_06_07_Page {
 
     @FindBy(xpath = "//iframe[@id='excerpt_ifr']")
     public WebElement iframe1;
-    //*[@id="tinymce"]/p
+
     @FindBy(xpath = "//*[@id=\"tinymce\"]/p")
     public WebElement iframe1TextBox;
 
@@ -109,7 +109,7 @@ public class US_05_06_07_Page {
     @FindBy(xpath = "//ul[@id='product_cats_checklist']")
     public WebElement categories;
 
-    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[25]")
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[28]")
     public WebElement musikClickBox;
 
     @FindBy(xpath = "//ul[@id='product_brand']")

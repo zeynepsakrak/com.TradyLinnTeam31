@@ -10,6 +10,9 @@ import java.util.List;
 public class US_08_09_10_Page {
     public US_08_09_10_Page() {
         PageFactory.initElements(Driver.getDriver(),this); }
+    @FindBy(xpath = " //input[@id='wcfm_products_simple_submit_button']")
+    public WebElement Submit;
+
 //*******us08******
     @FindBy(xpath = "//div[@id='wcfm_products_manage_form_inventory_head']")
     public WebElement Inventory;
@@ -45,13 +48,13 @@ public class US_08_09_10_Page {
 //*******us10******
     @FindBy(xpath = "//div[@class='page_collapsible_content_holder'][normalize-space()='Attributes']")
     public WebElement Attributes;
-    @FindBy(xpath = "(//span[@title='Toggle Block'])[2])")
+    @FindBy(xpath = "//input[@id='attributes_is_active_1']")
     public WebElement colorOk;
-    @FindBy(xpath = "(//button[@type='button'][normalize-space()='Select all'])[1]")
+    @FindBy(xpath = "//select[@id='attributes_value_1']")
     public WebElement colorSelectAll;
-    @FindBy(xpath = "(//span[@title='Toggle Block'])[3]")
+    @FindBy(xpath = "//input[@id='attributes_is_active_2']")
     public WebElement sizeOk;
-    @FindBy(xpath = "(//button[@type='button'][normalize-space()='Select all'])[2]")
+    @FindBy(xpath = "//select[@id='attributes_value_2']")
     public WebElement sizeSelectAll;
 
 
