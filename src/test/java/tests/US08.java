@@ -11,12 +11,13 @@ import pages.US_08_09_10_Page;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static tests.ReusableMethods.*;
 
-public class US08 {
+public class US08 extends TestBaseRapor{
     US_08_09_10_Page page=new US_08_09_10_Page();
     Actions actions=new Actions(Driver.getDriver());
     @Test(priority = 1)
@@ -30,31 +31,45 @@ public class US08 {
     }
 
     @Test(priority = 2)
-    public void US08_TC01() {
-        //extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
+    public void US08_TC01() throws IOException {
+        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
+        extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
+        extentTest.info("Hesabim butonuna basildi");
+        extentTest.info("Store manager butonuna tiklandi");
+        extentTest.info("Urun butonuna tiklandi");
+        extentTest.info("urun ekle butonuna tiklandi");
         waitFor(2);
         page.ManageStock.click();
+        extentTest.info("manage stock butonuna tiklandi");
         waitFor(5);
         page.StockMiktar.click();
         page.StockMiktar.clear();
         page.StockMiktar.sendKeys("10");
        waitFor(5);
-       page.Submit.click();
-       waitFor(3);
-        System.out.println(page.StockMiktar.getText());
-        Assert.assertTrue(page.StockMiktar.getText().contains("10"));
-        //extentTest.info("Urun miktarı stock belirlendi");
+        extentTest.info("Urun miktarı yazıldı");
+       Assert.assertTrue(page.StockMiktar.isEnabled());
+       extentTest.pass("Urun miktarı stock belirlendi");
+        ReusableMethods.gScreenshot("Urun miktarı stock belirlendi");
     }
     @Test(priority = 3)
-    public void US08_TC02() {
+    public void US08_TC02() throws IOException {
+        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilmeli");
+        extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
+        extentTest.info("Hesabim butonuna basildi");
+        extentTest.info("Store manager butonuna tiklandi");
+        extentTest.info("Urun butonuna tiklandi");
+        extentTest.info("urun ekle butonuna tiklandi");
+        extentTest.info("manage stock butonuna tiklandi");
         Select select =new Select(page.AllowBlackorder);
         List<WebElement> ActualList= select.getOptions();
         List<WebElement> expectedList=new ArrayList<>();
         for (WebElement each:ActualList) {
             each.click();
-            System.out.println(each.getText());
             expectedList.add(each);
         }
+
         Assert.assertEquals(ActualList,expectedList);
+        extentTest.pass("Backorder izni verilebilmeli, gecici verilmeme optionu olmalı veya verilmeli ama müşteri bilgilendirilmeli");
+        ReusableMethods.gScreenshot("BackOrder");
     }
 }
