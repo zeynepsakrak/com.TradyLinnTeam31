@@ -15,7 +15,6 @@ import utilities.TestBaseRapor;
 import java.time.Duration;
 
 import static tests.Login.login;
-import static tests.ReusableMethods.*;
 
 
 public class US03 extends TestBaseRapor {
@@ -37,7 +36,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hesabim'a tiklar
-        waitFor(5);
+        ReusableMethods.waitFor(5);
         thirdPage.hesabimButonu.click();
         extentTest.info("Hesabima tiklandi");
         //6. 'Siparisler'e tiklar
@@ -45,7 +44,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Siparislere tiklandi");
         //7. 'Ürünlere göz at/Alisverise devam et' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.hesabimAlisveriseDevamEtButonu);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         thirdPage.hesabimAlisveriseDevamEtButonu.click();
         extentTest.info("Ürünlere göz at/Alisverise devam et tiklandi");
         //8. Ürünlerin goruntulendigini kontrol eder
@@ -62,13 +61,13 @@ public class US03 extends TestBaseRapor {
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hemen Basla' butonuna tiklar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
         extentTest.info("Hemen Basla butonuna tiklandi");
         //6. Ilk 5 ürünü, 'Sepete Ekle' butonuna tiklayarak sepete ekler
@@ -76,10 +75,10 @@ public class US03 extends TestBaseRapor {
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.sepeteEkleButonu);
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.sepeteEkleButonu.click();
                 count++;
                 Driver.getDriver().navigate().back();
@@ -102,23 +101,23 @@ public class US03 extends TestBaseRapor {
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hemen Basla' butonuna tiklar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
         extentTest.info("Hemen Basla butonuna tiklandi");
         //6. Bir ürünü 'Sepete Ekle' butonuna tiklayarak sepete ekler
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.sepeteEkleButonu);
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.sepeteEkleButonu.click();
                 break;
             }
@@ -135,7 +134,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Sepete gidildigi kontrol edildi");
         //10. 'Ödeme sayfasina git'e tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.odemeSayfasinaGitButonu);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         thirdPage.odemeSayfasinaGitButonu.click();
         extentTest.info("Ödeme sayfasina gite tiklandi");
         //11. checkout'a gidildigini kontrol eder
@@ -152,23 +151,23 @@ public class US03 extends TestBaseRapor {
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hemen Basla' butonuna tiklar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
         extentTest.info("Hemen Basla butonuna tiklandi");
         //6. Bir ürünü 'Sepete Ekle' butonuna tiklayarak sepete ekler
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.sepeteEkleButonu);
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.sepeteEkleButonu.click();
                 break;
             }
@@ -181,9 +180,9 @@ public class US03 extends TestBaseRapor {
         thirdPage.sepetiGoruntule.click();
         extentTest.info("Sepeti Görüntüle butonuna tiklandi");
         //9. Kargo bilgilerini girer
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.korgoBilgileriSehirElementi);
-        waitFor(3);
+        ReusableMethods.waitFor(3);
         thirdPage.korgoBilgileriSehirElementi.click();
         actions.click(thirdPage.korgoBilgileriSehirSearchElementi).sendKeys(ConfigReader.getProperty("kargoBilgileriSehir") + Keys.ENTER).perform();
         actions.click(thirdPage.korgoBilgileriIlceElementi).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys(ConfigReader.getProperty("kargoBilgileriIlce")).perform();
@@ -191,7 +190,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Kargo bilgilerini girildi");
         //10. 'Fiyati Güncelle'ye tiklar
         thirdPage.fiyatiGuncelleButonu.click();
-        waitForVisibility(thirdPage.fiyatiGuncelleButonu, 10);
+        ReusableMethods.waitForVisibility(thirdPage.fiyatiGuncelleButonu, 10);
         extentTest.info("Fiyati Güncelleye tiklandi");
         //11. Kargo bilgilerinin girildigini kontrol eder
         String expectedPostaKodu = ConfigReader.getProperty("kargoBilgileriPostaKodu");
@@ -209,23 +208,23 @@ public class US03 extends TestBaseRapor {
         //3. Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        waitFor(8);
+        ReusableMethods.waitFor(8);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Email ve Password girildi");
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hemen Basla' butonuna tiklar
-        sepetiBosalt();
+        ReusableMethods.sepetiBosalt();
         thirdPage.hemenBaslaButonu.click();
         extentTest.info("Hemen Basla butonuna tiklandi");
         //6. Bir ürünü 'Sepete Ekle' butonuna tiklayarak sepete ekler
         for (int i = 0; i < thirdPage.urunlerElementListesi.size(); i++) {
             if (!thirdPage.urunlerElementListesi.get(i).getText().contains("STOKLAR TÜKENDI")) {
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.urunlerElementListesi.get(i));
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.urunlerElementListesi.get(i).click();
                 jse.executeScript("arguments[0].scrollIntoView();", thirdPage.sepeteEkleButonu);
-                waitFor(1);
+                ReusableMethods.waitFor(1);
                 thirdPage.sepeteEkleButonu.click();
                 break;
             }
@@ -239,31 +238,31 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Sepeti Görüntüle butonuna tiklandi");
         //9. 'Odeme Sayfasina Git'e tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.odemeSayfasinaGitButonu);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         thirdPage.odemeSayfasinaGitButonu.click();
         extentTest.info("Odeme Sayfasina Gite tiklandi");
         //10. 'Fatura Detaylarini' girer
-        waitForVisibility(thirdPage.faturaDetaylariIsim, 15);
+        ReusableMethods.waitForVisibility(thirdPage.faturaDetaylariIsim, 15);
         actions.click(thirdPage.faturaDetaylariIsim).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys("Ali").perform();
         actions.click(thirdPage.faturaDetaylariSoyisim).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys("Bal").perform();
         actions.click(thirdPage.faturaDetaylariSokak).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys("Gumus Sok.").perform();
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.faturaDetaylariPostaKodu);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         actions.click(thirdPage.faturaDetaylariPostaKodu).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys(ConfigReader.getProperty("kargoBilgileriPostaKodu")).perform();
 
         actions.click(thirdPage.faturaDetaylariIlce).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys(ConfigReader.getProperty("kargoBilgileriIlce")).perform();
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.faturaDetaylariSehir);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         thirdPage.faturaDetaylariSehir.click();
         actions.click(thirdPage.faturaDetaylariSehir).sendKeys(ConfigReader.getProperty("kargoBilgileriSehir") + Keys.ENTER).perform();
         actions.click(thirdPage.faturaDetaylariTelefon).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys(ConfigReader.getProperty("kargoBilgileriTelefon")).perform();
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.faturaDetaylariGonderiYeri);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         actions.click(thirdPage.faturaDetaylariGonderiYeri).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys(ConfigReader.getProperty("kargoBilgileriGonderiYeri")).perform();
         extentTest.info("Fatura Detaylarini girildi");
         //11. 'Siparisi onaylaya' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.siparisiOnaylaButonu);
-        waitFor(1);
+        ReusableMethods.waitFor(1);
         extentTest.info("Siparisi onaylaya tiklandi");
         //12. Fatura detaylarinin girildigini ve siparis verildigini kontrol eder
         Assert.assertTrue(thirdPage.siparisiOnaylaButonu.isDisplayed());
