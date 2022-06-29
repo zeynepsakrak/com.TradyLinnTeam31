@@ -77,7 +77,7 @@ public class US_11_12_Page {
     @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
     public WebElement hesapBigileriDegistirildiYazisi;
 
-    @FindBy(xpath = "//div[@class='page_collapsible wcfm_acf_products_manage_3116_collapsible simple variable external grouped booking collapse-close']")
+    @FindBy(xpath = "(//div[@class='page_collapsible_content_holder'])[13]")
     public WebElement toptanUrunGostermeAyarlariButonu;
 
     @FindBy(xpath = "//div[@class='wcfm-container wcfm_acf_products_manage_3116_container simple variable external grouped booking']")
@@ -86,7 +86,7 @@ public class US_11_12_Page {
     @FindBy(xpath = "//select[@id='piecetype']")
     public WebElement urunCesidi;
 
-    @FindBy(xpath = "//input[@name='submit-data']")
+    @FindBy(xpath = "(//input[@class='wcfm_submit_button'])[1]")
     public WebElement submitButonu;
 
     @FindBy(xpath = "//div[@class='wcfm-message']")
