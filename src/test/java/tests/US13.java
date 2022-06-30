@@ -47,7 +47,7 @@ public class US13 extends TestBaseRapor {
         String expectedCode = codeID;
         String actualcode = us_13_14_page.codeText.getAttribute("value");
         Assert.assertEquals(actualcode, expectedCode);  //10. Kullanıcı "Code" alanına veri girildiğine test eder
-        extentTest.info("'Kupon Code' alanına veri girilebiliyor.");
+        extentTest.pass("'Kupon Code' alanına veri girilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 2)
@@ -69,7 +69,7 @@ public class US13 extends TestBaseRapor {
         String expectedDescription = ConfigReader.getProperty("tradyDescriptionSabit");
         String actualDescription = us_13_14_page.descriptionText.getAttribute("value");
         Assert.assertEquals(actualDescription, expectedDescription);    //10. Kullanıcı "Description" alanına veri girildiğine test eder
-        extentTest.info("'Description' alanına veri girişi yapıldı.");
+        extentTest.pass("'Description' alanına veri girişi yapıldı.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 3)
@@ -103,7 +103,7 @@ public class US13 extends TestBaseRapor {
         expectedDescription = "Percentage discount";
         actualDescription = select.getFirstSelectedOption().getText();
         Assert.assertEquals(actualDescription, expectedDescription);    //13. Kullanıcı "Discount Type" alanı "Fixed Product Discount" olduğunu test eder
-        extentTest.info("'Discount Type' alanında indirim şekli seçilebiliyor.");
+        extentTest.pass("'Discount Type' alanında indirim şekli seçilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 4)
@@ -126,7 +126,7 @@ public class US13 extends TestBaseRapor {
         String expectedDescription = ConfigReader.getProperty("tradyCouponAmount");
         String actualDescription = us_13_14_page.couponAmountText.getAttribute("value");
         Assert.assertEquals(actualDescription, expectedDescription);    //10. Kullanıcı "Coupon Amount" alanına veri girildiğine test eder
-        extentTest.info("'Coupon Amount' alanına indirim miktarı girilebiliyor.");
+        extentTest.pass("'Coupon Amount' alanına indirim miktarı girilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 5)
@@ -148,7 +148,7 @@ public class US13 extends TestBaseRapor {
         String expectedDescription = ConfigReader.getProperty("tradyKCouponExpiryDate");
         String actualDescription = us_13_14_page.couponexpirydateText.getAttribute("value");
         Assert.assertEquals(actualDescription, expectedDescription); //10.Kullanıcı "Coupon expiry date" alanına veri girildiğine test eder
-        extentTest.info("'Coupon expiry date' alanına ürün kuponunu son kullanım tarihi girilebiliyor.");
+        extentTest.pass("'Coupon expiry date' alanına ürün kuponunu son kullanım tarihi girilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 6)
@@ -168,7 +168,7 @@ public class US13 extends TestBaseRapor {
         us_13_14_page.draftButonu.click();              //9. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
         Assert.assertTrue(us_13_14_page.allowfreeshippingCheck.isSelected());   //10. Kullanıcı "Allow free shipping" alanı tikli olduğunu test eder
-        extentTest.info("'Free shipping' alanı tik atılarak Free shipping uygulanabiliyor.");
+        extentTest.pass("'Free shipping' alanı tik atılarak Free shipping uygulanabiliyor.");
     }
 
     @Test(dependsOnMethods = "US13_TC01", priority = 7)
@@ -192,7 +192,7 @@ public class US13 extends TestBaseRapor {
         extentTest.info("'Show on store' alanı tik atılarak Show on store uygulanabiliyor.");
         us_13_14_page.submitButonu.click();     //11. Kullanıcı "Submit" butonuna tıklar
         Assert.assertTrue(us_13_14_page.submitOnayYazisi.getText().contains("Coupon Successfully Published.")); //12. Kullanıcı Kayıt yapıldığını kontrol eder
-        extentTest.info("Girilen veriler kaydedilip Coupon kodu başarılı bir şekilde oluşturulabiliyor.");
+        extentTest.pass("Girilen veriler kaydedilip Coupon kodu başarılı bir şekilde oluşturulabiliyor.");
         Driver.closeDriver();
     }
 }

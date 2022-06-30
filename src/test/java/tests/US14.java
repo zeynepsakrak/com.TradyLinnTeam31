@@ -50,7 +50,7 @@ public class US14 extends TestBaseRapor {
         String expectedDescription = ConfigReader.getProperty("tradyminimumspend");
         String actualDescription = us_13_14_page.minimumspendText.getAttribute("value");
         Assert.assertEquals(actualDescription, expectedDescription);    //12. Kullanıcı "Minimum spend" alanına veri girildiğine test eder
-        extentTest.info("'Minimum spend' alanına minimum satın alma miktarı girilebiliyor.");
+        extentTest.pass("'Minimum spend' alanına minimum satın alma miktarı girilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 2)
@@ -72,7 +72,7 @@ public class US14 extends TestBaseRapor {
         String expectedDescription = ConfigReader.getProperty("tradymaximumspend");
         String actualDescription = us_13_14_page.maximumspendText.getAttribute("value");
         Assert.assertEquals(actualDescription, expectedDescription);    //12. Kullanıcı "Maximum spend" alanına veri girildiğine test eder
-        extentTest.info("'Maximum spend' alanına maximum satın alma miktarı girilebiliyor.");
+        extentTest.pass("'Maximum spend' alanına maximum satın alma miktarı girilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 3)
@@ -92,7 +92,7 @@ public class US14 extends TestBaseRapor {
         us_13_14_page.draftButonu.click();                  //11. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
         Assert.assertTrue(us_13_14_page.IndividualuseonlyCheck.isSelected());   //12. Kullanıcı "Individual use only" alanı tikli olduğunu test eder
-        extentTest.info("'Individual use only' alanı tik atılıp seçilebiliyor.");
+        extentTest.pass("'Individual use only' alanı tik atılıp seçilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 4)
@@ -111,7 +111,7 @@ public class US14 extends TestBaseRapor {
         us_13_14_page.draftButonu.click();                  //11. Kullanıcı "Draft" butonuna tiklar
         ReusableMethods.bekle();
         Assert.assertTrue(us_13_14_page.excludesaleitemsCheck.isSelected());    //12. Kullanıcı "Exclude sale items" alanı tikli olduğunu test eder
-        extentTest.info("'Exclude sale items' alanı tik atılıp seçilebiliyor.");
+        extentTest.pass("'Exclude sale items' alanı tik atılıp seçilebiliyor.");
     }
 
     @Test(dependsOnMethods = "US14_TC01", priority = 5)
@@ -152,7 +152,7 @@ public class US14 extends TestBaseRapor {
         us_13_14_page.submitButonu.click();  //13. Kullanıcı "Submit" butonuna tıklar
 
         Assert.assertTrue(us_13_14_page.submitOnayYazisi.getText().contains("Coupon Successfully Published.")); //14. Kullanıcı Kayıt yapıldığını kontrol eder
-        extentTest.info("Veriler Girildikten Sonra Kayıt işlemi yapılıp, Ürüne Kısıtlamalar getirilebiliyor.");
+        extentTest.pass("Veriler Girildikten Sonra Kayıt işlemi yapılıp, Ürüne Kısıtlamalar getirilebiliyor.");
         Driver.closeDriver();
     }
 }
