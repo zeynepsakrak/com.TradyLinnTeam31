@@ -34,14 +34,14 @@ public class US19 extends TestBaseRapor {
 
         Assert.assertTrue(myPage.takipciEposta.isDisplayed());
 
-        extentTest.info("Takipcilerin e-posta gorunurlugu test edildi");
+        extentTest.info("Takipcilerin isim ve e-postalarinin gorunurlugu test edildi");
 
         Driver.getDriver().close();
     }
 
     @Test
     public void  US19_TC02() {
-        extentTest = extentReports.createTest("US19_TC02","İsim, e-posta tanımlanmalı");
+        extentTest = extentReports.createTest("US19_TC02","Işlemler tanımlanmalı");
 
         login();
         waitFor(10);
@@ -53,6 +53,8 @@ public class US19 extends TestBaseRapor {
         waitFor(5);
 
         Assert.assertTrue(myPage.takipciIslem.isDisplayed());
+
+        extentTest.info("Takipcilerin işlemlerinin gorunurlugu test edildi");
 
         Driver.getDriver().close();
     }

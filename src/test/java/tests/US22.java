@@ -6,10 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.US_19_22_Page;
-import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,11 +17,14 @@ import static tests.Login.login;
 import static tests.ReusableMethods.bekle;
 import static tests.ReusableMethods.waitFor;
 
-public class US22 {
+public class US22 extends TestBaseRapor {
     US_19_22_Page myPage= new US_19_22_Page();
 
     @Test
     public void US22_TC01() throws InterruptedException {
+        extentTest = extentReports.createTest("US22_TC01",
+                "Tumunu gor linki olmali ve tiklandigin o kategorinin ana tayfalarına götürmeli");
+
         login();
         waitFor(15);
 
@@ -36,11 +38,16 @@ public class US22 {
         String expectedUrl=Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualUrl.equals(expectedUrl));
 
+        extentTest.info("Tumunu gor linki nin gorunurlugu test edildi ve tiklandigin o kategorinin ana tayfalarına gidildi");
+
         Driver.getDriver().close();
     }
 
     @Test
     public void US22_TC02() {
+        extentTest = extentReports.createTest("US22_TC02",
+                "İndirimli Ürünleri siralanabilmeli");
+
         login();
         waitFor(15);
 
@@ -60,11 +67,16 @@ public class US22 {
         Assert.assertTrue(myPage.siralama5.isDisplayed());
         Assert.assertTrue(myPage.siralama6.isDisplayed());
 
+        extentTest.info("İndirimli Ürünler siralandi");
+
         Driver.getDriver().close();
     }
 
     @Test
     public void US22_TC03() {
+        extentTest = extentReports.createTest("US22_TC03",
+                "Fiyata göre sırala: Düşükten yükseğe seçildiğinde fiyatlar kucukten buyuge gore sıralanmalı");
+
         login();
         waitFor(15);
 
@@ -84,11 +96,16 @@ public class US22 {
         Collections.sort(kontrolListe);
         Assert.assertEquals(kontrolListe,urunlerDouble);
 
+        extentTest.info("Fiyata göre sırala: Düşükten yükseğe seçildiğinde fiyatlar kucukten buyuge gore sıralandi");
+
         Driver.getDriver().close();
     }
 
     @Test
     public void US22_TC04() {
+        extentTest = extentReports.createTest("US22_TC04",
+                "Fiyata göre sırala: Yüksekten düşüğe seçildiğinde fiyatlar büyükten kucuge gore sıralanmalı");
+
         login();
         waitFor(15);
 
@@ -110,6 +127,8 @@ public class US22 {
         ArrayList<Double> kontrolListe = new ArrayList<>(urunlerDouble);
         Collections.sort(kontrolListe);
         Assert.assertEquals(kontrolListe,urunlerDouble);
+
+        extentTest.info("Fiyata göre sırala: Yüksekten düşüğe seçildiğinde fiyatlar büyükten kucuge gore sıralandi");
 
         Driver.getDriver().close();
     }
