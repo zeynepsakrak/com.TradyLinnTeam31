@@ -33,7 +33,7 @@ public class US12 extends TestBaseRapor {
         //3-Kullanici siparislerin listelendigini kontrol eder
         Assert.assertTrue(myPage.siparislerListesi.size()!=0);
         Driver.closeDriver();
-        extentTest.info("Siparisler Basarili Bir Sekilde Listelendi");
+        extentTest.pass("Siparisler Basarili Bir Sekilde Listelendi");
 
     }
     @Test
@@ -52,7 +52,7 @@ public class US12 extends TestBaseRapor {
       //  3-Kullanici indirilecek urunlerin listesinin goruntulendigini kontrol eder
         Assert.assertTrue(myPage.indirmelerListesi.size()!=0);
 
-        extentTest.info("İndirilecek Urunler Listesi Basarili Bir Sekilde Listelenebildi");
+        extentTest.pass("İndirilecek Urunler Listesi Basarili Bir Sekilde Listelendi");
         Driver.closeDriver();
     }
     @Test
@@ -76,7 +76,7 @@ public class US12 extends TestBaseRapor {
 
         }
 
-        extentTest.info("Fatura Adresi ve Gonderim Adresi Basarili Bir Sekilde Goruntulendi");
+        extentTest.pass("Fatura Adresi ve Gonderim Adresi Basarili Bir Sekilde Goruntulendi");
         Driver.closeDriver();
     }
       @Test
@@ -101,7 +101,7 @@ public class US12 extends TestBaseRapor {
         Assert.assertTrue(myPage.hesapDetaylariSoyad.isDisplayed());
         Assert.assertTrue(myPage.hesapDetaylariGorunenAd.isDisplayed());
         Assert.assertTrue(myPage.hesapDetaylariEmail.isDisplayed());
-          extentTest.info("Hesap Bilgileri ve Eposta Adresi  Goruntulendi");
+          extentTest.pass("Hesap Bilgileri ve Eposta Adresi  Goruntulendi");
 
 
         // 4-Kullanici hesap  bilgilerinde degisiklik yapar
@@ -133,7 +133,7 @@ public class US12 extends TestBaseRapor {
 
         Assert.assertTrue(myPage.hesapBigileriDegistirildiYazisi.isDisplayed());
 
-          extentTest.info("Kullanici Hesap Bigilerinde Degisiklik Yapildi");
+          extentTest.pass("Kullanici Hesap Bigilerinde Degisiklik Yapildi");
 
           Driver.closeDriver();
     }

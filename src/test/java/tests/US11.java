@@ -65,16 +65,11 @@ public class US11 extends TestBaseRapor {
         Thread.sleep(6000);
         extentTest.info("Urun Cesidi Secildi");
 
-
-        //9-Kullanici submit butonuna tiklar
-        myPage.submitButonu.click();
-        extentTest.info("Submit Butonuna Tiklandi");
-        Thread.sleep(6000);
-        //10-Kullanici Secilen Urun Cesidinin Girildigini Kontrol Eder
+        //9-Kullanici Secilen Urun Cesidinin Girildigini Kontrol Eder
          String secilenUrunCesidi="Carton";
         Assert.assertTrue(myPage.urunCesidi.getAttribute("value").contains(secilenUrunCesidi));
 
-        extentTest.info("Urun Cesidi Basarili Bir Sekilde Secilebildi");
+        extentTest.pass("Urun Cesidi Basarili Bir Sekilde Secilebildi");
 
 
 
@@ -122,7 +117,6 @@ public class US11 extends TestBaseRapor {
 
         //7-Kullanici Toptan Ürün Gösterme Ayarları
         //bolumunun goruntulendigini kontrol eder"
-
         Assert.assertTrue(myPage.toptanUrunGostermeMenusu.isDisplayed());
         extentTest.info("Toptan Urun Gosterme Ayarlari Menusu Goruntulendi");
 
@@ -135,20 +129,11 @@ public class US11 extends TestBaseRapor {
         Thread.sleep(6000);
 
 
-        //9-Kullanici submit butonuna tiklar
-        JavascriptExecutor js5 = (JavascriptExecutor) Driver.getDriver();
-        js5.executeScript("arguments[0].scrollIntoView(true);", myPage.submitButonu);
-        js5.executeScript("arguments[0].click();", myPage.submitButonu);
-
-
-        extentTest.info("Submit Butonuna Tiklandi");
-        Thread.sleep(6000);
-
-        //10-Kullanici Girilen Degerin Units Per Piece  Seceneginde Gorundugunu Kontrol Eder
+        //9-Kullanici Girilen Degerin Units Per Piece  Seceneginde Gorundugunu Kontrol Eder
         String secilenUnitsPerPiece="3";
         Assert.assertTrue(myPage.unitsPerPiece.getAttribute("value").contains(secilenUnitsPerPiece));
 
-        extentTest.info("Urun Cesidi Basarili Bir Sekilde Secilebildi");
+        extentTest.pass("Units Per Piece Secenegine Bir Deger Girilebildi");
 
        Driver.closeDriver();
 
@@ -200,17 +185,10 @@ public class US11 extends TestBaseRapor {
 
         Thread.sleep(6000);
 
-
-        //9-Kullanici submit butonuna tiklar
-        JavascriptExecutor js8 = (JavascriptExecutor) Driver.getDriver();
-        js8.executeScript("arguments[0].scrollIntoView(true);", myPage.submitButonu);
-        js8.executeScript("arguments[0].click();", myPage.submitButonu);
-        extentTest.info("Submit Butonuna Tiklandi");
-        Thread.sleep(8000);
-        //10-Kullanici Girilen Degerin Minumum Quantity Seceneginde Gorundugunu Kontrol Eder
+        //9-Kullanici Girilen Degerin Minumum Quantity Seceneginde Gorundugunu Kontrol Eder
         String secilenMinumumQuantity="3";
         Assert.assertTrue(myPage.unitsPerPiece.getAttribute("value").contains(secilenMinumumQuantity));
-        extentTest.info("Minimum quantity  Secenegine Deger Girilebildi");
+        extentTest.pass("Minimum quantity  Secenegine Deger Girilebildi");
         Driver.closeDriver();
     }
 }
