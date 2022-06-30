@@ -7,8 +7,7 @@ import pages.Homepage;
 import pages.US_19_22_Page;
 
 import static tests.Login.login;
-import static tests.ReusableMethods.bekle;
-import static tests.ReusableMethods.waitFor;
+import static tests.ReusableMethods.*;
 
 public class US19 {
     US_19_22_Page myPage= new US_19_22_Page();
@@ -17,10 +16,10 @@ public class US19 {
     @Test
     public void  US19_TC01() {
         login();
-        waitFor(15);
+        waitFor(10);
         homePage.hesabim.click();
         homePage.StoreManager.click();
-        bekle();
+        waitForClickablility(myPage.takipci,5);
         myPage.takipci.sendKeys(Keys.ENTER);
         bekle();
         Assert.assertTrue(myPage.takipciEposta.isDisplayed());
@@ -29,11 +28,11 @@ public class US19 {
     @Test
     public void  US19_TC02() {
         login();
-        waitFor(15);
+        waitFor(10);
         homePage.hesabim.click();
         homePage.StoreManager.click();
-        bekle();
-        myPage.takipci.click();
+        waitForClickablility(myPage.takipci,5);
+        myPage.takipci.sendKeys(Keys.ENTER);
         waitFor(5);
         Assert.assertTrue(myPage.takipciIslem.isDisplayed());
     }
