@@ -26,19 +26,15 @@ import static tests.ReusableMethods.*;
 import static tests.ReusableMethods.waitFor;
 
 public class E2E extends TestBaseRapor {
-    JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
-    Actions actions = new Actions(Driver.getDriver());
-    SoftAssert softAssert=new SoftAssert();
-    US_01_02_Page firstPage=new US_01_02_Page();
-    US_03_04_Page thirdPage = new US_03_04_Page();
+    JavascriptExecutor jse;
+    Actions actions;
+    US_01_02_Page firstPage;
+    US_03_04_Page thirdPage;
     US_05_06_07_Page us_05_06_07_page;
-    US_08_09_10_Page page=new US_08_09_10_Page();
-    US_11_12_Page myPage=new US_11_12_Page();
-    US_13_14_Page us_13_14_page = new US_13_14_Page();
-    US_15_16_Page us_15_16_page=new US_15_16_Page();
-    US_17_18_Page us_17_18_page;
-    US_20_21_Page us_20_21_Page = new US_20_21_Page();
+    US_08_09_10_Page page;
+    US_11_12_Page myPage;
+    US_13_14_Page us_13_14_page ;
+    US_15_16_Page us_15_16_page;
 
     public static void login() {
         Homepage homepage = new Homepage();
@@ -50,6 +46,7 @@ public class E2E extends TestBaseRapor {
     }
     @Test
     public void US01_TC01() throws InterruptedException {
+        firstPage=new US_01_02_Page();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         //2_Kullanıcı Sign in butonuna tıklar.
         //3_Kullanıcı Email adresini girer.
@@ -62,6 +59,9 @@ public class E2E extends TestBaseRapor {
     }
     @Test
     public void US03_TC01() {
+        thirdPage = new US_03_04_Page();
+        jse = (JavascriptExecutor) Driver.getDriver();
+        actions = new Actions(Driver.getDriver());
         extentTest = extentReports.createTest("Urunlere gitme", "Urunlerden siparislere gidilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
@@ -126,6 +126,7 @@ public class E2E extends TestBaseRapor {
     }
     @Test
     public void US08_TC01() throws IOException {
+        page=new US_08_09_10_Page();
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
@@ -154,6 +155,7 @@ public class E2E extends TestBaseRapor {
     }
     @Test
     public void US12_TC01(){
+        myPage=new US_11_12_Page();
         extentTest=extentReports.createTest("Siparisler","Siparisler Listelenebilmeli");
         //1-Kullanici vendor olarak hesabina gider
         login();
@@ -170,6 +172,7 @@ public class E2E extends TestBaseRapor {
     }
     @Test
     public void US14_TC01() {
+        us_13_14_page = new US_13_14_Page();
         extentTest = extentReports.createTest("US14_TC01", "Minimum spend / en az alma miktari girilmeli");
         login();                                    //1., 2., 3. Stepler
         extentTest.info("https://tradylinn.com adresine gidildi");
@@ -201,6 +204,7 @@ public class E2E extends TestBaseRapor {
     }
     @Test
     public void US15_TC_01_02_03() throws InterruptedException, IOException {
+        us_15_16_page=new US_15_16_Page();
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         extentTest=extentReports.createTest("US15_TC_01_02_03","Gecerli email ve sifre ile giris yapabilmeli");
         us_15_16_page.myAccount.click();
