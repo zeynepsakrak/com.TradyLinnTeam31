@@ -18,6 +18,9 @@ public class US_19_22_Page {
     @FindBy(xpath = "//a[@href=\"https://tradylinn.com/store-manager/followers/\"]")
     public WebElement takipci;
 
+    @FindBy(xpath = "//th[@aria-label='Name']  ")
+    public WebElement takipciIsim;
+
     @FindBy(xpath = "//th[@aria-label='E-posta']")
     public WebElement takipciEposta;
 
