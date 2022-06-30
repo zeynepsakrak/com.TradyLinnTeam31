@@ -131,4 +131,5 @@ public class SmokeTest extends TestBaseRapor {
         softAssert.assertAll();
         Driver.closeDriver();
     }
+
 }
