@@ -1,8 +1,42 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Smoke Test Calistirma">
-    <test name="Secilen US">
+    <test name="Secilen US03">
         <classes>
-            <class name="tests.US03"></class>
+            <class name="tests.US02">
+                <methods>
+                    <include name="US01_TC01"></include>
+                </methods>
+            </class>
+            <class name="tests.US02">
+                <methods>
+                    <include name="US01_TC02"></include>
+                </methods>
+            </class>
+            <class name="tests.US03">
+                <methods>
+                    <include name="US03_TC01"></include>
+                </methods>
+            </class>
+            <class name="tests.US03">
+                <methods>
+                    <include name="US03_TC02"></include>
+                </methods>
+            </class>
+            <class name="tests.US03">
+                <methods>
+                    <include name="US03_TC03"></include>
+                </methods>
+            </class>
+            <class name="tests.US03">
+                <methods>
+                    <include name="US03_TC04"></include>
+                </methods>
+            </class>
+            <class name="tests.US03">
+                <methods>
+                    <include name="US03_TC05"></include>
+                </methods>
+            </class>
         </classes>
     </test>
 
