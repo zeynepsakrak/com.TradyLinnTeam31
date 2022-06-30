@@ -16,7 +16,7 @@ public class Login {
         waitFor(3);
         homepage.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
         homepage.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
-        waitFor(3);
         homepage.girisYapButonu.click();
+        waitFor(3);
     }
 }
