@@ -19,17 +19,17 @@ public class US15 extends TestBaseRapor {
     public void US15_TC_01_02_03() throws InterruptedException {
 
         //1- Siteye git:https://tradylinn.com/ gidilebilir
-        Driver.getDriver().get(ConfigReader.getProperty("tradllyinnUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         extentReports.createTest("US15_TC_01_02_03","Gecerli email ve sifre ile giris yapabilmeli");
         //2 -Vendor "My Account" butonuna tiklanir
         us_15_16_page.myAccount.click();
-
+        //extentTest.info("myAccount butonu basilabildi");
         //3- Vendor "username or email address" ve "password" bilgileri girer ve "login" butonuna tiklanir
-        us_15_16_page.username.sendKeys(ConfigReader.getProperty("tradllyinnEmail"));
-        us_15_16_page.password.sendKeys(ConfigReader.getProperty("tradllyinnPassword"));
+        us_15_16_page.username.sendKeys(ConfigReader.getProperty("validVendorEmail"));
+        us_15_16_page.password.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         ReusableMethods.waitFor(1);
         us_15_16_page.login.sendKeys(Keys.ENTER);
-
+        //extentTest.info("login butonu basilabildi");
         //4-Vendor "Store Manager" butonuna tiklanir
         us_15_16_page.storeManager.click();
 
