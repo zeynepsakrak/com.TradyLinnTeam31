@@ -29,7 +29,7 @@ public class US19 {
 
         Assert.assertTrue(myPage.takipciEposta.isDisplayed());
 
-        Driver.getDriver().quit();
+        Driver.getDriver().close();
     }
 
     @Test
@@ -40,8 +40,6 @@ public class US19 {
         homePage.hesabim.click();
 
         homePage.StoreManager.click();
-
-        waitForClickablility(myPage.takipci,5);
         myPage.takipci.sendKeys(Keys.ENTER);
         waitFor(5);
 
