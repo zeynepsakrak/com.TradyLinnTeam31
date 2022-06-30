@@ -15,11 +15,7 @@ public class US_19_22_Page {
     @FindBy(xpath = "(//a[@href='https://tradylinn.com/product-category/indirimli-urunler/'])[4]")
     public WebElement indirimliTumunuGor;
 
-    /*
-    @FindBy(xpath = "//span[@class='text'][normalize-space()='Takipçiler']")   //div[@class='wcfm_menu_items wcfm_menu_wcfm-followers']
-    public WebElement takipci;
-*/
-    @FindBy(xpath = "//span[@class='text'][normalize-space()='Takipçiler']")   //div[@class='wcfm_menu_items wcfm_menu_wcfm-followers']
+    @FindBy(xpath = "//a[@href=\"https://tradylinn.com/store-manager/followers/\"]")
     public WebElement takipci;
 
     @FindBy(xpath = "//th[@aria-label='E-posta']")
