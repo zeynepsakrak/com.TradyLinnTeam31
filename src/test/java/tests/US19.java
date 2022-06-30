@@ -21,21 +21,29 @@ public class US19 extends TestBaseRapor {
 
         login();
         waitFor(10);
+        extentTest.info("Tradylinn anasayfasina gidildi");
+        extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
+        extentTest.info("Kullanici Email ve Password girildi");
+        extentTest.info("Giris Yap butonuna tiklandi");
 
         homePage.hesabim.click();
+        extentTest.info("Hesabim butonuna tiklandi");
 
         homePage.StoreManager.click();
+        extentTest.info("Store Manager butonuna tiklandi");
 
         waitForClickablility(myPage.takipci,5);
         myPage.takipci.sendKeys(Keys.ENTER);
         bekle();
+        extentTest.info("Takipciler butonuna tiklandi");
 
         Assert.assertTrue(myPage.takipciIsim.isDisplayed());
+        extentTest.info("Takipcilerin isimlerinin gorunurlugu test edildi");
 
         Assert.assertTrue(myPage.takipciEposta.isDisplayed());
+        extentTest.info("Takipcilerin e-postalarinin gorunurlugu test edildi");
 
-        extentTest.info("Takipcilerin isim ve e-postalarinin gorunurlugu test edildi");
-
+        extentTest.pass("Takipcilerin isim ve e-postalarinin gorunurlugu test edildi");
         Driver.getDriver().close();
     }
 
@@ -45,17 +53,25 @@ public class US19 extends TestBaseRapor {
 
         login();
         waitFor(10);
+        extentTest.info("Tradylinn anasayfasina gidildi");
+        extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
+        extentTest.info("Kullanici Email ve Password girildi");
+        extentTest.info("Giris Yap butonuna tiklandi");
 
         homePage.hesabim.click();
+        extentTest.info("Hesabim butonuna tiklandi");
 
         homePage.StoreManager.click();
+        extentTest.info("Store Manager butonuna tiklandi");
+
         myPage.takipci.sendKeys(Keys.ENTER);
         waitFor(5);
+        extentTest.info("Takipciler butonuna tiklandi");
 
         Assert.assertTrue(myPage.takipciIslem.isDisplayed());
-
         extentTest.info("Takipcilerin işlemlerinin gorunurlugu test edildi");
 
+        extentTest.pass("Takipcilerin işlemlerinin gorunurlugu test edildi");
         Driver.getDriver().close();
     }
 }
