@@ -17,10 +17,12 @@ import static tests.ReusableMethods.bekle;
 import static tests.ReusableMethods.waitFor;
 
 public class US22 extends TestBaseRapor {
-    US_19_22_Page myPage= new US_19_22_Page();
+    US_19_22_Page myPage;
 
     @Test
     public void US22_TC01() throws InterruptedException {
+        myPage= new US_19_22_Page();
+
         extentTest = extentReports.createTest("US22_TC01",
                 "Tumunu gor linki olmali ve tiklandigin o kategorinin ana tayfalarına götürmeli");
 
@@ -51,6 +53,8 @@ public class US22 extends TestBaseRapor {
 
     @Test
     public void US22_TC02() {
+        myPage= new US_19_22_Page();
+
         extentTest = extentReports.createTest("US22_TC02",
                 "İndirimli Ürünleri siralanabilmeli");
 
@@ -87,6 +91,8 @@ public class US22 extends TestBaseRapor {
 
     @Test
     public void US22_TC03() {
+        myPage= new US_19_22_Page();
+
         extentTest = extentReports.createTest("US22_TC03",
                 "Fiyata göre sırala: Düşükten yükseğe seçildiğinde fiyatlar kucukten buyuge gore sıralanmalı");
 
@@ -123,6 +129,8 @@ public class US22 extends TestBaseRapor {
 
     @Test
     public void US22_TC04() {
+        myPage= new US_19_22_Page();
+
         extentTest = extentReports.createTest("US22_TC04",
                 "Fiyata göre sırala: Yüksekten düşüğe seçildiğinde fiyatlar büyükten kucuge gore sıralanmalı");
 

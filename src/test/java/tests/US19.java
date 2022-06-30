@@ -12,11 +12,14 @@ import static tests.Login.login;
 import static tests.ReusableMethods.*;
 
 public class US19 extends TestBaseRapor {
-    US_19_22_Page myPage= new US_19_22_Page();
-    Homepage homePage = new Homepage();
+    US_19_22_Page myPage;
+    Homepage homePage;
 
     @Test
     public void  US19_TC01() {
+        myPage= new US_19_22_Page();
+        homePage = new Homepage();
+
         extentTest = extentReports.createTest("US19_TC01","İsim, e-posta tanımlanmalı");
 
         login();
@@ -49,6 +52,9 @@ public class US19 extends TestBaseRapor {
 
     @Test
     public void  US19_TC02() {
+        myPage= new US_19_22_Page();
+        homePage = new Homepage();
+
         extentTest = extentReports.createTest("US19_TC02","Işlemler tanımlanmalı");
 
         login();
