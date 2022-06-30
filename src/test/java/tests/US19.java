@@ -29,7 +29,7 @@ public class US19 {
 
         Assert.assertTrue(myPage.takipciEposta.isDisplayed());
 
-        Driver.getDriver().quit();
+        Driver.getDriver().close();
     }
 
     @Test
