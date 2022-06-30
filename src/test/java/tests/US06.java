@@ -15,7 +15,7 @@ public class US06 extends TestBaseRapor{
     US_05_06_07_Page us_05_06_07_page;
     @Test
     public void UC06_TC01() throws InterruptedException {
-        extentTest=extentReports.createTest("Catagories secimi", "Catagori tiklanabilir ve isaretlenebilir");
+        extentTest=extentReports.createTest("UC06_TC01", "Catagori tiklanabilir ve isaretlenebilir");
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
