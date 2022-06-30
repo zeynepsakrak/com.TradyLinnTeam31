@@ -105,9 +105,12 @@ public class US_03_04_Page {
     @FindBy(xpath = "//input[@id='wcfmmp_user_location']")
     public WebElement faturaDetaylariGonderiYeri;
 
-
     @FindBy(xpath = "//button[@name='woocommerce_checkout_place_order']")
     public WebElement siparisiOnaylaButonu;
+
+    @FindBy(xpath = "//p[text()='Teşekkür ederiz. Siparişiniz alınmıştır.']")
+    public WebElement tesekkurlerYaziElementi;
+
 
     @FindBy(xpath = "//input[@aria-label='Ara']")
     public WebElement urunAramaKutusu;

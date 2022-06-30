@@ -14,10 +14,15 @@ import static tests.Login.login;
 import static tests.ReusableMethods.waitFor;
 
 public class US12 extends TestBaseRapor {
-    US_11_12_Page myPage=new US_11_12_Page();
+    US_11_12_Page myPage;
+    Actions actions;
+    Faker faker;
+
     @Test
     public void US12_TC01(){
-        extentTest=extentReports.createTest("Siparisler","Siparisler Listelenebilmeli");
+        myPage=new US_11_12_Page();
+
+        extentTest=extentReports.createTest("US12_TC01","Siparisler Listelenebilmeli");
 
         //1-Kullanici vendor olarak hesabina gider
         login();
@@ -33,12 +38,13 @@ public class US12 extends TestBaseRapor {
         //3-Kullanici siparislerin listelendigini kontrol eder
         Assert.assertTrue(myPage.siparislerListesi.size()!=0);
         Driver.closeDriver();
-        extentTest.info("Siparisler Basarili Bir Sekilde Listelendi");
+        extentTest.pass("Siparisler Basarili Bir Sekilde Listelendi");
 
     }
     @Test
     public void US12_TC02(){
-        extentTest=extentReports.createTest("Indirilecek Urunler","İndirilecek Urunler Listelenebilmeli");
+        myPage=new US_11_12_Page();
+        extentTest=extentReports.createTest("US12_TC02","İndirilecek Urunler Listelenebilmeli");
       //  1-Kullanici vendor olarak hesabina gider
         login();
         waitFor(8);
@@ -52,13 +58,14 @@ public class US12 extends TestBaseRapor {
       //  3-Kullanici indirilecek urunlerin listesinin goruntulendigini kontrol eder
         Assert.assertTrue(myPage.indirmelerListesi.size()!=0);
 
-        extentTest.info("İndirilecek Urunler Listesi Basarili Bir Sekilde Listelenebildi");
+        extentTest.pass("İndirilecek Urunler Listesi Basarili Bir Sekilde Listelendi");
         Driver.closeDriver();
     }
     @Test
 
     public void US12_TC03(){
-        extentTest=extentReports.createTest("Fatura ve Gonderim Adresi","Fatura Adresi ve Gonderim Adresi Goruntulenmeli");
+        myPage=new US_11_12_Page();
+        extentTest=extentReports.createTest("US12_TC03","Fatura Adresi ve Gonderim Adresi Goruntulenmeli");
        // 1-Kullanici vendor olarak hesabina gider
         login();
         waitFor(8);
@@ -76,12 +83,18 @@ public class US12 extends TestBaseRapor {
 
         }
 
-        extentTest.info("Fatura Adresi ve Gonderim Adresi Basarili Bir Sekilde Goruntulendi");
+        extentTest.pass("Fatura Adresi ve Gonderim Adresi Basarili Bir Sekilde Goruntulendi");
         Driver.closeDriver();
     }
       @Test
     public void US12_TC04(){
-          extentTest=extentReports.createTest("Hesap Detaylari","Hesap Bilgileri ve Eposta Adresi Goruntulenebilmeli," +
+          myPage=new US_11_12_Page();
+          actions=new Actions(Driver.getDriver());
+          faker=new Faker();
+          JavascriptExecutor js;
+          js = (JavascriptExecutor)Driver.getDriver();
+
+          extentTest=extentReports.createTest("US12_TC04","Hesap Bilgileri ve Eposta Adresi Goruntulenebilmeli," +
                   "Kullanici Hesap Bigilerinde Degisiklik Yapabilmeli");
 
        // 1-Kullanici vendor olarak hesabina gider
@@ -91,7 +104,7 @@ public class US12 extends TestBaseRapor {
           extentTest.info("Vendor Olarak Hesaba Girildi");
 
        // 2-Kullanici Hesap Detaylari butonuna tiklar
-        Actions actions=new Actions(Driver.getDriver());
+
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         myPage.hesapDetaylariButonu.click();
           extentTest.info("Hesap Detaylari Butonu Tiklandi");
@@ -101,12 +114,12 @@ public class US12 extends TestBaseRapor {
         Assert.assertTrue(myPage.hesapDetaylariSoyad.isDisplayed());
         Assert.assertTrue(myPage.hesapDetaylariGorunenAd.isDisplayed());
         Assert.assertTrue(myPage.hesapDetaylariEmail.isDisplayed());
-          extentTest.info("Hesap Bilgileri ve Eposta Adresi  Goruntulendi");
+          extentTest.pass("Hesap Bilgileri ve Eposta Adresi  Goruntulendi");
 
 
         // 4-Kullanici hesap  bilgilerinde degisiklik yapar
 
-        Faker faker=new Faker();
+
         myPage.hesapDetaylariAd.clear();
         myPage.hesapDetaylariAd.sendKeys(faker.name().firstName());
 
@@ -120,7 +133,7 @@ public class US12 extends TestBaseRapor {
 
 
         // 5-Kullanici degisiklikleri kaydet butonuna tiklar
-        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+
         js.executeScript("arguments[0].scrollIntoView(true);",myPage.degisklikleriKaydetButonu);
         js.executeScript("arguments[0].click();", myPage.degisklikleriKaydetButonu);
 
@@ -133,7 +146,7 @@ public class US12 extends TestBaseRapor {
 
         Assert.assertTrue(myPage.hesapBigileriDegistirildiYazisi.isDisplayed());
 
-          extentTest.info("Kullanici Hesap Bigilerinde Degisiklik Yapildi");
+          extentTest.pass("Kullanici Hesap Bigilerinde Degisiklik Yapildi");
 
           Driver.closeDriver();
     }

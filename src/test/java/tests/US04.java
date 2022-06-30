@@ -12,17 +12,18 @@ import static tests.Login.login;
 
 
 public class US04 extends TestBaseRapor {
-    US_03_04_Page forthPage = new US_03_04_Page();
+    US_03_04_Page forthPage;
 
-    @Test
+    @Test(priority = 1)
     public void US04_TC01() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Sepet detaylari gorme", "Sepetteki urun detaylari goruntulenmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
@@ -54,15 +55,16 @@ public class US04 extends TestBaseRapor {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 2)
     public void US04_TC02() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Urun miktari arttirma/azaltma", "Urun miktarlari arttirilip azaltilmalidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
@@ -108,15 +110,16 @@ public class US04 extends TestBaseRapor {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 3)
     public void US04_TC03() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Stok fazlasi urun ekleme", "Stoktan fazla urun eklenmemelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
@@ -161,22 +164,23 @@ public class US04 extends TestBaseRapor {
         Assert.assertEquals(artirmaSonrasi, parseInt(ConfigReader.getProperty("stokMiktari")));
         extentTest.info("Stoktan fazla deger girilemedigini kontrol edildi");
         //13.Urun miktarina gecerli bir deger girer
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         forthPage.eksiButonListesi.get(0).click();
         forthPage.sepetiTemizle.click();
         extentTest.pass("Urun miktarina gecerli bir deger girildi");
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 4)
     public void US04_TC04() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Sepeti bosaltma", "Sepet bosaltilabilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
@@ -208,15 +212,16 @@ public class US04 extends TestBaseRapor {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 5)
     public void US04_TC05() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Coupon kullanma", "Coupon secenegi kullanilabilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
@@ -244,15 +249,16 @@ public class US04 extends TestBaseRapor {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 6)
     public void US04_TC06() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Alisverise devam etme", "Sepetten alisveris sayfasina gidilebilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");
@@ -279,15 +285,16 @@ public class US04 extends TestBaseRapor {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 7)
     public void US04_TC07() {
+        forthPage = new US_03_04_Page();
         extentTest = extentReports.createTest("Kargo bilgileri goruntuleme", "Kargo bilgileri goruntulenebilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
         //4. 'Giris Yap' butonuna tiklar
         login();
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(10);
         extentTest.info("Tradylinn anasayfasina gidildi");
         extentTest.info("Giris Yap/Uye Ol butonuna tiklandi");
         extentTest.info("Kullanici Email ve Password girildi");

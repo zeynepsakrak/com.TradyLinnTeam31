@@ -9,30 +9,41 @@ import pages.Homepage;
 import pages.US_05_06_07_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
-public class US05 extends ReusableMethods{
+public class US05 extends TestBaseRapor {
     US_05_06_07_Page us_05_06_07_page;
 
     @Test(priority = 1)
     public void US05_TC01() throws InterruptedException {
+        extentTest=extentReports.createTest("US05_TC01", "Store Manager olarak, Products'a gidip yeni ürün yüklenebilmeli");
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
+        extentTest.info("tradylinn Anasayfaya gidildi");
         us_05_06_07_page.girisButonu.click();
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
+        extentTest.info("Gecerli bit mail gidildi");
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
+        extentTest.info("Gecerli bir Password gidildi");
         us_05_06_07_page.girisYapButonu.click();
+        extentTest.info("Giris yapildi");
         ReusableMethods.waitFor(5);
         us_05_06_07_page.hesabimButonu.click();
+        extentTest.info("hesabim buttonu tiklandi");
         //Kullanici Store Manager butonuna tiklar
         us_05_06_07_page.storeManagerButonu.click();
+        extentTest.info("storManager Buttonu tiklandi");
         //Kullanici Urunler butonuna tiklar
         us_05_06_07_page.urunButonu.click();
+        extentTest.info("Urun buttonu tiklandi");
         // Kullanici; status, stock, price ve date stunlarinin görünür oldugu kontrol edilir
+        extentTest.info("status, stock, price ve date stunlarinin görünür oldugu kontrol edildi");
+        extentTest.pass("status, stock, price ve date stunlari görünüyor");
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(3);
@@ -44,6 +55,7 @@ public class US05 extends ReusableMethods{
     }
     @Test(priority = 2)
     public void UC05_TC02() throws InterruptedException {
+        extentTest=extentReports.createTest("US05_TC02", "Store Manager olarak, Products'a gidip yeni ürün yüklenebilmeli");
         //Kullanici vendor olarak hesabina gider
         us_05_06_07_page=new US_05_06_07_Page();
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
@@ -59,6 +71,13 @@ public class US05 extends ReusableMethods{
         us_05_06_07_page.urunButonu.click();
         //Kullanici Yeni Ekle butonuna tiklar
         us_05_06_07_page.yeniEkleButonu.click();
+        extentTest.info("tradylinn Anasayfaya gidildi");
+        extentTest.info("Gecerli bit mail gidildi");
+        extentTest.info("Gecerli bir Password gidildi");
+        extentTest.info("Giris yapildi");
+        extentTest.info("hesabim buttonu tiklandi");
+        extentTest.info("Virtual ve Downloadable seceneklerinin oldugunu kontrol edilir");
+        extentTest.pass("Virtual ve Downloadable secenekleri görünüyor");
         // Kullanici Virtual ve Downloadable seceneklerinin oldugunu kontrol eder
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();

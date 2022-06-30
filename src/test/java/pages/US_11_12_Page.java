@@ -98,5 +98,8 @@ public class US_11_12_Page {
     @FindBy(xpath = "//input[@id='minorderqtytr']")
     public WebElement minumumQuantity;
 
+    @FindBy(xpath ="//span[contains(text(),'Yeni ekle')]")
+    public WebElement yeniUrunEkle;
+
 
 }
