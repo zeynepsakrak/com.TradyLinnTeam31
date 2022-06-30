@@ -17,14 +17,15 @@ import static tests.Login.login;
 import static tests.ReusableMethods.waitFor;
 
 public class SmokeTest extends TestBaseRapor {
-    US_01_02_Page firstPage=new US_01_02_Page();
+    US_01_02_Page firstPage;
     US_03_04_Page thirdPage;
-    SoftAssert softAssert=new SoftAssert();
+    SoftAssert softAssert;
     JavascriptExecutor jse;
     Actions actions;
 
     @Test
     public void US01_TC01() {
+        firstPage=new US_01_02_Page();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         //2_Kullanıcı Sign Up butonuna tıklar.
@@ -35,6 +36,8 @@ public class SmokeTest extends TestBaseRapor {
     }
     @Test
     public void US01_TC02() {
+        firstPage=new US_01_02_Page();
+        softAssert=new SoftAssert();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         //2_Kullanıcı Sign Up butonuna tıklar.
