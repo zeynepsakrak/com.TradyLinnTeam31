@@ -23,7 +23,7 @@ public class US06 extends TestBaseRapor{
         us_05_06_07_page.girisButonu.click();
         extentTest.info("Giris butonu tiklandi");
         us_05_06_07_page.userName.sendKeys(ConfigReader.getProperty("validVendorEmail"));
-        extentTest.info("Gecerli bit mail gidildi");
+        extentTest.info("Gecerli bir mail gidildi");
         us_05_06_07_page.pasword.sendKeys(ConfigReader.getProperty("validVendorPassword"));
         extentTest.info("Gecerli bir Password gidildi");
         us_05_06_07_page.girisYapButonu.click();
