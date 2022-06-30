@@ -23,33 +23,38 @@ public class US20 extends TestBaseRapor {
         //1-kullanıcı  https://tradylinn.com/  adresine gider
         //2- Satıcı olarak giriş yapılır
         login();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
+        extentTest.info("1-https://tradylinn.com/  adresine gidildi\n" +
+                "        2-Satıcı olarak giriş yapildi");
 
-        //3-hesabim a tiklanir
+        //3-hesabim butonuna  a tiklanir
         us_20_21_Page.hesabim.click();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
+        extentTest.info("3-hesabim butonuna  a tiklandi");
 
         //4-story manager'e tiklanir
         us_20_21_Page.storeManejer.click();
         Thread.sleep(4000);
+        extentTest.info("4-story manager'e tiklandi");
 
         //5-incelemelere tiklanir
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);",us_20_21_Page.inceleme);
         Thread.sleep(4000);
         us_20_21_Page.inceleme.click();
         Thread.sleep(2000);
+        extentTest.info("5-incelemelere tiklandi");
 
         //6-product reviews tiklanir
         us_20_21_Page.productReviews.click();
+        extentTest.info("6-product reviews tiklandi");
 
         //7-kullanıcı bilgisi gorunur oldugunu test eder
         String actualResult=us_20_21_Page.kullaniciBilgisi.getText();
-
         System.out.println("KullaniciAdi = " + actualResult);
         Assert.assertTrue(us_20_21_Page.kullaniciBilgisi.isDisplayed());
 
         Driver.closeDriver();
-        extentTest.info("kullanici bilgisi görüntülendi");
+        extentTest.pass("kullanici bilgisi görüntülendi");
 
     }
 
@@ -62,42 +67,52 @@ public class US20 extends TestBaseRapor {
         //2- Satıcı olarak giriş yapılır
         login();
         Thread.sleep(5000);
+        extentTest.info("1-https://tradylinn.com/  adresine gidildi\n" +
+                "        2-Satıcı olarak giriş yapildi");
 
         //3-hesabim a tiklanir
         us_20_21_Page.hesabim.click();
         Thread.sleep(9000);
+        extentTest.info("3-hesabim butonuna  a tiklandi");
 
         //4-story manager'e tiklanir
         us_20_21_Page.storeManejer.click();
         Thread.sleep(4000);
+        extentTest.info("4-story manager'e tiklandi");
 
         //5-incelemelere tiklanir
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);",us_20_21_Page.inceleme);
         Thread.sleep(4000);
         us_20_21_Page.inceleme.click();
         Thread.sleep(2000);
+        extentTest.info("5-incelemelere tiklandi");
 
         //6-product reviews tiklanir
         us_20_21_Page.productReviews.click();
+        Thread.sleep(4000);
+        extentTest.info("6-product reviews tiklandi");
 
         //7-kullanıcı commentinin gorunur oldugunu test eder
         String actualDescription1=us_20_21_Page.kullaniciCommenti.getText();
         System.out.println("kullaniciCommenti = " + actualDescription1);
         Assert.assertTrue(us_20_21_Page.kullaniciCommenti.isDisplayed());
+        extentTest.info("7-kullanıcı commenti goruntulendi");
 
 
         //8-kullanıcı rating nin gorunur oldugunu test eder
         String actualResult=us_20_21_Page.kullaniciRating.getText();
         System.out.println("kullaniciRating = " + actualResult);
         Assert.assertTrue(us_20_21_Page.kullaniciCommenti.isDisplayed());
+        extentTest.info("8-kullanıcı rating goruntulendi");
 
 
         //9-kullanıcı comment tarihinin gorunur oldugunu test eder
         String actualResult1=us_20_21_Page.kullaniciCommentiTarihi.getText();
         System.out.println("kullaniciCommentiTarihi = " + actualResult1);
         Assert.assertTrue(us_20_21_Page.kullaniciCommentiTarihi.isDisplayed());
+        extentTest.pass("kullanıcı commentinin,rating,comment tarihi görüntülendi");
         Driver.closeDriver();
-        extentTest.info("kullanıcı commentinin,rating,comment tarihi görüntülendi");
+
 
     }
 
