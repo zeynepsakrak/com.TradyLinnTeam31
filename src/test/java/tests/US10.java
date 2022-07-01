@@ -17,11 +17,13 @@ import java.util.List;
 import static tests.ReusableMethods.*;
 
 public class US10 extends TestBaseRapor {
-    US_08_09_10_Page page=new US_08_09_10_Page();
-    Actions actions=new Actions(Driver.getDriver());
+    US_08_09_10_Page page;
+    Actions actions;
 
     @Test(priority = 1)
     public void US10_TC01() throws IOException {
+        US_08_09_10_Page page=new US_08_09_10_Page();
+        Actions actions=new Actions(Driver.getDriver());
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
@@ -55,6 +57,8 @@ public class US10 extends TestBaseRapor {
 
     @Test(priority = 2)
     public void US10_TC02() throws IOException {
+        US_08_09_10_Page page=new US_08_09_10_Page();
+        Actions actions=new Actions(Driver.getDriver());
         extentTest=extentReports.createTest("US10_TC02","Renk secenegi; beyaz, siyah, yeşil vs tum renkler belirtilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");
