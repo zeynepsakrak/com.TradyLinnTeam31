@@ -47,7 +47,6 @@ public class US19 extends TestBaseRapor {
         extentTest.info("Takipcilerin e-postalarinin gorunurlugu test edildi");
 
         extentTest.pass("Takipcilerin isim ve e-postalarinin gorunurlugu test edildi");
-        Driver.getDriver().close();
     }
 
     @Test
@@ -78,6 +77,5 @@ public class US19 extends TestBaseRapor {
         extentTest.info("Takipcilerin işlemlerinin gorunurlugu test edildi");
 
         extentTest.pass("Takipcilerin işlemlerinin gorunurlugu test edildi");
-        Driver.getDriver().close();
     }
 }

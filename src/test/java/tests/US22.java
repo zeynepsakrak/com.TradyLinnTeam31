@@ -48,7 +48,6 @@ public class US22 extends TestBaseRapor {
         extentTest.info("Ürünün satış sayfasına gidildi");
 
         extentTest.pass("Tumunu gor linki nin gorunurlugu test edildi ve tiklandigin o kategorinin ana tayfalarına gidildi");
-        Driver.getDriver().close();
     }
 
     @Test
@@ -86,7 +85,6 @@ public class US22 extends TestBaseRapor {
         extentTest.info("Diger seceneklerin gorunurlugu test edildi");
 
         extentTest.pass("İndirimli Ürünler siralandi");
-        Driver.getDriver().close();
     }
 
     @Test
@@ -124,7 +122,6 @@ public class US22 extends TestBaseRapor {
         extentTest.info("Ürünlerin fiyat sıralaması küçükten büyüğe olduğu test edildi");
 
         extentTest.pass("Fiyata göre sırala: Düşükten yükseğe seçildiğinde fiyatlar kucukten buyuge gore sıralandi");
-        Driver.getDriver().close();
     }
 
     @Test
@@ -165,6 +162,5 @@ public class US22 extends TestBaseRapor {
         extentTest.info("Ürünlerin fiyat sıralaması büyükten küçüğe olduğu test edildi");
 
         extentTest.pass("Fiyata göre sırala: Yüksekten düşüğe seçildiğinde fiyatlar büyükten kucuge gore sıralandi");
-        Driver.getDriver().close();
     }
 }
