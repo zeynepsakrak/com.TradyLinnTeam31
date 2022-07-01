@@ -9,6 +9,8 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 import static tests.Login.login;
 
 
@@ -147,7 +149,7 @@ public class US03 extends TestBaseRapor {
     }
 
     @Test(priority = 4)
-    public void US03_TC04() {
+    public void US03_TC04() throws IOException {
         thirdPage = new US_03_04_Page();
         jse = (JavascriptExecutor) Driver.getDriver();
         actions = new Actions(Driver.getDriver());
@@ -203,11 +205,12 @@ public class US03 extends TestBaseRapor {
         thirdPage.faturaDetaylariSehir.click();
         actions.click(thirdPage.faturaDetaylariSehir).sendKeys(ConfigReader.getProperty("kargoBilgileriSehir") + Keys.ENTER).perform();
         actions.click(thirdPage.faturaDetaylariTelefon).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).sendKeys(ConfigReader.getProperty("kargoBilgileriTelefon")).perform();
-        extentTest.info("Kargo detaylari girildi");
-        //10. Kargo bilgilerinin girildigini kontrol eder
+        extentTest.info("Fatura detaylari girildi");
+        //10. Kargo bilgilerininin girildigini kontrol eder
         Assert.assertTrue(thirdPage.siparisiOnaylaButonu.isEnabled());
-        extentTest.pass("Kargo bilgilerinin girildigi kontrol edildi");
+        extentTest.pass("Fatura detaylarinin girildigi kontrol edildi");
         Driver.closeDriver();
+
     }
 
     @Test(priority = 5)
