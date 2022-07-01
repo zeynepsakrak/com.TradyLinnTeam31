@@ -17,7 +17,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 1)
     public void US04_TC01() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Sepet detaylari gorme", "Sepetteki urun detaylari goruntulenmelidir");
+        extentTest = extentReports.createTest("US04_TC01", "Sepetteki urun detaylari goruntulenmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
@@ -58,7 +58,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 2)
     public void US04_TC02() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Urun miktari arttirma/azaltma", "Urun miktarlari arttirilip azaltilmalidir");
+        extentTest = extentReports.createTest("US04_TC02", "Urun miktarlari arttirilip azaltilmalidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
@@ -113,7 +113,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 3)
     public void US04_TC03() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Stok fazlasi urun ekleme", "Stoktan fazla urun eklenmemelidir");
+        extentTest = extentReports.createTest("US04_TC03", "Stoktan fazla urun eklenmemelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
@@ -174,7 +174,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 4)
     public void US04_TC04() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Sepeti bosaltma", "Sepet bosaltilabilmelidir");
+        extentTest = extentReports.createTest("US04_TC04", "Sepet bosaltilabilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
@@ -215,7 +215,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 5)
     public void US04_TC05() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Coupon kullanma", "Coupon secenegi kullanilabilmelidir");
+        extentTest = extentReports.createTest("US04_TC05", "Coupon secenegi kullanilabilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
@@ -252,7 +252,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 6)
     public void US04_TC06() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Alisverise devam etme", "Sepetten alisveris sayfasina gidilebilmelidir");
+        extentTest = extentReports.createTest("US04_TC06", "Sepetten alisveris sayfasina gidilebilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer
@@ -288,7 +288,7 @@ public class US04 extends TestBaseRapor {
     @Test(priority = 7)
     public void US04_TC07() {
         forthPage = new US_03_04_Page();
-        extentTest = extentReports.createTest("Kargo bilgileri goruntuleme", "Kargo bilgileri goruntulenebilmelidir");
+        extentTest = extentReports.createTest("US04_TC07", "Kargo bilgileri goruntulenebilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Kullanici Email ve Password girer

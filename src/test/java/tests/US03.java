@@ -24,7 +24,7 @@ public class US03 extends TestBaseRapor {
         thirdPage = new US_03_04_Page();
         jse = (JavascriptExecutor) Driver.getDriver();
         actions = new Actions(Driver.getDriver());
-        extentTest = extentReports.createTest("Urunlere gitme", "Urunlerden siparislere gidilmelidir");
+        extentTest = extentReports.createTest("US03_TC01", "Urunlerden siparislere gidilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
@@ -57,7 +57,7 @@ public class US03 extends TestBaseRapor {
         thirdPage = new US_03_04_Page();
         jse = (JavascriptExecutor) Driver.getDriver();
         actions = new Actions(Driver.getDriver());
-        extentTest = extentReports.createTest("Sepete urun ekleme", "Secilen 5 urun sepete eklenmelidir");
+        extentTest = extentReports.createTest("US03_TC02", "Secilen 5 urun sepete eklenmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
@@ -100,7 +100,7 @@ public class US03 extends TestBaseRapor {
         thirdPage = new US_03_04_Page();
         jse = (JavascriptExecutor) Driver.getDriver();
         actions = new Actions(Driver.getDriver());
-        extentTest = extentReports.createTest("Sepete urun ekleme", "Secilen 5 urun sepete eklenmelidir");
+        extentTest = extentReports.createTest("US03_TC03", "Secilen 5 urun sepete eklenmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
@@ -153,7 +153,7 @@ public class US03 extends TestBaseRapor {
         thirdPage = new US_03_04_Page();
         jse = (JavascriptExecutor) Driver.getDriver();
         actions = new Actions(Driver.getDriver());
-        extentTest = extentReports.createTest("Siparise adres girme", "Tum adres bilgleri basarili girilmelidir");
+        extentTest = extentReports.createTest("US03_TC04", "Tum adres bilgleri basarili girilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
@@ -218,7 +218,7 @@ public class US03 extends TestBaseRapor {
         thirdPage = new US_03_04_Page();
         jse = (JavascriptExecutor) Driver.getDriver();
         actions = new Actions(Driver.getDriver());
-        extentTest = extentReports.createTest("Siparis verme", "Siparis verilebilmelidir");
+        extentTest = extentReports.createTest("US03_TC05", "Siparis verilebilmelidir");
         //1. Kullanıcı https://tradylinn.com adresine gider
         //2. 'Giris Yap/Uye Ol' butonuna tiklar
         //3. Email ve Password girer
