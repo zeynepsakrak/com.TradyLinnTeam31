@@ -241,4 +241,5 @@ public class E2E extends TestBaseRapor {
         ReusableMethods.getScreenshot("Limit uygulama");
         Driver.closeDriver();
     }
+
 }
