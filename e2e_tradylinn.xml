@@ -27,19 +27,9 @@
                     <include name="UC07_TC01"></include>
                 </methods>
             </class>
-            <class name="tests.US08">
-                <methods>
-                    <include name="US08_TC01"></include>
-                </methods>
-            </class>
             <class name="tests.US12">
                 <methods>
                     <include name="US12_TC01"></include>
-                </methods>
-            </class>
-            <class name="tests.US14">
-                <methods>
-                    <include name="US14_TC01"></include>
                 </methods>
             </class>
             <class name="tests.US15">
