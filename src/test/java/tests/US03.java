@@ -49,6 +49,7 @@ public class US03 extends TestBaseRapor {
         //8. Ürünlerin goruntulendigini kontrol eder
         Assert.assertTrue(thirdPage.urunlerElementListesi.size() != 0);
         extentTest.pass("Ürünlerin goruntulendi");
+        ReusableMethods.sepetiBosalt();
         Driver.closeDriver();
     }
 
@@ -70,6 +71,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hemen Basla' butonuna tiklar
         ReusableMethods.sepetiBosalt();
+        ReusableMethods.waitFor(2);
         thirdPage.hemenBaslaButonu.click();
         extentTest.info("Hemen Basla butonuna tiklandi");
         //6. Ilk 5 ürünü, 'Sepete Ekle' butonuna tiklayarak sepete ekler
@@ -231,6 +233,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Giris Yap butonuna tiklandi");
         //5. 'Hemen Basla' butonuna tiklar
         ReusableMethods.sepetiBosalt();
+        ReusableMethods.waitFor(2);
         thirdPage.hemenBaslaButonu.click();
         extentTest.info("Hemen Basla butonuna tiklandi");
         //6. Bir ürünü 'Sepete Ekle' butonuna tiklayarak sepete ekler
@@ -275,7 +278,7 @@ public class US03 extends TestBaseRapor {
         extentTest.info("Fatura Detaylarini girildi");
         //11. 'Siparisi onaylaya' tiklar
         jse.executeScript("arguments[0].scrollIntoView();", thirdPage.siparisiOnaylaButonu);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
         thirdPage.siparisiOnaylaButonu.click();
         ReusableMethods.waitFor(3);
         extentTest.info("Siparisi onaylaya tiklandi");
