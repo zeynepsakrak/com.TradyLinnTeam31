@@ -5,15 +5,20 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.US_01_02_Page;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import static tests.Login.login;
 
-public class US02 {
-    US_01_02_Page firstPage=new US_01_02_Page();
-    SoftAssert softAssert=new SoftAssert();
+public class US02 extends TestBaseRapor {
+
+    US_01_02_Page firstPage;
+    SoftAssert softAssert;
 
     @Test
-    public void US01_TC01() throws InterruptedException {
+    public void US02_TC01() throws InterruptedException {
+        extentTest=extentReports.createTest("UC07_TC01", "Brands tiklanabilir ve isaretlenebilir");
+        firstPage=new US_01_02_Page();
+        SoftAssert softAssert=new SoftAssert();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         //2_Kullanıcı Sign in butonuna tıklar.
         //3_Kullanıcı Email adresini girer.
@@ -26,7 +31,9 @@ public class US02 {
     }
 
     @Test
-    public void US01_TC02() throws InterruptedException {
+    public void US02_TC02() throws InterruptedException {
+        firstPage=new US_01_02_Page();
+        SoftAssert softAssert=new SoftAssert();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         //2_Kullanıcı Sign in butonuna tıklar.
         //3_Kullanıcı Email adresini girer.
@@ -57,7 +64,9 @@ public class US02 {
     }
 
     @Test
-    public void US01_TC03() throws InterruptedException {
+    public void US02_TC03() throws InterruptedException {
+        firstPage=new US_01_02_Page();
+        SoftAssert softAssert=new SoftAssert();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         //2_Kullanıcı Sign in butonuna tıklar.
         //3_Kullanıcı Email adresini girer.
@@ -90,7 +99,9 @@ public class US02 {
     }
 
     @Test
-    public void US01_TC04() throws InterruptedException {
+    public void US02_TC04() throws InterruptedException {
+        firstPage=new US_01_02_Page();
+        SoftAssert softAssert=new SoftAssert();
         //1_Kullanıcı https://tradylinn.com adresine gider.
         //2_Kullanıcı Sign in butonuna tıklar.
         //3_Kullanıcı Email adresini girer.
