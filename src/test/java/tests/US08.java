@@ -23,8 +23,8 @@ public class US08 extends TestBaseRapor{
 
     @Test(priority = 1)
     public void US08_TC01() throws IOException {
-        US_08_09_10_Page page=new US_08_09_10_Page();
-        Actions actions=new Actions(Driver.getDriver());
+        page=new US_08_09_10_Page();
+        actions=new Actions(Driver.getDriver());
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
@@ -53,7 +53,17 @@ public class US08 extends TestBaseRapor{
     }
     @Test(priority = 2)
     public void US08_TC02() throws IOException {
-        US_08_09_10_Page page=new US_08_09_10_Page();
+        page=new US_08_09_10_Page();
+        actions=new Actions(Driver.getDriver());
+        urun_ekle_menusune_gidilir();
+        bekle();
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        bekle();
+        page.Inventory.click();
+        waitFor(3);
+        waitFor(2);
+        page.ManageStock.click();
+        waitFor(5);
         extentTest=extentReports.createTest("US08_TC02","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");

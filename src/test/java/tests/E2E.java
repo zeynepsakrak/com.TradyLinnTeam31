@@ -110,6 +110,7 @@ public class E2E extends TestBaseRapor {
         us_05_06_07_page.storeManagerButonu.click();
         extentTest.info("storManager Buttonu tiklandi");
         //Kullanici Urunler butonuna tiklar
+        waitFor(5);
         us_05_06_07_page.urunButonu.click();
         extentTest.info("Urun buttonu tiklandi");
         // Kullanici; status, stock, price ve date stunlarinin görünür oldugu kontrol edilir
@@ -127,10 +128,11 @@ public class E2E extends TestBaseRapor {
     @Test
     public void US08_TC01() throws IOException {
         page=new US_08_09_10_Page();
+        actions=new Actions(Driver.getDriver());
         urun_ekle_menusune_gidilir();
-        bekle();
+        waitFor(5);
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
-        bekle();
+     waitFor(3);
         page.Inventory.click();
         waitFor(6);
         extentTest=extentReports.createTest("US08_TC01","Gecerli username ve sifre ile giris yapabilmeli");
@@ -166,6 +168,7 @@ public class E2E extends TestBaseRapor {
         myPage.siparislerButonu.click();
         extentTest.info("Siparisler Butonu Tiklandi");
         //3-Kullanici siparislerin listelendigini kontrol eder
+        waitFor(3);
         Assert.assertTrue(myPage.siparislerListesi.size()!=0);
         Driver.closeDriver();
         extentTest.pass("Siparisler Basarili Bir Sekilde Listelendi");
@@ -173,6 +176,7 @@ public class E2E extends TestBaseRapor {
     @Test
     public void US14_TC01() {
         us_13_14_page = new US_13_14_Page();
+        actions=new Actions(Driver.getDriver());
         extentTest = extentReports.createTest("US14_TC01", "Minimum spend / en az alma miktari girilmeli");
         login();                                    //1., 2., 3. Stepler
         extentTest.info("https://tradylinn.com adresine gidildi");
@@ -181,12 +185,14 @@ public class E2E extends TestBaseRapor {
         ReusableMethods.bekle();
         us_13_14_page.hesabimButonu.click();        //4. Kullanıcı "Hesabım" butonunu tıklar
         extentTest.info("Hesabım Butonuna basıldı.");
+        waitFor(3);
         us_13_14_page.storeManagerButonu.click();   //5. Kullanıcı "Store Manager" butonunu tıklar
         extentTest.info("Stor Manager Butonuna basıldı.");
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         us_13_14_page.kuponlarButonu.click();       //6. Kullanıcı "Kuponlar" butonunu tıklar
         extentTest.info("Kuponlar Butonuna basıldı.");
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+        waitFor(5);
         us_13_14_page.kuponlarYeniButonu.click();   //7. Kullanıcı "Yeni ekle" butonunu tıklar
         extentTest.info("Kuponlar Yeni Ekle Butonuna basıldı.");
         actions.sendKeys(Keys.PAGE_DOWN).perform();
