@@ -13,15 +13,20 @@ public class US_17_18_Page {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "(//a[text()='Hesabım'])[1]")
-    public WebElement hesabimButonu;
+    @FindBy (xpath = "//li[@id='menu-item-1074']")
+    public WebElement hesabim;
 
-    @FindBy (xpath = "//a[text()='Store Manager']")
-    public WebElement storeManagerButonu;
+    @FindBy (xpath = "//a[@href='https://tradylinn.com/store-manager/']")
+    public WebElement storeManager;
 
-    @FindBy (xpath = "/nnnnnnnnn")
-    public WebElement musterilerButonu;
+    @FindBy (xpath = "//span[@class='wcfmfa fa-user-circle']")
+    public WebElement musteriler;
 
+    @FindBy (xpath = "//span[@class='wcfmfa fa-user-plus']")
+    public WebElement yeniMusteriEkle;
+
+    @FindBy (id = "user_name")
+    public WebElement musteriUserName;
 
     @FindBy (xpath = "//input[@id='user_name']")
     public WebElement usernameBox;
@@ -53,8 +58,11 @@ public class US_17_18_Page {
     @FindBy (xpath = "//input[@id='baddr_2']")
     public WebElement billingAddress2Box;
 
-    @FindBy(xpath = "//select[@id='bcountry']")
-    public WebElement billingCountryDropDown;
+    @FindBy(id = "select2-bcountry-container")
+    public WebElement billingCountry;
+
+    @FindBy (id = "select2-bcountry-result-9kwe-TR")
+    public WebElement Turkiye;
 
     @FindBy (xpath = "//input[@id='bcity']")
     public WebElement billingCityBox;
@@ -95,9 +103,11 @@ public class US_17_18_Page {
     @FindBy (xpath = "//input[@id='szip']")
     public WebElement shippingZipBox;
 
-    @FindBy (xpath = "//input[@id='wcfm_customer_submit_button']")
+    @FindBy (id = "wcfm_customer_submit_button")
     public WebElement submitButonu;
 
+    @FindBy (xpath = "//span[@class='wcfmfa fa-retweet']")
+    public WebElement refundButonu;
 
 
 
