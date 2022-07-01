@@ -4,12 +4,12 @@
         <classes>
             <class name="tests.US02">
                 <methods>
-                    <include name="US01_TC01"></include>
+                    <include name="US02_TC01"></include>
                 </methods>
             </class>
             <class name="tests.US02">
                 <methods>
-                    <include name="US01_TC02"></include>
+                    <include name="US02_TC02"></include>
                 </methods>
             </class>
             <class name="tests.US03">
