@@ -17,11 +17,13 @@ import java.util.List;
 import static tests.ReusableMethods.*;
 
 public class US09 extends TestBaseRapor {
-    US_08_09_10_Page page=new US_08_09_10_Page();
-    Actions actions=new Actions(Driver.getDriver());
+    US_08_09_10_Page page;
+    Actions action;
 
     @Test(priority = 1)
     public void US09_TC01() throws IOException {
+        US_08_09_10_Page page=new US_08_09_10_Page();
+        Actions actions=new Actions(Driver.getDriver());
         urun_ekle_menusune_gidilir();
         bekle();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
@@ -63,6 +65,7 @@ public class US09 extends TestBaseRapor {
 
     @Test(priority = 2)
     public void US09_TC02() throws IOException {
+        US_08_09_10_Page page=new US_08_09_10_Page();
         extentTest=extentReports.createTest("US09_TC02","Gecerli username ve sifre ile giris yapabilmeli");
         extentTest.info("Hesabiniza basarili bir sekilde giris yapildi");
         extentTest.info("Hesabim butonuna basildi");

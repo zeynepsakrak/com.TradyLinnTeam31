@@ -44,6 +44,12 @@ public class US_01_02_Page {
     @FindBy(xpath = "//input[@value='Register']")
     public WebElement registerButonu;
 
+    @FindBy(xpath = "//input[@data-required_message=\"Email: This field is required.\"]")
+    public WebElement emailThisFieldIsRequiredUyarisi;
+
+    @FindBy(xpath = "//div[@class=\"strong\"]")
+    public WebElement strongYazisi;
+
     @FindBy(xpath = "(//*[text()='Siparişler'])[2]")
     public WebElement ordersButonu;
 

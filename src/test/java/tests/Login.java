@@ -20,7 +20,5 @@ public class Login {
         waitFor(5);
         homepage.girisYapButonu.click();
         waitFor(5);
-        homepage.girisYapButonu.click();
-        waitFor(3);
     }
 }
